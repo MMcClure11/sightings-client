@@ -4,6 +4,7 @@ import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom';
 import { Link } from 'react-router-dom'
+import SightingFormModal from './SightingFormModal'
 
 
 class SightingList extends React.Component {
@@ -21,6 +22,7 @@ class SightingList extends React.Component {
       <div>
         <h2>My Sightings</h2>
         {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} currentOwner={true} />)}
+        <SightingFormModal />
       </div>
     )
   }

@@ -1,9 +1,9 @@
-
 function Sighting (props) {
 
   const edit = () => {
     alert('edit me!')
   }
+
   return (
     <div className="App">
       { props.user && <h2>Reported By: {props.user.username}</h2> }
