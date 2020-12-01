@@ -2,12 +2,18 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import NavBar from './NavBar'
+import { getCurrentUser } from '../actions/currentUser'
+
 
 class Home extends Component {
 
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
+
   onClick = (url) => {
     this.props.history.push(url)
-}
+  }
 //instead of welcome, button for the user to go to their profile
 //add about, info, footer
   render() {
@@ -30,4 +36,4 @@ const mapStateToProps = state => {
   })
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps, { getCurrentUser })(Home)
