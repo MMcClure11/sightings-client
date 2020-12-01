@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import SightingsContainer from '../containers/SightingsContainer'
 
-export default class MyProfile extends Component {
+class MyProfile extends Component {
   render() {
     return (
       <div>
-        User Profile Page
+        <h2>Username: {this.props.currentUser.username}</h2>
+        <h4>Name: {this.props.currentUser.name}</h4>
+        <SightingsContainer />
       </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return({
+    currentUser: state.currentUser
+  })
+}
+
+export default connect(mapStateToProps)(MyProfile)
