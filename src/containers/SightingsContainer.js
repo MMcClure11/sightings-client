@@ -1,8 +1,10 @@
+import SightingList from '../components/SightingList'
+
 function SightingsContainer() {
   
   return (
     <div className="App">
-       SightingsContainer
+       <SightingList />
     </div>
   );
 }
