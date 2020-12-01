@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { geSightings } from '../actions/sightings'
+import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom';
 

@@ -1,10 +1,12 @@
 import { currentUserReducer } from './currentUser'
+import { sightingsReducer } from './sightings'
 
 
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-  currentUser: currentUserReducer
+  currentUser: currentUserReducer,
+  sightings: sightingsReducer
 
 })
 

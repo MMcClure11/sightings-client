@@ -8,9 +8,9 @@ export function getSightings() {
   return (dispatch) => {
     fetch(URL)
     .then(resp => resp.json())
-    .then(messages => dispatch({
+    .then(sightings => dispatch({
       type: GET_SIGHTINGS,
-      messages
+      sightings
     }))
   }
 }
