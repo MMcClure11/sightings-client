@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Logout from '../components/Logout'
+
 
 export default class NavBar extends Component {
 
@@ -11,7 +13,7 @@ export default class NavBar extends Component {
       <div>
         <p>Logged in as {this.props.currentUser.username}</p>
         <Link to="/myprofile" onClick={() => this.onClick('/myprofile')}>Profile</Link>
-        <p>Logout</p>
+        <Logout />
       </div>
     )
   }
