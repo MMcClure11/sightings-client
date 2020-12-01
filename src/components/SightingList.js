@@ -20,7 +20,7 @@ class SightingList extends React.Component {
     return (
       <div>
         <h2>My Sightings</h2>
-        {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+        {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} currentOwner={true} />)}
       </div>
     )
   }

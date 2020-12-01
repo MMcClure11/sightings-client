@@ -18,6 +18,7 @@ class MyProfile extends Component {
     return (
       <div>
         <Link to="/" onClick={() => this.onClick('/')}>Home</Link>
+        <button>Report New Sighting</button>
         <h2>Username: {this.props.currentUser && this.props.currentUser.username}</h2>
         <h4>Name: {this.props.currentUser && this.props.currentUser.name}</h4>
         <SightingsContainer />
