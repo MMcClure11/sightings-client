@@ -13,7 +13,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        { this.props.loggedIn ? <NavBar currentUser={this.props.currentUser}/> : 
+        { this.props.loggedIn ? <NavBar currentUser={this.props.currentUser} history={this.props.history}/> : 
         <>
           <Link to="/signup" onClick={() => this.onClick('/signup')}>Sign Up</Link> OR <Link to="/login" onClick={() => this.onClick('/login')}>Log In</Link>
         </>
