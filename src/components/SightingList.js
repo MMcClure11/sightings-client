@@ -1,15 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { geSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom';
 
 class SightingList extends React.Component {
+
+  componentDidMount(){
+    this.props.getSightings()
+  }
 
   renderMySightings = () => {
     return this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)
   }
 
   renderAllSightings = () => {
+    console.log(this.props.sightings)
     return <p>All Sightings</p>
   }
 
@@ -24,8 +30,9 @@ class SightingList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-      currentUser: state.currentUser
+      currentUser: state.currentUser,
+      sightings: state.sightings
   }
 }
 
-export default withRouter(connect(mapStateToProps)(SightingList))
+export default withRouter(connect(mapStateToProps, { getSightings })(SightingList))
