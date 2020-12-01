@@ -1,0 +1,19 @@
+//bery importante file
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px and the standard font size on a browser is 16px: 10px/16px = 62.5 making rem a standard size
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  text-align: center;
+}
