@@ -12,7 +12,7 @@ class MyProfile extends Component {
 
   onClick = (url) => {
     this.props.history.push(url)
-}
+  }
 
   render() {
     return (

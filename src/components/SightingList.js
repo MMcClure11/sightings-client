@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 
 class SightingList extends React.Component {
 
@@ -10,13 +12,27 @@ class SightingList extends React.Component {
     this.props.getSightings()
   }
 
+  onClick = (url) => {
+    this.props.history.push(url)
+  }  
+
   renderMySightings = () => {
-    return this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)
+    return (
+      <div>
+        <h2>My Sightings</h2>
+        {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+      </div>
+    )
   }
 
   renderAllSightings = () => {
-    console.log(this.props.sightings)
-    return <p>All Sightings</p>
+    return (
+      <div>
+        <Link to="/" onClick={() => this.onClick('/')}>Home</Link>
+        <h2>All Sightings</h2>
+        {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+      </div>
+    )
   }
 
   render(){
