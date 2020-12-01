@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import NavBar from './NavBar'
 
 class Home extends Component {
 
@@ -12,7 +13,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        { this.props.loggedIn ? <h2>Welcome, {this.props.currentUser.username}</h2> : 
+        { this.props.loggedIn ? <NavBar currentUser={this.props.currentUser}/> : 
         <>
           <Link to="/signup" onClick={() => this.onClick('/signup')}>Sign Up</Link> OR <Link to="/login" onClick={() => this.onClick('/login')}>Log In</Link>
         </>
