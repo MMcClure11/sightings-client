@@ -20,6 +20,7 @@ class SightingList extends React.Component {
       date: '',
       identified: false,
       id: null,
+      category: 'Bird',
     }
   }
 
@@ -28,6 +29,7 @@ class SightingList extends React.Component {
   onChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
+  //  const value = target.type === 'select' ? target.selected : target.value
     const name = target.name;
     this.setState({form:
       {
@@ -51,6 +53,7 @@ class SightingList extends React.Component {
   }  
 
   renderMySightings = () => {
+    console.log(this.state.form)
     return (
       <div>
         <button onClick={this.toggleModal}>Report New Sighting</button>

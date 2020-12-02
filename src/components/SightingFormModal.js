@@ -3,8 +3,7 @@ import React from 'react'
 export default function SightingFormModal(props){
 
   const display = props.display ? "block" : "none"
-  const { image, commonName, scientificName, notes, date, identified, toggle, onChange, onSubmit } = props
-
+  const { image, category, commonName, scientificName, notes, date, identified, toggle, onChange, onSubmit } = props
   return (
     <div id="myModal" className="modal" style={{ display }}>
       <div className="modal-content">
@@ -16,9 +15,9 @@ export default function SightingFormModal(props){
         </label>
         <br/>
         <br/>
-        {/* <label>
+        <label>
         Category:
-        <select >
+        <select name="category" onChange={onChange} value={category} >
           <option value="Bird">Bird</option>
           <option value="Freshwater Creature">Freshwater Creature</option>
           <option value="Fungus">Fungus</option>
@@ -31,7 +30,7 @@ export default function SightingFormModal(props){
         </select>
         </label>
         <br/>
-        <br/> */}
+        <br/>
         <label>
           Common Name:
           <input type="text" name="commonName"  onChange={onChange} value={commonName}/>
