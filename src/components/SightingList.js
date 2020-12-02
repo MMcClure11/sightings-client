@@ -10,10 +10,31 @@ import SightingFormModal from './SightingFormModal'
 class SightingList extends React.Component {
 
   state = {
-    modal: false
+    modal: false,
+    form: {
+      image: '',
+      commonName: '',
+      scientificName: '',
+      notes: '',
+      date: '',
+      identified: false,
+      id: null,
+    }
   }
 
   toggleModal = () => this.setState({modal: !this.state.modal})
+
+  onChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({form:
+      {
+        ...this.state.form,
+        [name]: value
+      }
+    })
+  }
 
   componentDidMount(){
     this.props.getSightings()
@@ -24,12 +45,13 @@ class SightingList extends React.Component {
   }  
 
   renderMySightings = () => {
+    console.log(this.state.form)
     return (
       <div>
         <button onClick={this.toggleModal}>Report New Sighting</button>
         <h2>My Sightings</h2>
         {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} currentOwner={true} />)}
-        <SightingFormModal toggle={this.toggleModal} display={this.state.modal}/>
+        <SightingFormModal toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange}/>
       </div>
     )
   }
