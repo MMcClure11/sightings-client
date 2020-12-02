@@ -1,9 +1,5 @@
 function Sighting (props) {
-
-  const edit = () => {
-    alert('edit me!')
-  }
-
+  // console.log(props)
   return (
     <div className="App">
       { props.user && <h2>Reported By: {props.user.username}</h2> }
@@ -15,7 +11,7 @@ function Sighting (props) {
       <p>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
       <p>Date seen: {props.date}</p>
       <p>Notes: {props.notes}</p>
-      { props.currentOwner && <button onClick={edit}>Edit</button>}
+      { props.currentOwner && <button onClick={() => props.populateForm(props)}>Edit</button>}
     </div>
   );
 }
