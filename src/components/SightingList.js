@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
-import {withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import SightingFormModal from './SightingFormModal'
+import { addSighting } from '../actions/sightings'
 
 
 class SightingList extends React.Component {
@@ -36,6 +37,11 @@ class SightingList extends React.Component {
     })
   }
 
+  onSubmit = (e) => {
+    e.preventDefault()
+    this.props.addSighting(this.state.form)
+  }
+
   componentDidMount(){
     this.props.getSightings()
   }
@@ -51,7 +57,7 @@ class SightingList extends React.Component {
         <button onClick={this.toggleModal}>Report New Sighting</button>
         <h2>My Sightings</h2>
         {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} currentOwner={true} />)}
-        <SightingFormModal toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange}/>
+        <SightingFormModal toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange} onSubmit={this.onSubmit}/>
       </div>
     )
   }
@@ -82,4 +88,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, { getSightings })(SightingList))
+export default withRouter(connect(mapStateToProps, { getSightings, addSighting })(SightingList))

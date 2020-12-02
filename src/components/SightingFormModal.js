@@ -3,13 +3,13 @@ import React from 'react'
 export default function SightingFormModal(props){
 
   const display = props.display ? "block" : "none"
-  const { image, commonName, scientificName, notes, date, identified, toggle, onChange } = props
+  const { image, commonName, scientificName, notes, date, identified, toggle, onChange, onSubmit } = props
 
   return (
     <div id="myModal" className="modal" style={{ display }}>
       <div className="modal-content">
         <span onClick={toggle} className="close">&times;</span>
-        <form >
+        <form onSubmit={onSubmit}>
         <label>
           Image URL:
           <input type="text" name="image"  onChange={onChange} value={image}/>
