@@ -20,6 +20,22 @@ body {
   line-height: 1.7;
   color: #333; }
 
+.heading-primary {
+  color: #ebebeb;
+  text-transform: lowercase;
+  backface-visibility: hidden; }
+  .heading-primary--main {
+    display: block;
+    text-transform: uppercase;
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 1.5rem; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .5rem; }
+
 .btn {
   border-radius: 2rem;
   border: none;
