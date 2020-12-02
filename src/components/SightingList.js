@@ -55,6 +55,23 @@ class SightingList extends React.Component {
     this.props.history.push(url)
   }  
 
+  openNewSightingForm = () => this.setState({
+    modal: true,
+    form: {
+      image: '',
+      commonName: '',
+      scientificName: '',
+      notes: '',
+      city: '',
+      region: '',
+      country: '',
+      date: '',
+      identified: false,
+      id: null,
+      category: 'Bird',
+    }
+  })
+
   populateForm = (sighting) => this.setState({
     modal: true,
     form: {
@@ -75,7 +92,7 @@ class SightingList extends React.Component {
   renderMySightings = () => {
     return (
       <div>
-        <button onClick={this.toggleModal}>Report New Sighting</button>
+        <button onClick={this.openNewSightingForm}>Report New Sighting</button>
         <h2>My Sightings</h2>
         {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
         <SightingFormModal toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange} onSubmit={this.onSubmit}/>
