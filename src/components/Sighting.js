@@ -1,5 +1,12 @@
+import { connect } from 'react-redux'
+import { deleteSighting } from '../actions/sightings'
+
 function Sighting (props) {
-  // console.log(props)
+
+  const onClick = () => {
+    props.deleteSighting(props.id)
+  }
+
   return (
     <div className="App">
       { props.user && <h2>Reported By: {props.user.username}</h2> }
@@ -12,8 +19,9 @@ function Sighting (props) {
       <p>Date seen: {props.date}</p>
       <p>Notes: {props.notes}</p>
       { props.currentOwner && <button onClick={() => props.populateForm(props)}>Edit</button>}
+      { props.currentOwner && <button onClick={onClick}>Delete</button>}
     </div>
   );
 }
 
-export default Sighting;
+export default connect({ deleteSighting })(Sighting);

@@ -99,3 +99,19 @@ export function editSighting(sightingData) {
     });
   }
 }
+
+export function deleteSighting(sightingId) {
+  return (dispatch) => {
+    return  fetch(`${URL}/${sightingId}`, {
+      method: 'DELETE',
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      dispatch({
+      type: DELETE_SIGHTING,
+      sightingId
+      })
+      dispatch(getCurrentUser())
+    })
+  }
+}
