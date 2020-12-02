@@ -20,6 +20,29 @@ body {
   line-height: 1.7;
   color: #333; }
 
+.btn {
+  border-radius: 2rem;
+  border: none;
+  padding: 1rem 1.5rem;
+  background-color: #49705F;
+  color: #EBDCCB;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem; }
+  .btn:hover {
+    background-color: #4C6958;
+    color: #EBDCCB;
+    box-shadow: 0 1rem 2rem rgba(14, 17, 17, 0.4);
+    transform: translateY(-2px); }
+  .btn:active {
+    box-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.25);
+    transform: translateY(0); }
+  .btn--small {
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: 1rem; }
+
 .header {
   height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(68, 187, 164, 0.8), rgba(51, 141, 123, 0.8)), url(./imgs/header.jpg);

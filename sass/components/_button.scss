@@ -1,0 +1,30 @@
+.btn {
+  border-radius: 2rem;
+  border: none;
+  padding: 1rem 1.5rem;
+  background-color: $color-tertiary;
+  color: $color-accent-light;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+
+  &:hover {
+      background-color: $color-tertiary-dark;
+      color: $color-accent-light;
+      box-shadow: 0 1rem 2rem rgba($color-black, .40);
+      transform: translateY(-2px);
+  }
+
+  &:active {
+      box-shadow: 0 1rem 1rem rgba($color-black, 0.25);
+      transform: translateY(0);
+  }
+
+  &--small {
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border-radius: 1rem;
+  }
+
+}
