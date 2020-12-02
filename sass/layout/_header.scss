@@ -1,0 +1,24 @@
+//this is where we will handle the image and the box
+
+.header {
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, 
+                                    rgba($color-primary-light, 0.8), 
+                                    rgba($color-primary-dark, 0.8)), 
+                                    url(./imgs/header.jpg);
+  background-size: cover;
+  position: relative;
+  background-position: top;
+
+  &__text-box {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+  }
+
+  &__buttons {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
+}
