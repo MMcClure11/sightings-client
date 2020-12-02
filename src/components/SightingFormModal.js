@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function SightingFormModal(props){
-
   const display = props.display ? "block" : "none"
   const { image, category, commonName, scientificName, notes, date, identified, city, region, country, toggle, onChange, onSubmit } = props
   return (

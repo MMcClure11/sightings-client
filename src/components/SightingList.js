@@ -5,7 +5,7 @@ import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import SightingFormModal from './SightingFormModal'
-import { addSighting } from '../actions/sightings'
+import { addSighting, editSighting } from '../actions/sightings'
 
 
 class SightingList extends React.Component {
@@ -44,7 +44,11 @@ class SightingList extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault()
-    this.props.addSighting(this.state.form)
+    if (this.state.form.id) {
+      this.props.editSighting(this.state.form)
+    } else {
+      this.props.addSighting(this.state.form)
+    }
   }
 
   componentDidMount(){
@@ -126,4 +130,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, { getSightings, addSighting })(SightingList))
+export default withRouter(connect(mapStateToProps, { getSightings, addSighting, editSighting })(SightingList))
