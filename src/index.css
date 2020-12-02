@@ -1,3 +1,23 @@
+@keyframes tilt-in-bottom-1 {
+  0% {
+    -webkit-transform: rotateY(30deg) translateY(300px) skewY(-30deg);
+    transform: rotateY(30deg) translateY(300px) skewY(-30deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+    transform: rotateY(0deg) translateY(0) skewY(0deg);
+    opacity: 1; } }
+
+@keyframes tilt-in-top-1 {
+  0% {
+    -webkit-transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+    transform: rotateY(30deg) translateY(-300px) skewY(-30deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform: rotateY(0deg) translateY(0) skewY(0deg);
+    transform: rotateY(0deg) translateY(0) skewY(0deg);
+    opacity: 1; } }
+
 *,
 *::after,
 *::before {
@@ -29,12 +49,18 @@ body {
     text-transform: uppercase;
     font-size: 6rem;
     font-weight: 800;
-    letter-spacing: 1.5rem; }
+    letter-spacing: 1.5rem;
+    animation-name: tilt-in-top-1;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out; }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 500;
-    letter-spacing: .5rem; }
+    letter-spacing: .5rem;
+    animation-name: tilt-in-bottom-1;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out; }
 
 .btn {
   border-radius: 2rem;
