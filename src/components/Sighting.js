@@ -24,4 +24,4 @@ function Sighting (props) {
   );
 }
 
-export default connect({ deleteSighting })(Sighting);
+export default connect(null, { deleteSighting })(Sighting);

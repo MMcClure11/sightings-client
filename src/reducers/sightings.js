@@ -1,7 +1,8 @@
 import {
   GET_SIGHTINGS,
   ADD_SIGHTING,
-  EDIT_SIGHTING
+  EDIT_SIGHTING,
+  DELETE_SIGHTING
 } from '../actionTypes'
 
 const initialState = []
@@ -14,7 +15,9 @@ export function sightingsReducer(state = initialState, action) {
       return [...state, action.sighting]
     case EDIT_SIGHTING:
       return state.map(sighting => sighting.id === action.sighting.id ? action.sighting : sighting)
-    default:
+    case DELETE_SIGHTING:
+      return state.filter(sighting => sighting.id !== action.sightingId)
+      default:
       return state
   }
 }

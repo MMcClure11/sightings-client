@@ -1,7 +1,8 @@
 import {
   GET_SIGHTINGS,
   ADD_SIGHTING, 
-  EDIT_SIGHTING
+  EDIT_SIGHTING,
+  DELETE_SIGHTING
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
