@@ -51,7 +51,6 @@ class SightingList extends React.Component {
   }  
 
   renderMySightings = () => {
-    console.log(this.state.form)
     return (
       <div>
         <button onClick={this.toggleModal}>Report New Sighting</button>

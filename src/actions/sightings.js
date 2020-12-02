@@ -16,15 +16,23 @@ export function getSightings() {
   }
 }
 
-export function addSighting(sightingObj) {
-  return (dispatch) => {
-    fetch(URL, {
+export function addSighting(sightingData) {
+  return dispatch => {
+    const sendableSightingData = {
+      image: sightingData.image,
+      common_name: sightingData.commonName,
+      scientific_name: sightingData.scientificName,
+      notes: sightingData.notes,
+      date: sightingData.date,
+      identified: sightingData.identified,
+    }
+    return fetch(URL, {
       credentials: "include",
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(sightingObj),
+      body: JSON.stringify(sendableSightingData),
     })
     .then(response => response.json())
     .then(sighting => {
