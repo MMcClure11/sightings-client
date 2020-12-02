@@ -18,6 +18,7 @@ export function getSightings() {
 
 export function addSighting(sightingData) {
   return dispatch => {
+    // console.log(sightingData)
     const sendableSightingData = {
       image: sightingData.image,
       common_name: sightingData.commonName,
@@ -25,7 +26,9 @@ export function addSighting(sightingData) {
       notes: sightingData.notes,
       date: sightingData.date,
       identified: sightingData.identified,
+      category: sightingData.category
     }
+    // console.log(sendableSightingData)
     return fetch(URL, {
       credentials: "include",
       method: 'POST',
