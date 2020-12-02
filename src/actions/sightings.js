@@ -104,6 +104,7 @@ export function editSighting(sightingData) {
 export function deleteSighting(sightingId) {
   return (dispatch) => {
     return  fetch(`${URL}/${sightingId}`, {
+      credentials: "include",
       method: 'DELETE',
     })
     .then(resp => resp.json())
