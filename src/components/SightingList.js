@@ -13,6 +13,8 @@ class SightingList extends React.Component {
     modal: false
   }
 
+  toggleModal = () => this.setState({modal: !this.state.modal})
+
   componentDidMount(){
     this.props.getSightings()
   }
@@ -24,9 +26,10 @@ class SightingList extends React.Component {
   renderMySightings = () => {
     return (
       <div>
+        <button onClick={this.toggleModal}>Report New Sighting</button>
         <h2>My Sightings</h2>
         {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} currentOwner={true} />)}
-        <SightingFormModal />
+        <SightingFormModal toggle={this.toggleModal} display={this.state.modal}/>
       </div>
     )
   }
