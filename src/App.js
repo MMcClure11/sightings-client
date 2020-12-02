@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { useHistory } from 'react-router';
+import './App.css';
 
 import Home from './containers/Home'
 import Login from './components/Login'

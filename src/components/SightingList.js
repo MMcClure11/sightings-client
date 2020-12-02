@@ -9,6 +9,10 @@ import SightingFormModal from './SightingFormModal'
 
 class SightingList extends React.Component {
 
+  state = {
+    modal: false
+  }
+
   componentDidMount(){
     this.props.getSightings()
   }
