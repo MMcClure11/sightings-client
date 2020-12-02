@@ -1,6 +1,7 @@
 import {
   GET_SIGHTINGS,
-  ADD_SIGHTING
+  ADD_SIGHTING,
+  EDIT_SIGHTING
 } from '../actionTypes'
 
 const initialState = []
@@ -11,6 +12,8 @@ export function sightingsReducer(state = initialState, action) {
       return action.sightings
     case ADD_SIGHTING:
       return [...state, action.sighting]
+    case EDIT_SIGHTING:
+      return state.map(sighting => sighting.id === action.sighting.id ? action.sighting : sighting)
     default:
       return state
   }

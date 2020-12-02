@@ -1,6 +1,7 @@
 import {
   GET_SIGHTINGS,
-  ADD_SIGHTING
+  ADD_SIGHTING, 
+  EDIT_SIGHTING
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
@@ -47,6 +48,47 @@ export function addSighting(sightingData) {
       } else {
         dispatch({
           type: ADD_SIGHTING, 
+          sighting
+        })
+        dispatch(getCurrentUser())
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
+}
+
+export function editSighting(sightingData) {
+  return dispatch => {
+    const sendableSightingData = {
+      image: sightingData.image,
+      common_name: sightingData.commonName,
+      scientific_name: sightingData.scientificName,
+      notes: sightingData.notes,
+      date: sightingData.date,
+      identified: sightingData.identified,
+      category: sightingData.category,
+      city: sightingData.city,
+      region: sightingData.region,
+      country: sightingData.country,
+      id: sightingData.id
+    }
+    return fetch(`${URL}/${sightingData.id}`, {
+      credentials: "include",
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(sendableSightingData),
+    })
+    .then(response => response.json())
+    .then(sighting => {
+      if (sighting.error) {
+        alert(sighting.error)
+      } else {
+        dispatch({
+          type: EDIT_SIGHTING, 
           sighting
         })
         dispatch(getCurrentUser())
