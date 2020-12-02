@@ -3,6 +3,8 @@ import {
   ADD_SIGHTING
 } from '../actionTypes'
 
+import { getCurrentUser } from './currentUser'
+
 const URL = 'http://localhost:3000/api/v1/sightings'
 
 export function getSightings() {
@@ -47,7 +49,7 @@ export function addSighting(sightingData) {
           type: ADD_SIGHTING, 
           sighting
         })
-        // dispatch(getCurrentUser())
+        dispatch(getCurrentUser())
       }
     })
     .catch((error) => {
