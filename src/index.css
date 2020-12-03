@@ -85,12 +85,35 @@ body {
     font-size: 1rem;
     border-radius: 1rem; }
 
+.nav {
+  flex: 0 0 24%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #eee;
+  align-content: center;
+  height: 90vh;
+  padding: 4rem; }
+  .nav__link-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+  .nav__link {
+    margin-bottom: 3rem; }
+  .nav__logout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 40rem; }
+
 .header {
   height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(68, 187, 164, 0.8), rgba(51, 141, 123, 0.8)), url(./imgs/header.jpg);
   background-size: cover;
   position: relative;
-  background-position: top; }
+  background-position: top;
+  display: flex; }
   .header__text-box {
     position: absolute;
     top: 65%;
@@ -99,5 +122,3 @@ body {
     position: absolute;
     top: 10%;
     left: 5%; }
-
- 

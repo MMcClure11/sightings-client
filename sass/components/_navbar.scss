@@ -1,0 +1,30 @@
+//the parent container is a display flex, flex with grow or shrink based on what parameters it is given
+//first flex is in relation to the parent flex
+.nav {
+    flex: 0 0 24%;
+    float: left; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; //y axis (because using flex dir column)
+    background-color: $color-gray-light-2;
+    align-content: center; //x axis
+    height: 90vh;
+    padding: 4rem; 
+
+    &__link-container{
+        display: flex;  
+        flex-direction: column;
+        justify-content: flex-start; //top of the link-container box which is inside the nav box
+    }
+
+    &__link {
+        margin-bottom: 3rem; 
+    }
+
+    &__logout-container {
+        display: flex; 
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 40rem;
+    }
+}
