@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class Header extends Component {
+class Header extends Component {
 
   onClick = (url) => {
     this.props.history.push(url)
@@ -15,11 +16,21 @@ export default class Header extends Component {
               <span className="heading-primary--sub">What did you see today?</span>
             </h1>
           </div>
-          <div className="header__buttons">
-            <button className="btn" onClick={() => this.onClick('/signup')}>Sign Up</button>
-            <button className="btn" onClick={() => this.onClick('/login')}>Login</button> 
-          </div>
+          { this.props.loggedIn ? null :
+            <div className="header__buttons">
+              <button className="btn" onClick={() => this.onClick('/signup')}>Sign Up</button>
+              <button className="btn" onClick={() => this.onClick('/login')}>Login</button> 
+            </div>
+          }
         </header>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser
+  })
+}
+
+export default connect(mapStateToProps)(Header)
