@@ -28,7 +28,7 @@
 - [X] toggle modal closed on submit and reset form state
 
 # Sightings:
-	- [] choose Identified or Non-identified
+  - [] choose Identified or Non-identified
 	- [] filter by category 
   - [] search by name or location or username
   - [] sort by date_seen, alphabetically
@@ -41,3 +41,4 @@
 # STRETCH:
  - [] comments (has_many through relationship)
  - [] likes/favorites for sightings
+ - [] add frontend library for validations

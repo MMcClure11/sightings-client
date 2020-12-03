@@ -11,6 +11,7 @@ class NavBar extends Component {
       <nav className='nav'>
         {this.props.loggedIn ? 
           <>
+          <p>{this.props.currentUser.username}</p>
           <div className='nav__link-container'>
             <NavLink className='nav__link' to="/">Home</NavLink>
             <NavLink className='nav__link' to="/myprofile">My Profile</NavLink>
@@ -32,7 +33,10 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = state => {
-  return ({loggedIn: !!state.currentUser})
+  return ({
+    loggedIn: !!state.currentUser,
+    currentUser: state.currentUser
+  })
 }
 
 export default connect(mapStateToProps)(NavBar)
