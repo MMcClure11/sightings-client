@@ -22,7 +22,7 @@
   - [X] if not loggedIn /sightings and /myprofile should redirect to login page
 - [X] signup and login pages should display navBar so that they can click on Home or the other button
 - [] active page on navbar is highlighted
-- [] modal has required fields
+- [X] modal has required fields
   - [] add public input
 - [] add spinner for loading sightings and user
 - [X] toggle modal closed on submit and reset form state
