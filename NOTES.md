@@ -1,8 +1,14 @@
 FRONTEND:
 
 [X] PROBLEM: clicking logout when NOT on home page, redirects to home but does NOT actually log the user out, it has to do with the fact that I'm using a component did mount to get the current user on the home page..., current solve, redirect to a page that does not have a get_current_user on componentDidMount --- such as login!
-[] New Problem: now when someone types the url to /myprofile it redirects them to the login page!!
+  -AND IT WORKS ON THE HOME PAGE BECAUSE HOME IS ALREADY MOUNTED!!
+[] New Problem: now when someone types the url to /myprofile or /sightings it redirects them to the login page!! AND they're not logged out if one clicks on the button to go to the Home page
 [X] conditionally render signup and login buttons 
+
+- theories: 
+  - so because Home is NOT a private route, it is not redirected to the login page and it appropriately runs the componentDidMount and gets the currentUser
+  - however if someone types in the url to go to myprofile or sightings it shows the login page because that runs before the componentDidMount, but they are not actually logged out which is why if they click button for home or type it in the URL it shows they are still logged in
+
   [X] should not show when logged in
   [X] add these buttons to the vertical navbar
 [X] remove links on individual pages cause now i have a nav
@@ -12,6 +18,8 @@ FRONTEND:
 [] active page on navbar is highlighted
 [] modal has required fields
   [] add public input
+[] add spinner for loading sightings and user
+[] toggle modal closed on submit
 
   
 BACKEND:
