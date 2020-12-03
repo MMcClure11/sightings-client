@@ -48,6 +48,22 @@ class SightingList extends React.Component {
     } else {
       this.props.addSighting(this.state.form)
     }
+    this.setState({
+      modal: false,
+      form: {
+        image: '',
+        commonName: '',
+        scientificName: '',
+        notes: '',
+        city: '',
+        region: '',
+        country: '',
+        date: '',
+        identified: false,
+        id: null,
+        category: 'Bird',
+      }
+    })
   }
 
   componentDidMount(){
