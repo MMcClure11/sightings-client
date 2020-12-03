@@ -4,7 +4,7 @@ FRONTEND:
 [] conditionally render signup and login buttons 
   [X] should not show when logged in
   [] move these buttons to the vertical navbar
-[] remove links on individual pages cause now i have a nav
+[X] remove links on individual pages cause now i have a nav
 [X] PrivateRoute
   [X] if not loggedIn /sightings and /myprofile should redirect to login page
 [] signup and login pages should display navBar so that they can click on Home or the other button

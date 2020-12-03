@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom'
-import { Link } from 'react-router-dom'
 import SightingFormModal from './SightingFormModal'
 import { addSighting, editSighting } from '../actions/sightings'
 
@@ -107,7 +106,6 @@ class SightingList extends React.Component {
   renderAllSightings = () => {
     return (
       <div>
-        <Link to="/" onClick={() => this.onClick('/')}>Home</Link>
         <h2>All Sightings</h2>
         {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
       </div>
