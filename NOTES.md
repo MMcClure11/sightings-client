@@ -23,7 +23,7 @@
 - [X] signup and login pages should display navBar so that they can click on Home or the other button
 - [] active page on navbar is highlighted
 - [X] modal has required fields
-  - [] add public input
+  - [X] add public input
 - [] add spinner for loading sightings and user
 - [X] toggle modal closed on submit and reset form state
 
@@ -36,7 +36,7 @@
   
 # BACKEND:
 - [] add validations
-- [] sightings should only display public sightings
+- [X] sightings should only display public sightings
 
 # STRETCH:
  - [] comments (has_many through relationship)
