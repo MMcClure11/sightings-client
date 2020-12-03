@@ -126,6 +126,7 @@ class SightingList extends React.Component {
     return (
       <div>
         <h2>All Sightings</h2>
+        { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
       </div>
     )

@@ -1,12 +1,13 @@
 import SightingList from '../components/SightingList'
 
-function SightingsContainer() {
+function SightingsContainer(props) {
   
   return (
     <div className="App">
-       <SightingList />
+      <SightingList />
     </div>
   );
 }
+
 
 export default SightingsContainer;

@@ -33,6 +33,12 @@
   - [] search by name or location or username
   - [] sort by date_seen, alphabetically
 
+# CSS:
+  - [] pick and import svg icons
+  - [] style signup page
+  - [] style login page
+  - [] sighting cardFront
+  - [] sighting cardBack
   
 # BACKEND:
 - [X] add validations
