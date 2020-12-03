@@ -24,7 +24,9 @@
 - [] active page on navbar is highlighted
 - [X] modal has required fields
   - [X] add public input
-- [] add spinner for loading sightings and user
+- [] add spinner for loading 
+  - [X] sightings
+  - [] and user
 - [X] toggle modal closed on submit and reset form state
 
 # Sightings:
@@ -34,11 +36,16 @@
   - [] sort by date_seen, alphabetically
 
 # CSS:
-  - [] pick and import svg icons
+  - [X] pick and 
+    - [] import svg icons
   - [] style signup page
   - [] style login page
   - [] sighting cardFront
   - [] sighting cardBack
+  - [] move modal css to sass
+  - [] move loader css to sass
+  - [] style loader
+  - [] style modal
   
 # BACKEND:
 - [X] add validations
