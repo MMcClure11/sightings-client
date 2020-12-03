@@ -25,7 +25,7 @@ FRONTEND:
 [] modal has required fields
   [] add public input
 [] add spinner for loading sightings and user
-[] toggle modal closed on submit
+[X] toggle modal closed on submit and reset form state
 
   
 BACKEND:
