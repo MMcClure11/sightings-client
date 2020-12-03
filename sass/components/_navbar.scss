@@ -9,7 +9,11 @@
     background-color: $color-gray-light-2;
     align-content: center; //x axis
     height: 90vh;
-    padding: 4rem; 
+    padding: 4rem;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // bottom: 0; 
 
     &__link-container{
         display: flex;  
