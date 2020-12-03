@@ -3,7 +3,8 @@ FRONTEND:
 [X] PROBLEM: clicking logout when NOT on home page, redirects to home but does NOT actually log the user out, it has to do with the fact that I'm using a component did mount to get the current user on the home page..., current solve, redirect to a page that does not have a get_current_user on componentDidMount --- such as login!
   -this seems weird though, because get_current_user is supposed to make a fetch to the backend and they session is supposed to be cleared, is it getting the current_user again before the session is cleared?
   -AND IT WORKS ON THE HOME PAGE BECAUSE HOME IS ALREADY MOUNTED!!
-[] New Problem: now when someone types the url to /myprofile or /sightings it redirects them to the login page!! AND they're not logged out if one clicks on the button to go to the Home page
+[X] New Problem: now when someone types the url to /myprofile or /sightings it redirects them to the login page!! AND they're not logged out if one clicks on the button to go to the Home page
+  - solved by redirecting to Home so it's obvious they are still logged in, and logout history.push('/login')
 [X] conditionally render signup and login buttons 
 
 - theories: 
