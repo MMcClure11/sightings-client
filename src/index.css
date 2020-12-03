@@ -100,7 +100,15 @@ body {
     flex-direction: column;
     justify-content: flex-start; }
   .nav__link {
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    color: #3EAA95;
+    text-decoration: none; }
+    .nav__link:hover {
+      transform: translateY(-3px);
+      color: #44BBA4; }
+    .nav__link:active {
+      transform: translateY(0);
+      color: #338D7B; }
   .nav__logout-container {
     display: flex;
     flex-direction: column;

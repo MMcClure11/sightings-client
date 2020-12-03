@@ -22,7 +22,21 @@
     }
 
     &__link {
-        margin-bottom: 3rem; 
+        margin-bottom: 3rem;
+        color: $color-primary;
+        text-decoration: none;
+        
+        &:hover {
+          transform: translateY(-3px);
+          color: $color-primary-light;
+          // box-shadow: 0 1rem 2rem rgba($color-black, .40);
+        }
+
+        &:active {
+          transform: translateY(0);
+          // box-shadow: 0 1rem 2rem rgba($color-black, .25);
+          color: $color-primary-dark;
+        }
     }
 
     &__logout-container {
