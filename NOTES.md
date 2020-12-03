@@ -35,7 +35,7 @@
 
   
 # BACKEND:
-- [] add validations
+- [X] add validations
 - [X] sightings should only display public sightings
 
 # STRETCH:
