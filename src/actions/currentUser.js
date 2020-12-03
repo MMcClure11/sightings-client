@@ -79,13 +79,17 @@ export function getCurrentUser() {
   }
 }
 
-export function logout() {
+export function logout(history) {
   return dispatch => {
-    dispatch({type: CLEAR_CURRENT_USER})
     // dispatch(clearSightings())
     return fetch('http://localhost:3000/api/v1/logout', {
       credentials: "include",
       method: "DELETE"
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      dispatch({type: CLEAR_CURRENT_USER})
+      history.push('/')
     })
   }
 }
