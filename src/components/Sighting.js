@@ -15,6 +15,7 @@ function Sighting (props) {
       <h2>Common Name: {props.common_name}</h2>
       <h4>Scientific Name: {props.scientific_name}</h4>
       <p>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
+      <p>{props.public === true ? 'Public Sighting' : 'Private Sighting'}</p>
       <p>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
       <p>Date seen: {props.date}</p>
       <p>Notes: {props.notes}</p>

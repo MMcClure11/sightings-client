@@ -32,7 +32,8 @@ export function addSighting(sightingData) {
       category: sightingData.category,
       city: sightingData.city,
       region: sightingData.region,
-      country: sightingData.country
+      country: sightingData.country,
+      public: sightingData.isPublic
     }
     return fetch(URL, {
       credentials: "include",
@@ -73,6 +74,7 @@ export function editSighting(sightingData) {
       city: sightingData.city,
       region: sightingData.region,
       country: sightingData.country,
+      public: sightingData.isPublic,
       id: sightingData.id
     }
     return fetch(`${URL}/${sightingData.id}`, {
