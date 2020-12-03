@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { useHistory } from 'react-router';
 import './App.css';
 
@@ -6,18 +6,22 @@ import Home from './containers/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import MyProfile from './components/MyProfile'
-import SightingList from './components/SightingList';
+import SightingList from './components/SightingList'
+import NavBar from './components/NavBar'
 
 function App() {
   const history = useHistory();
   return (
     <div className="App">
         <Router>
-          <Route exact path='/login' component={Login} history={history}/>
-          <Route exact path='/signup' component={Signup} history={history}/>
-          <Route exact path='/myprofile' component={MyProfile} history={history}/>
-          <Route exact path='/sightings' component={SightingList} history={history}/>
-          <Route exact path="/" component={Home} history={history}/>
+          <NavBar />
+          <Switch>
+            <Route exact path='/login' component={Login} history={history}/>
+            <Route exact path='/signup' component={Signup} history={history}/>
+            <Route exact path='/myprofile' component={MyProfile} history={history}/>
+            <Route exact path='/sightings' component={SightingList} history={history}/>
+            <Route exact path="/" component={Home} history={history}/>
+          </Switch>
       </Router>
     </div>
   );

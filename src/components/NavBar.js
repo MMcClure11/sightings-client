@@ -5,15 +5,11 @@ import Logout from '../components/Logout'
 
 export default class NavBar extends Component {
 
-  onClick = (url) => {
-    this.props.history.push(url)
-}
   render() {
     return (
       <div>
-        <p>Logged in as {this.props.currentUser.username}</p>
-        <Link to="/myprofile" onClick={() => this.onClick('/myprofile')}>Profile</Link>
-        <Link to="/sightings" onClick={() => this.onClick('/sightings')}>All Sightings</Link>
+        <Link to="/myprofile">Profile</Link>
+        <Link to="/sightings">All Sightings</Link>
         <Logout />
       </div>
     )
