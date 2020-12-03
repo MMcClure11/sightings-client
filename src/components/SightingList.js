@@ -23,6 +23,7 @@ class SightingList extends React.Component {
       identified: false,
       id: null,
       category: 'Bird',
+      isPublic: false,
     }
   }
 
@@ -31,7 +32,6 @@ class SightingList extends React.Component {
   onChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-  //  const value = target.type === 'select' ? target.selected : target.value
     const name = target.name;
     this.setState({form:
       {
@@ -62,6 +62,7 @@ class SightingList extends React.Component {
         identified: false,
         id: null,
         category: 'Bird',
+        isPublic: false,
       }
     })
   }
@@ -88,6 +89,7 @@ class SightingList extends React.Component {
       identified: false,
       id: null,
       category: 'Bird',
+      isPublic: false,
     }
   })
 
@@ -105,6 +107,7 @@ class SightingList extends React.Component {
       identified: sighting.identified,
       id: sighting.id,
       category: sighting.category.name,
+      isPublic: sighting.public
     }
   })
 

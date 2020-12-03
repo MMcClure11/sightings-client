@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SightingFormModal(props){
   const display = props.display ? "block" : "none"
-  const { image, category, commonName, scientificName, notes, date, identified, city, region, country, toggle, onChange, onSubmit } = props
+  const { image, category, commonName, scientificName, notes, date, identified, city, region, country, isPublic, toggle, onChange, onSubmit } = props
   return (
     <div id="myModal" className="modal" style={{ display }}>
       <div className="modal-content">
@@ -77,7 +77,17 @@ export default function SightingFormModal(props){
           type="checkbox"
           checked={identified}
           onChange={onChange} />
-      </label>
+        </label>
+        <br/>
+        <br/>
+        <label>
+          Make entry public?
+        <input
+          name="isPublic"
+          type="checkbox"
+          checked={isPublic}
+          onChange={onChange} />
+        </label>
         <br/>
         <br/>
         <input type="submit" value="Submit" />
