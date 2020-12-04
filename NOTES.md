@@ -28,9 +28,10 @@
   - [X] sightings
   - [] and user
 - [X] toggle modal closed on submit and reset form state
+- [] refactor controlled form local state to redux store state
 
 # Sightings:
-  - [] choose Identified or Non-identified
+  - [] choose Identified or Non-identified (or both?)
 	- [] filter by category 
   - [] search by name or location or username
   - [] sort by date_seen, alphabetically
@@ -50,22 +51,26 @@
 # BACKEND:
 - [X] add validations
 - [X] sightings should only display public sightings
+- [] use ActiveModel Serializer to convert data from snake case to camel case
+- [] handle converting camelCase to snake_case on the back end
 
 # STRETCH:
  - [] comments (has_many through relationship)
  - [] likes/favorites for sightings
  - [] add frontend library for validations
+ - [] show page for sightings where comments can be added, edited, deleted by the owner
+ - [] show page includes google map of location of the sighting based on city, region and country
 
 # Minimal Requirements for Flatiron project:
 - [] The code should be written in ES6 as much as possible
   - [] refactor functions to const as arrow functions
 - [X] Use the create-react-app generator to start your project.
 - [X] Your app should have one HTML page to render your react-redux application
-- [] There should be 5 stateless components
+- [X] There should be 5 stateless components (components that mapDispatch or mapStateToProps count because you're using props, not state)
 - [X] There should be 3 routes
-- [] The Application must make use of react-router and proper RESTful routing
+- [X] The Application must make use of react-router and proper RESTful routing (restful mostly applies to backend)
 - [X] Use Redux middleware to respond to and modify state change
 - [X] Make use of async actions and redux-thunk middleware to send data to and receive data from a server
-- [X] Your Rails API should handle the data persistence with a database. You should be using fetch() within your actions to GET and POST data from your API - do not use jQuery methods.
+- [X] Your Rails API should handle the data persistence with a database. You should be using fetch() within your actions to GET and POST data from your API - do not use jQuery methods. (you can use async await)
 - [X] Your client-side application should handle the display of data with minimal data manipulation
-- [] Your application should have some minimal styling: feel free to stick to a framework (like react-bootstrap), but if you want to write (additional) CSS yourself, go for it!
+- [] Your application should have great styling: remember, this is your final!
