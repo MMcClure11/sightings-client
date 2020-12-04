@@ -114,7 +114,7 @@ class SightingList extends React.Component {
   renderMySightings = () => {
     return (
       <>
-        <button onClick={this.openNewSightingForm}>Report New Sighting</button>
+        <button className="btn btn--small" onClick={this.openNewSightingForm}>Report New Sighting</button>
         <h2>My Sightings</h2>
           <section className="cards">
             {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}

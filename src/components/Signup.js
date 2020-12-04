@@ -34,7 +34,7 @@ onSubmit = e => {
           <input placeholder="username" value={this.state.username} name="username" type="text" onChange={this.onChange} />
           <input placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} />
           <input placeholder="name" value={this.state.name} name="name" type="text" onChange={this.onChange} />
-          <input type="submit" value="Signup"/>
+          <input className="btn btn--small" type="submit" value="Signup"/>
         </form>
       </div>
     )

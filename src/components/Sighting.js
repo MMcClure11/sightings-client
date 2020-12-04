@@ -25,8 +25,8 @@ function Sighting (props) {
           <p className='heading-small'>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
           <p className='heading-small'>Date seen: {props.date}</p>
           <p className='heading-small'>Notes: {props.notes}</p>
-          { props.currentOwner && <button onClick={() => props.populateForm(props)}>Edit</button>}
-          { props.currentOwner && <button onClick={onClick}>Delete</button>}
+          { props.currentOwner && <button className="btn btn--small" onClick={() => props.populateForm(props)}>Edit</button>}
+          { props.currentOwner && <button className="btn btn--small" onClick={onClick}>Delete</button>}
         </div>
       </div>
     </div>
