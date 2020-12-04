@@ -113,22 +113,26 @@ class SightingList extends React.Component {
 
   renderMySightings = () => {
     return (
-      <div>
+      <>
         <button onClick={this.openNewSightingForm}>Report New Sighting</button>
         <h2>My Sightings</h2>
-        {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
+          <section className="cards">
+            {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
+          </section>
         <SightingFormModal toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange} onSubmit={this.onSubmit}/>
-      </div>
+      </>
     )
   }
 
   renderAllSightings = () => {
     return (
-      <div>
+      <>
         <h2>All Sightings</h2>
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
-        {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
-      </div>
+        <section className="cards">
+          {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+        </section>
+      </>
     )
   }
 

@@ -115,6 +115,43 @@ body {
     justify-content: flex-end;
     height: 40rem; }
 
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center; }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  flex: 0 1 40%;
+  transform-style: preserve-3d;
+  height: 55rem;
+  margin-top: 3rem; }
+  .card__side {
+    height: inherit;
+    transition: all .8s ease;
+    position: absolute;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.15);
+    display: flex;
+    flex-direction: column; }
+    .card__side--back {
+      background-color: #ebebeb;
+      transform: rotateY(180deg); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__image {
+    background-image: contain;
+    background-size: cover;
+    height: 45rem; }
+
 .header {
   height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(68, 187, 164, 0.8), rgba(51, 141, 123, 0.8)), url(./imgs/header.jpg);
