@@ -62,6 +62,12 @@ body {
     animation-duration: 1.2s;
     animation-timing-function: ease-out; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block; }
+
 .heading-tertiary {
   font-size: 1.6rem;
   font-weight: 700;
@@ -150,7 +156,8 @@ body {
       background-color: #eee; }
     .card__side--back {
       background-color: #ebebeb;
-      transform: rotateY(180deg); }
+      transform: rotateY(180deg);
+      background-image: linear-gradient(to left bottom, rgba(68, 187, 164, 0.6), rgba(51, 141, 123, 0.8)); }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {

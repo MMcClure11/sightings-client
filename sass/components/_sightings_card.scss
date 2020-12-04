@@ -36,6 +36,9 @@
       &--back {
           background-color: $color-white; 
           transform: rotateY(180deg);
+          background-image: linear-gradient(to left bottom, 
+                                    rgba($color-primary-light, 0.6), 
+                                    rgba($color-primary-dark, 0.8));
           // display: flex; 
           // justify-content: stretch;
       }

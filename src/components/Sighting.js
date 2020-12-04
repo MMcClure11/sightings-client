@@ -15,7 +15,7 @@ function Sighting (props) {
         <h2 className='heading-tertiary'>Common Name: {props.common_name}</h2>
       </div>
       <div className='card__side card__side--back'>
-        <h2>Category: {props.category.name}</h2>
+        <h2 className='heading-secondary'>Category: {props.category.name}</h2>
         <h4>Scientific Name: {props.scientific_name}</h4>
         <p>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
         { !props.user &&
