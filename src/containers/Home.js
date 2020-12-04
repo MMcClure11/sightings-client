@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import NavBar from '../components/NavBar'
 import { getCurrentUser } from '../actions/currentUser'
 import Header from '../components/Header'
 
@@ -12,16 +10,11 @@ class Home extends Component {
     this.props.getCurrentUser()
   }
 
-  // onClick = (url) => {
-  //   this.props.history.push(url)
-  // }
-//instead of welcome, button for the user to go to their profile
 //add about, info, footer
   render() {
     return (
       <div>
         <>
-          {/* <Link to="/signup" onClick={() => this.onClick('/signup')}>Sign Up</Link> OR <Link to="/login" onClick={() => this.onClick('/login')}>Log In</Link> */}
         <Header history={this.props.history} />
         </>
       </div>
