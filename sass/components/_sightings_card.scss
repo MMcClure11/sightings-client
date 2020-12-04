@@ -14,6 +14,13 @@
   height: 55rem;
   margin-top: 3rem;
 
+  &__content {
+    display: flex; 
+    justify-content: space-around;
+    flex-direction: column;
+    height: 55rem;
+  }
+
   &__side {
       height: inherit;
       transition: all .8s ease;
@@ -39,9 +46,10 @@
           background-image: linear-gradient(to left bottom, 
                                     rgba($color-primary-light, 0.6), 
                                     rgba($color-primary-dark, 0.8));
-          // display: flex; 
-          // justify-content: stretch;
+          display: flex;
+          flex-direction: column;
       }
+
   }
 
   &:hover &__side--front {

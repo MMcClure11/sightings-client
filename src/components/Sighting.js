@@ -15,17 +15,19 @@ function Sighting (props) {
         <h2 className='heading-tertiary'>Common Name: {props.common_name}</h2>
       </div>
       <div className='card__side card__side--back'>
-        <h2 className='heading-secondary'>Category: {props.category.name}</h2>
-        <h4>Scientific Name: {props.scientific_name}</h4>
-        <p>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
-        { !props.user &&
-          <p>{props.public === true ? 'Public Sighting' : 'Private Sighting'}</p>
-        }
-        <p>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
-        <p>Date seen: {props.date}</p>
-        <p>Notes: {props.notes}</p>
-        { props.currentOwner && <button onClick={() => props.populateForm(props)}>Edit</button>}
-        { props.currentOwner && <button onClick={onClick}>Delete</button>}
+        <div className='card__content'>
+          <h2 className='heading-secondary'>Category: {props.category.name}</h2>
+          <h4 className='heading-tertiary'>Scientific Name: {props.scientific_name}</h4>
+          <p>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
+          { !props.user &&
+            <p>{props.public === true ? 'Public Sighting' : 'Private Sighting'}</p>
+          }
+          <p>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
+          <p>Date seen: {props.date}</p>
+          <p>Notes: {props.notes}</p>
+          { props.currentOwner && <button onClick={() => props.populateForm(props)}>Edit</button>}
+          { props.currentOwner && <button onClick={onClick}>Delete</button>}
+        </div>
       </div>
     </div>
   );

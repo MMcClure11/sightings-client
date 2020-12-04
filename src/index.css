@@ -140,6 +140,11 @@ body {
   transform-style: preserve-3d;
   height: 55rem;
   margin-top: 3rem; }
+  .card__content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 55rem; }
   .card__side {
     height: inherit;
     transition: all .8s ease;
@@ -157,7 +162,9 @@ body {
     .card__side--back {
       background-color: #ebebeb;
       transform: rotateY(180deg);
-      background-image: linear-gradient(to left bottom, rgba(68, 187, 164, 0.6), rgba(51, 141, 123, 0.8)); }
+      background-image: linear-gradient(to left bottom, rgba(68, 187, 164, 0.6), rgba(51, 141, 123, 0.8));
+      display: flex;
+      flex-direction: column; }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
