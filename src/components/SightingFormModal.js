@@ -90,7 +90,7 @@ export default function SightingFormModal(props){
         </label>
         <br/>
         <br/>
-        <input type="submit" value="Submit" />
+        <input className="btn btn--small" type="submit" value="Submit" />
       </form>
       </div>
     </div>
