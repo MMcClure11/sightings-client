@@ -11,8 +11,8 @@ function Sighting (props) {
     <div className='card'>
       <div className='card__side card__side--front'>
         <img className='card__image' src={props.image} alt={props.common_name}></img>
-        { props.user && <h2>Reported By: {props.user.username}</h2> }
-        <h2>Common Name: {props.common_name}</h2>
+        { props.user && <h2 className='heading-tertiary'>Reported By: {props.user.username}</h2> }
+        <h2 className='heading-tertiary'>Common Name: {props.common_name}</h2>
       </div>
       <div className='card__side card__side--back'>
         <h2>Category: {props.category.name}</h2>

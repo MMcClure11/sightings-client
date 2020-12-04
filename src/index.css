@@ -62,6 +62,12 @@ body {
     animation-duration: 1.2s;
     animation-timing-function: ease-out; }
 
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1rem; }
+
 .btn {
   border-radius: 2rem;
   border: none;
@@ -140,6 +146,8 @@ body {
     box-shadow: 0 1.5rem 4rem rgba(14, 17, 17, 0.15);
     display: flex;
     flex-direction: column; }
+    .card__side--front {
+      background-color: #eee; }
     .card__side--back {
       background-color: #ebebeb;
       transform: rotateY(180deg); }

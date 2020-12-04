@@ -30,7 +30,8 @@
       flex-direction: column;
 
       &--front {
-         }
+        background-color: $color-gray-light-2;
+      }
 
       &--back {
           background-color: $color-white; 

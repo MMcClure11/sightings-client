@@ -35,3 +35,11 @@ body {
   }
 
 }
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  // text-transform: uppercase;
+  margin-bottom: 1rem; 
+  margin-top: 1rem;
+}
