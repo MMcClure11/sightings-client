@@ -29,6 +29,7 @@
   - [] and user
 - [X] toggle modal closed on submit and reset form state
 - [] refactor controlled form local state to redux store state
+- [] add sighting show page so can add comments eventually and a google map
 
 # Sightings:
   - [] choose Identified or Non-identified (or both?)
@@ -51,8 +52,9 @@
 # BACKEND:
 - [X] add validations
 - [X] sightings should only display public sightings
-- [] use ActiveModel Serializer to convert data from snake case to camel case
-- [] handle converting camelCase to snake_case on the back end
+- [X] use ActiveModel Serializer to convert data from snake case to camel case
+- [X] handle converting camelCase to snake_case on the back end
+  - almost able to remove sendableSightingData hash, had to use isPublic on frontend because public is a reserved key word, so still had to modify the sendable data since is_public is not a key in my database.
 
 # STRETCH:
  - [] comments (has_many through relationship)
