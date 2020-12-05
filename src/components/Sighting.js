@@ -10,14 +10,14 @@ function Sighting (props) {
   return (
     <div className='card'>
       <div className='card__side card__side--front'>
-        <img className='card__image' src={props.image} alt={props.common_name}></img>
+        <img className='card__image' src={props.image} alt={props.commonName}></img>
         { props.user && <h2 className='heading-tertiary'>Reported By: {props.user.username}</h2> }
-        <h2 className='heading-tertiary'>Common Name: {props.common_name}</h2>
+        <h2 className='heading-tertiary'>Common Name: {props.commonName}</h2>
       </div>
       <div className='card__side card__side--back'>
         <div className='card__content'>
           <h2 className='heading-secondary'>Category: {props.category.name}</h2>
-          <h4 className='heading-tertiary heading-tertiary--no-margin'>Scientific Name: {props.scientific_name}</h4>
+          <h4 className='heading-tertiary heading-tertiary--no-margin'>Scientific Name: {props.scientificName}</h4>
           <p className='heading-small'>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
           { !props.user &&
             <p className='heading-small'>{props.public === true ? 'Public Sighting' : 'Private Sighting'}</p>

@@ -97,8 +97,8 @@ class SightingList extends React.Component {
     modal: true,
     form: {
       image: sighting.image,
-      commonName: sighting.common_name,
-      scientificName: sighting.scientific_name,
+      commonName: sighting.commonName,
+      scientificName: sighting.scientificName,
       notes: sighting.notes,
       city: sighting.location.city,
       region: sighting.location.region,
