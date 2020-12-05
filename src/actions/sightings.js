@@ -24,8 +24,8 @@ export function addSighting(sightingData) {
   return dispatch => {
     const sendableSightingData = {
       image: sightingData.image,
-      common_name: sightingData.commonName,
-      scientific_name: sightingData.scientificName,
+      commonName: sightingData.commonName,
+      scientificName: sightingData.scientificName,
       notes: sightingData.notes,
       date: sightingData.date,
       identified: sightingData.identified,
@@ -33,7 +33,7 @@ export function addSighting(sightingData) {
       city: sightingData.city,
       region: sightingData.region,
       country: sightingData.country,
-      public: sightingData.isPublic
+      public: sightingData.isPublic,
     }
     return fetch(URL, {
       credentials: "include",
@@ -65,8 +65,8 @@ export function editSighting(sightingData) {
   return dispatch => {
     const sendableSightingData = {
       image: sightingData.image,
-      common_name: sightingData.commonName,
-      scientific_name: sightingData.scientificName,
+      commonName: sightingData.commonName,
+      scientificName: sightingData.scientificName,
       notes: sightingData.notes,
       date: sightingData.date,
       identified: sightingData.identified,
