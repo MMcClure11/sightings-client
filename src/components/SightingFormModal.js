@@ -10,7 +10,7 @@ export default function SightingFormModal(props){
         <form onSubmit={onSubmit}>
         <label>
           Image URL:
-          <input type="text" name="image"  onChange={onChange} value={image} required="true"/>
+          <input type="text" name="image"  onChange={onChange} value={image} required={true}/>
         </label>
         <br/>
         <br/>
@@ -52,21 +52,21 @@ export default function SightingFormModal(props){
         <br/>
         <label>
           City:
-          <input type="text" name="city" onChange={onChange} value={city} required="true" />
+          <input type="text" name="city" onChange={onChange} value={city} required={true} />
         </label>
         <label>
           Region:
-          <input type="text" name="region" onChange={onChange} value={region} required="true" />
+          <input type="text" name="region" onChange={onChange} value={region} required={true} />
         </label>
         <label>
           Country:
-          <input type="text" name="country" onChange={onChange} value={country} required="true" />
+          <input type="text" name="country" onChange={onChange} value={country} required={true} />
         </label>
         <br/>
         <br/>
         <label>
           Date Seen:
-          <input type="date" name="date" onChange={onChange} value={date} required="true" />
+          <input type="date" name="date" onChange={onChange} value={date} required={true} />
         </label>
         <br/>
         <br/>
