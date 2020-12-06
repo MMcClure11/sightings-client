@@ -21,6 +21,15 @@ export default function Filter(props){
       <option value="Alphabetically">A-Z by Common Name</option>
       <option value="Date">Most Recently Seen</option>
     </select>
+    <form onSubmit={props.searchSubmit}>
+      <label>Search by</label>
+      <select onChange={props.updateSearchState} value={props.searchOption} name="searchOption">
+        <option value="commonName">Common Name</option>
+        <option value="username">Username</option>
+      </select>
+      <input type="text" name="search" value={props.search} onChange={props.updateSearchState}/>
+      <input type="submit" />
+    </form>
   </div>
   )
 

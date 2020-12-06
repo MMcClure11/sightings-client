@@ -28,6 +28,9 @@ class SightingList extends React.Component {
     },
     filter: 'All',
     sort: 'Alphabetically',
+    searchOption: 'commonName',
+    search: '',
+    searched: false,
   }
 
   toggleModal = () => this.setState({modal: !this.state.modal})
@@ -132,12 +135,23 @@ class SightingList extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     this.setState({
-      [name]: value
+      [name]: value,
+      searched: false,
+      search: ''
     })
   }
 
   updateSortState = (event) => {
-    this.setState({sort: event.target.value})
+    this.setState({sort: event.target.value, searched: false, search: ''})
+  }
+
+  updateSearchState = (event) => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value
+    })
   }
 
   filteredSightings = () => {
@@ -150,14 +164,26 @@ class SightingList extends React.Component {
     : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
   }
 
+  searchSubmit = (e) => {
+    e.preventDefault();
+    this.setState({searched: true})   
+  }
+
+  searchedSightings = () => {
+    return this.state.searchOption === 'commonName'
+    ? this.sortedSightings().filter(sighting => sighting.commonName === this.state.search)
+    : this.sortedSightings().filter(sighting => sighting.user.username === this.state.search)
+  }
+
   renderAllSightings = () => {
     return (
       <>
         <h2>All Sightings</h2>
-        <Filter updateFilterState={this.updateFilterState} updateSortState={this.updateSortState} {...this.state}/>
+        <Filter updateFilterState={this.updateFilterState} updateSortState={this.updateSortState} updateSearchState={this.updateSearchState} searchSubmit={this.searchSubmit} {...this.state}/>
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
-          {this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+          {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />) : 
+          this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
         </section>
       </>
     )

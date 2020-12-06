@@ -36,8 +36,10 @@
 	- [X] filter by category
     - [X] make controlled form
     - [X] why do I have to use this.state.filter.filter?? where is it doubling up? Silly me, did filter: [:name]: value, so of course it was doubling
-  - [] search by name or location or username
+  - [X] search by common_name or username
+    - [] add search by location
   - [X] sort by date_seen, alphabetically
+  - [] refactor sightingList class to reuse onChange functions
 
 # CSS:
   - [X] pick and 
