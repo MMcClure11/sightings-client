@@ -6,7 +6,6 @@ function Sighting (props) {
   const onClick = () => {
     props.deleteSighting(props.id)
   }
-
   return (
     <div className='card'>
       <div className='card__side card__side--front'>

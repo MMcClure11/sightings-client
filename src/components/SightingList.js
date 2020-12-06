@@ -135,21 +135,28 @@ class SightingList extends React.Component {
     })
   }
 
+  filteredSightings = () => {
+   if (this.state.filter.filter) {
+      return this.state.filter.filter === 'All' ? this.props.sightings : this.props.sightings.filter(sighting => sighting.category.name === this.state.filter.filter)
+   } else {
+     return this.props.sightings
+   }
+  }
+
   renderAllSightings = () => {
     return (
       <>
         <h2>All Sightings</h2>
-        <Filter updateFilterState={this.updateFilterState} />
+        <Filter updateFilterState={this.updateFilterState} {...this.state}/>
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
-          {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+          {this.props.sightings && this.filteredSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
         </section>
       </>
     )
   }
 
   render(){
-    console.log(this.state.filter)
     return (
       <div>
         { this.props.location.pathname === '/myprofile' ? this.renderMySightings() : this.renderAllSightings() }

@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Filter(props){
+  console.log(props.filter.filter)
   return(
   <nav className="filterWrapper">
     <label>Filter Options:</label>
