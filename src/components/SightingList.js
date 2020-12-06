@@ -4,6 +4,7 @@ import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom'
 import SightingFormModal from './SightingFormModal'
+import Filter from './Filter'
 import { addSighting, editSighting } from '../actions/sightings'
 
 
@@ -128,6 +129,7 @@ class SightingList extends React.Component {
     return (
       <>
         <h2>All Sightings</h2>
+        <Filter />
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
           {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
