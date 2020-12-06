@@ -33,7 +33,9 @@
 
 # Sightings:
   - [] choose Identified or Non-identified (or both?)
-	- [] filter by category 
+	- [X] filter by category
+    - [X] make controlled form
+    - [X] why do I have to use this.state.filter.filter?? where is it doubling up? Silly me, did filter: [:name]: value, so of course it was doubling
   - [] search by name or location or username
   - [] sort by date_seen, alphabetically
 

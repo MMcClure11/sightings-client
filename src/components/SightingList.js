@@ -131,16 +131,12 @@ class SightingList extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     this.setState({
-      filter: {[name]: value}
+      [name]: value
     })
   }
 
   filteredSightings = () => {
-   if (this.state.filter.filter) {
-      return this.state.filter.filter === 'All' ? this.props.sightings : this.props.sightings.filter(sighting => sighting.category.name === this.state.filter.filter)
-   } else {
-     return this.props.sightings
-   }
+    return this.state.filter === 'All' ? this.props.sightings : this.props.sightings.filter(sighting => sighting.category.name === this.state.filter)
   }
 
   renderAllSightings = () => {
