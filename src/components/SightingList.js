@@ -25,7 +25,8 @@ class SightingList extends React.Component {
       id: null,
       category: 'Bird',
       isPublic: false,
-    }
+    },
+    filter: 'All', 
   }
 
   toggleModal = () => this.setState({modal: !this.state.modal})
@@ -125,11 +126,20 @@ class SightingList extends React.Component {
     )
   }
 
+  updateFilterState = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({
+      filter: {[name]: value}
+    })
+  }
+
   renderAllSightings = () => {
     return (
       <>
         <h2>All Sightings</h2>
-        <Filter />
+        <Filter updateFilterState={this.updateFilterState} />
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
           {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} />)}
@@ -139,6 +149,7 @@ class SightingList extends React.Component {
   }
 
   render(){
+    console.log(this.state.filter)
     return (
       <div>
         { this.props.location.pathname === '/myprofile' ? this.renderMySightings() : this.renderAllSightings() }

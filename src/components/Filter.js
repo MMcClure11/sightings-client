@@ -1,11 +1,10 @@
 import React from 'react'
 
 export default function Filter(props){
-  console.log(props)
   return(
   <nav className="filterWrapper">
     <label>Filter Options:</label>
-    <select>
+    <select onChange={props.updateFilterState} name="filter">
       <option value="All">All</option>
       <option value="Bird">Bird</option>
       <option value="Freshwater Creature">Freshwater Creature</option>
