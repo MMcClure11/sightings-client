@@ -26,7 +26,8 @@ class SightingList extends React.Component {
       category: 'Bird',
       isPublic: false,
     },
-    filter: 'All', 
+    filter: 'All',
+    sort: 'Alphabetically',
   }
 
   toggleModal = () => this.setState({modal: !this.state.modal})
@@ -135,18 +136,28 @@ class SightingList extends React.Component {
     })
   }
 
+  updateSortState = (event) => {
+    this.setState({sort: event.target.value})
+  }
+
   filteredSightings = () => {
     return this.state.filter === 'All' ? this.props.sightings : this.props.sightings.filter(sighting => sighting.category.name === this.state.filter)
+  }
+
+  sortedSightings = () => {
+    return this.state.sort === 'Alphabetically' 
+    ? this.filteredSightings().sort((a, b) => a.commonName.localeCompare(b.commonName)) 
+    : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
   }
 
   renderAllSightings = () => {
     return (
       <>
         <h2>All Sightings</h2>
-        <Filter updateFilterState={this.updateFilterState} {...this.state}/>
+        <Filter updateFilterState={this.updateFilterState} updateSortState={this.updateSortState} {...this.state}/>
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
-          {this.props.sightings && this.filteredSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+          {this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
         </section>
       </>
     )

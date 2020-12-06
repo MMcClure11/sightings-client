@@ -37,7 +37,7 @@
     - [X] make controlled form
     - [X] why do I have to use this.state.filter.filter?? where is it doubling up? Silly me, did filter: [:name]: value, so of course it was doubling
   - [] search by name or location or username
-  - [] sort by date_seen, alphabetically
+  - [X] sort by date_seen, alphabetically
 
 # CSS:
   - [X] pick and 

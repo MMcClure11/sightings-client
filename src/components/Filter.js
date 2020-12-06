@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Filter(props){
   return(
-  <nav className="filterWrapper">
+  <div>
     <label>Filter by Category:</label>
     <select onChange={props.updateFilterState} value={props.filter} name="filter">
       <option value="All">All</option>
@@ -16,7 +16,12 @@ export default function Filter(props){
       <option value="Salt Water Creature">Salt Water Creature</option>
       <option value="Other">Other</option>
     </select>
-  </nav>
+    <label>Sort by:</label>
+    <select onChange={props.updateSortState} value={props.sort} name="sort">
+      <option value="Alphabetically">A-Z by Common Name</option>
+      <option value="Date">Most Recently Seen</option>
+    </select>
+  </div>
   )
 
 }
