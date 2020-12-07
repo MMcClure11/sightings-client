@@ -161,3 +161,20 @@ export const submitComment = commentData => {
     }))
   }
 }
+
+export function deleteComment(commentId) {
+  return (dispatch) => {
+    return  fetch(`http://localhost:3000/api/v1/comments/${commentId}`, {
+      credentials: "include",
+      method: 'DELETE',
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      dispatch({
+      type: DELETE_COMMENT,
+      commentId
+      })
+      dispatch(getCurrentUser())
+    })
+  }
+}

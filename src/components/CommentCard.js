@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { deleteComment } from '../actions/sightings'
 
 class CommentCard extends Component {
 
   onClick = () => {
-    alert(`delete ${this.props.id}`)
-    // this.props.deleteComment(this.props.id)
+    // alert(`delete ${this.props.id}`)
+    this.props.deleteComment(this.props.id)
   }
 
   render(){
@@ -25,4 +25,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(CommentCard)
+export default connect(mapStateToProps, { deleteComment })(CommentCard)
