@@ -4,7 +4,8 @@ import {
   EDIT_SIGHTING,
   DELETE_SIGHTING,
   SET_SELECTED_SIGHTING,
-  UNSET_SIGHTING
+  UNSET_SIGHTING,
+  COMMENT_FORM_CHANGE
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
@@ -136,3 +137,8 @@ export function setSelectedSighting(sightingId){
 }
 
 export const unsetSighting = () => ({type: UNSET_SIGHTING})
+
+export const commentFormChange = (e) => ({
+  type: COMMENT_FORM_CHANGE,
+  payload: {name: e.target.name, value: e.target.value}
+})

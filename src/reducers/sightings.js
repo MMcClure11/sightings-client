@@ -4,12 +4,18 @@ import {
   EDIT_SIGHTING,
   DELETE_SIGHTING,
   SET_SELECTED_SIGHTING,
-  UNSET_SIGHTING
+  UNSET_SIGHTING,
+  COMMENT_FORM_CHANGE
 } from '../actionTypes'
+
+const nullCommentForm = {
+  content: ''
+}
 
 const initialState = {
   sightings: [],
-  selectedSighting: null
+  selectedSighting: null,
+  commentForm: nullCommentForm
 }
 
 export function sightingsReducer(state = initialState, action) {
@@ -35,6 +41,10 @@ export function sightingsReducer(state = initialState, action) {
       return {...state, selectedSighting: action.sighting}
     case UNSET_SIGHTING:
       return {...state, selectedSighting: null}
+    case COMMENT_FORM_CHANGE:
+      return {...state, commentForm: {
+        ...state.commentForm, [action.payload.name]: action.payload.value
+      }}
     default:
       return state
   }
