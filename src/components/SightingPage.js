@@ -15,7 +15,6 @@ class SightingPage extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { commonName, image, category, scientificName, identified, location, date, notes, comments } = this.props
     return (
       <>
@@ -29,7 +28,8 @@ class SightingPage extends Component {
         <h3>Country: {location.country} </h3>
         <h3>Date seen: { date }</h3>
         <h4>Notes: { notes }</h4>
-        {this.props.comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
+        { comments && comments.length > 0 ? <h6>Comments:</h6> : null}
+        { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
       </>
     )
   }
