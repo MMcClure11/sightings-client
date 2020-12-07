@@ -5,7 +5,8 @@ import {
   DELETE_SIGHTING,
   SET_SELECTED_SIGHTING,
   UNSET_SIGHTING,
-  COMMENT_FORM_CHANGE
+  COMMENT_FORM_CHANGE,
+  SET_COMMENT
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
@@ -154,6 +155,9 @@ export const submitComment = commentData => {
       body: JSON.stringify(commentData),
     })
     .then(resp => resp.json())
-    .then(console.log)
+    .then(comment => dispatch({
+      type: SET_COMMENT,
+      payload: comment
+    }))
   }
 }
