@@ -41,6 +41,13 @@
   - [X] sort by date_seen, alphabetically
   - [] refactor sightingList class to reuse onChange functions
 
+# REFACTORS
+  - [] move comments action creator and reducer out of sightings and into its own comments action creator and reducer?
+  - [] signup controlled form in redux
+  - [] login controlled form in redux
+  - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
+  - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
+
 # CSS:
   - [X] pick and 
     - [] import svg icons
@@ -62,10 +69,13 @@
   - almost able to remove sendableSightingData hash, had to use isPublic on frontend because public is a reserved key word, so still had to modify the sendable data since is_public is not a key in my database.
 
 # STRETCH:
- - [] comments (has_many through relationship)
+ - [X] comments (has_many through relationship)
  - [] likes/favorites for sightings
  - [] add frontend library for validations
- - [] show page for sightings where comments can be added, edited, deleted by the owner
+ - [] show page for sightings where comments can be 
+  - [X] added, 
+  - [] edited, 
+  - [] deleted by the owner
  - [] show page includes google map of location of the sighting based on city, region and country
 
 # Minimal Requirements for Flatiron project:
