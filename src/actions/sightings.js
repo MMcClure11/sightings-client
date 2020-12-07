@@ -2,7 +2,8 @@ import {
   GET_SIGHTINGS,
   ADD_SIGHTING, 
   EDIT_SIGHTING,
-  DELETE_SIGHTING
+  DELETE_SIGHTING,
+  SET_SELECTED_SIGHTING
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
@@ -117,5 +118,18 @@ export function deleteSighting(sightingId) {
       })
       dispatch(getCurrentUser())
     })
+  }
+}
+
+export function setSelectedSighting(sightingId){
+  return dispatch => {
+    fetch(`${URL}/${sightingId}`, {
+      credentials: 'include'
+    })
+    .then(resp => resp.json())
+    .then(sighting => dispatch({
+      type: SET_SELECTED_SIGHTING,
+      sighting
+    }))
   }
 }
