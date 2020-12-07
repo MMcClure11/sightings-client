@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect} from 'react-redux'
 import { setSelectedSighting, unsetSighting } from '../actions/sightings'
 import CommentCard from './CommentCard'
+import CommentForm from './CommentForm'
 
 class SightingPage extends Component {
 
@@ -15,7 +16,7 @@ class SightingPage extends Component {
   }
 
   render() {
-    const { commonName, image, category, scientificName, identified, location, date, notes, comments } = this.props
+    const { commonName, image, category, scientificName, identified, location, date, notes, comments, id } = this.props
     return (
       <>
         <h2>Category { category && category.name }</h2>
@@ -30,6 +31,7 @@ class SightingPage extends Component {
         <h4>Notes: { notes }</h4>
         { comments && comments.length > 0 ? <h6>Comments:</h6> : null}
         { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
+        { this.props.currentUser.id && <CommentForm sighting_id={ id } />}
       </>
     )
   }
