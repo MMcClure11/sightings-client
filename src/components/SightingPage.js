@@ -10,16 +10,27 @@ class SightingPage extends Component {
   }
 
   render() {
+    const { commonName, image, category, scientificName, identified, location, date, notes } = this.props
+    console.log(this.props)
     return (
-      <div>
-        Sighting Show Page
-      </div>
+      <>
+        <h2>Category { category.name }</h2>
+        <h1>{ commonName }</h1>
+        <h3>{ scientificName }</h3>
+        <img src={ image } alt={ commonName }></img>
+        <h3>Identified? {identified === true ? '✅ ': '🚫'}</h3>
+        <h3>City: {location.city} </h3>
+        <h3>Region: {location.region} </h3>
+        <h3>Country: {location.country} </h3>
+        <h3>Date seen: { date }</h3>
+        <h4>Notes: { notes }</h4>
+      </>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  selectedSighting: state.selectedSighting,
+  ...state.sightings.selectedSighting,
   currentUser: state.currentUser
 })
 
