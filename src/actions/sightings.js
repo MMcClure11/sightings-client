@@ -144,5 +144,16 @@ export const commentFormChange = (e) => ({
 })
 
 export const submitComment = commentData => {
-  console.log("in action creator for submit comment")
+  return dispatch => {
+    fetch('http://localhost:3000/api/v1/comments', {
+      credentials: "include",
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentData),
+    })
+    .then(resp => resp.json())
+    .then(console.log)
+  }
 }

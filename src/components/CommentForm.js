@@ -8,7 +8,7 @@ const CommentForm = (props) => {
 
   const onSubmit = e => {
     e.preventDefault()
-    props.submitComment({ ...props, sighting_id: props.sighting_id})
+    props.submitComment({ ...props.form, sighting_id: props.sighting_id})
   }
 
   return(
