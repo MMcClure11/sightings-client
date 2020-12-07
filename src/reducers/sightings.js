@@ -17,7 +17,11 @@ export function sightingsReducer(state = initialState, action) {
     case GET_SIGHTINGS:
       return {...state, sightings: action.sightings}
     case ADD_SIGHTING:
-      return [...state, action.sighting]
+      // return [...state, action.sighting]
+      return {
+        ...state,
+        sightings: [...state.sightings, action.sighting]
+      }
     case EDIT_SIGHTING:
       return state.map(sighting => sighting.id === action.sighting.id ? action.sighting : sighting)
     case DELETE_SIGHTING:

@@ -183,7 +183,6 @@ class SightingList extends React.Component {
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
           {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />) : 
-          // {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />) :
           this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
         </section>
       </>
