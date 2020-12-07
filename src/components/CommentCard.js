@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-const CommentCard = (props) => {
-  const {username, content} = props
-  return (
-    <div>
-      <p>{username}: {content}</p>
-    </div>
-  )
+
+class CommentCard extends Component {
+
+  onClick = () => {
+    alert(`delete ${this.props.id}`)
+    // this.props.deleteComment(this.props.id)
+  }
+
+  render(){
+    const { username, content, currentUser, userId } = this.props
+    return (
+      <div>
+        <p>{username}: {content}</p>
+        { userId === currentUser.id && <button onClick={this.onClick}>Delete</button>}
+      </div>
+    )}
 }
 
-export default CommentCard
+const mapStateToProps = state => {
+  return {
+      currentUser: state.currentUser,
+  }
+}
+
+export default connect(mapStateToProps)(CommentCard)

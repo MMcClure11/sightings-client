@@ -190,6 +190,7 @@ class SightingList extends React.Component {
   }
 
   render(){
+    // console.log(this.props.currentUser)
     return (
       <div>
         { this.props.location.pathname === '/myprofile' ? this.renderMySightings() : this.renderAllSightings() }
