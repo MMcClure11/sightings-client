@@ -27,7 +27,10 @@ export function sightingsReducer(state = initialState, action) {
         sightings: [...state.sightings.map(sighting => sighting.id === action.sighting.id ? action.sighting : sighting)]
       }
     case DELETE_SIGHTING:
-      return state.filter(sighting => sighting.id !== action.sightingId)
+      return {
+        ...state,
+        sightings: [...state.sightings.filter(sighting => sighting.id !== action.sightingId)]
+      }
     case SET_SELECTED_SIGHTING:
       return {...state, selectedSighting: action.sighting}
     case UNSET_SIGHTING:
