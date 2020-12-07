@@ -6,7 +6,8 @@ import {
   SET_SELECTED_SIGHTING,
   UNSET_SIGHTING,
   COMMENT_FORM_CHANGE,
-  SET_COMMENT
+  SET_COMMENT,
+  DELETE_COMMENT
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
