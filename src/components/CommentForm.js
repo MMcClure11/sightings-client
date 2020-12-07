@@ -1,13 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { commentFormChange } from '../actions/sightings'
+import { commentFormChange, submitComment } from '../actions/sightings'
 
 const CommentForm = (props) => {
 
   const { content } = props.form
 
+  const onSubmit = e => {
+    e.preventDefault()
+    props.submitComment({ ...props, sighting_id: props.sighting_id})
+  }
+
   return(
-    <form>
+    <form onSubmit={ onSubmit }>
        <label>
         Content:
         <textarea name="content" value={ content } onChange={props.commentFormChange}></textarea>
@@ -22,4 +27,4 @@ const mapStateToProps = state => ({
   form: state.sightings.commentForm
 })
 
-export default connect(mapStateToProps, { commentFormChange })(CommentForm)
+export default connect(mapStateToProps, { commentFormChange, submitComment })(CommentForm)

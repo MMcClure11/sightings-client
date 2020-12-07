@@ -142,3 +142,7 @@ export const commentFormChange = (e) => ({
   type: COMMENT_FORM_CHANGE,
   payload: {name: e.target.name, value: e.target.value}
 })
+
+export const submitComment = commentData => {
+  console.log("in action creator for submit comment")
+}
