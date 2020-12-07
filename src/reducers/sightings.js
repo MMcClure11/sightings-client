@@ -5,7 +5,8 @@ import {
   DELETE_SIGHTING,
   SET_SELECTED_SIGHTING,
   UNSET_SIGHTING,
-  COMMENT_FORM_CHANGE
+  COMMENT_FORM_CHANGE,
+  SET_COMMENT
 } from '../actionTypes'
 
 const nullCommentForm = {
@@ -45,6 +46,15 @@ export function sightingsReducer(state = initialState, action) {
       return {...state, commentForm: {
         ...state.commentForm, [action.payload.name]: action.payload.value
       }}
+    case SET_COMMENT:
+      return {
+        ...state,
+        selectedSighting: {
+          ...state.selectedSighting,
+          comments: [...state.selectedSighting.comments, action.payload]
+        },
+        commentForm: nullCommentForm
+      }
     default:
       return state
   }
