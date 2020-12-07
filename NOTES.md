@@ -29,7 +29,7 @@
   - [] and user
 - [X] toggle modal closed on submit and reset form state
 - [] refactor controlled form local state to redux store state
-- [] add sighting show page so can add comments eventually and a google map
+- [X] add sighting show page so can add comments eventually and a google map
 
 # Sightings:
   - [] choose Identified or Non-identified (or both?)
@@ -44,14 +44,15 @@
 # CSS:
   - [X] pick and 
     - [] import svg icons
-  - [] style signup page
-  - [] style login page
+  - [] style signup page**
+  - [] style login page**
   - [] sighting cardFront
   - [] sighting cardBack
   - [] move modal css to sass
   - [] move loader css to sass
   - [] style loader
   - [] style modal
+  - [] style sighting show page
   
 # BACKEND:
 - [X] add validations

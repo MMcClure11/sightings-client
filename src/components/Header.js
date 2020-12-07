@@ -16,12 +16,12 @@ class Header extends Component {
               <span className="heading-primary--sub">What did you see today?</span>
             </h1>
           </div>
-          { this.props.loggedIn ? null :
+          {/* { this.props.loggedIn ? null :
             <div className="header__buttons">
               <button className="btn" onClick={() => this.onClick('/signup')}>Sign Up</button>
               <button className="btn" onClick={() => this.onClick('/login')}>Login</button> 
             </div>
-          }
+          } */}
         </header>
     )
   }
