@@ -12,7 +12,7 @@ class SightingPage extends Component {
   render() {
     return (
       <div>
-        Sighting Show Page for {this.props.selectedSighting.commonName}
+        Sighting Show Page
       </div>
     )
   }
