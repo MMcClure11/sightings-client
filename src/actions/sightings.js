@@ -3,7 +3,8 @@ import {
   ADD_SIGHTING, 
   EDIT_SIGHTING,
   DELETE_SIGHTING,
-  SET_SELECTED_SIGHTING
+  SET_SELECTED_SIGHTING,
+  UNSET_SIGHTING
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
@@ -133,3 +134,5 @@ export function setSelectedSighting(sightingId){
     }))
   }
 }
+
+export const unsetSighting = () => ({type: UNSET_SIGHTING})

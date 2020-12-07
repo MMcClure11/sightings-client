@@ -3,15 +3,19 @@ import {
   ADD_SIGHTING,
   EDIT_SIGHTING,
   DELETE_SIGHTING,
-  SET_SELECTED_SIGHTING
+  SET_SELECTED_SIGHTING,
+  UNSET_SIGHTING
 } from '../actionTypes'
 
-const initialState = []
+const initialState = {
+  sightings: [],
+  selectedSighting: null
+}
 
 export function sightingsReducer(state = initialState, action) {
   switch(action.type){
     case GET_SIGHTINGS:
-      return action.sightings
+      return {...state, sightings: action.sightings}
     case ADD_SIGHTING:
       return [...state, action.sighting]
     case EDIT_SIGHTING:
@@ -20,6 +24,8 @@ export function sightingsReducer(state = initialState, action) {
       return state.filter(sighting => sighting.id !== action.sightingId)
     case SET_SELECTED_SIGHTING:
       return {...state, selectedSighting: action.sighting}
+    case UNSET_SIGHTING:
+      return {...state, selectedSighting: null}
     default:
       return state
   }

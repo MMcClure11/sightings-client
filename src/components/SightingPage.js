@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect} from 'react-redux'
-import { setSelectedSighting } from '../actions/sightings'
+import { setSelectedSighting, unsetSighting } from '../actions/sightings'
 
 class SightingPage extends Component {
 
@@ -9,12 +9,15 @@ class SightingPage extends Component {
     this.props.setSelectedSighting(id)
   }
 
+  componentWillUnmount(){
+    this.props.unsetSighting()
+  }
+
   render() {
     const { commonName, image, category, scientificName, identified, location, date, notes } = this.props
-    console.log(this.props)
     return (
       <>
-        <h2>Category { category.name }</h2>
+        <h2>Category { category && category.name }</h2>
         <h1>{ commonName }</h1>
         <h3>{ scientificName }</h3>
         <img src={ image } alt={ commonName }></img>
@@ -34,4 +37,4 @@ const mapStateToProps = (state) => ({
   currentUser: state.currentUser
 })
 
-export default connect(mapStateToProps, { setSelectedSighting })(SightingPage)
+export default connect(mapStateToProps, { setSelectedSighting, unsetSighting })(SightingPage)
