@@ -9,6 +9,7 @@ import MyProfile from './components/MyProfile'
 import SightingList from './components/SightingList'
 import NavBar from './components/NavBar'
 import PrivateRoute from './containers/PrivateRoute'
+import SightingPage from './components/SightingPage'
 
 function App() {
   const history = useHistory();
@@ -21,6 +22,7 @@ function App() {
             <Route exact path='/signup' component={Signup} history={history}/>
             <PrivateRoute exact path='/myprofile' component={MyProfile} history={history}/>
             <PrivateRoute exact path='/sightings' component={SightingList} history={history}/>
+            <PrivateRoute exact path='/sightings/:id' component={SightingPage} history={history} />
             <Route exact path="/" component={Home} history={history}/>
           </Switch>
       </Router>

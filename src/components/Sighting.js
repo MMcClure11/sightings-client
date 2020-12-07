@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
 import { deleteSighting } from '../actions/sightings'
+import { Link } from 'react-router-dom'
+
 
 function Sighting (props) {
 
@@ -24,6 +26,7 @@ function Sighting (props) {
           <p className='heading-small'>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
           <p className='heading-small'>Date seen: {props.date}</p>
           <p className='heading-small'>Notes: {props.notes}</p>
+          <Link to={`/sightings/${props.id}`}>More Info - {props.id}</Link>
           { props.currentOwner && <button className="btn btn--small" onClick={() => props.populateForm(props)}>Edit</button>}
           { props.currentOwner && <button className="btn btn--small" onClick={onClick}>Delete</button>}
         </div>
