@@ -14,14 +14,11 @@ class CommentFormModal extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log('comment:', this.state.content, 'props:', this.props)
     this.props.editComment(this.state, this.props.commentId)
     this.props.toggle()
-    this.setState({content: this.props.content})
   }
 
   render() {
-    // console.log(this.state)
     const display = this.props.display ? "block" : "none"
     return (
       <div id="myModal" className="modal" style={{ display }}>
@@ -40,4 +37,4 @@ class CommentFormModal extends Component {
   }
 }
 
-export default connect(null, { editComment})(CommentFormModal)
+export default connect(null, { editComment })(CommentFormModal)
