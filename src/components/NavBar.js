@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Logout from '../components/Logout'
+import sprite from '../imgs/sprite.svg'
 
 
 class NavBar extends Component {
@@ -13,7 +14,14 @@ class NavBar extends Component {
           <>
           <p>{this.props.currentUser.username}</p>
           <div className='nav__link-container'>
-            <NavLink className='nav__link' to="/">Home</NavLink>
+            <NavLink className='nav__link' to="/">
+              <span>
+                <svg className="icon">
+                  <use href={sprite + '#icon-home3'} />
+                </svg>
+                Home
+              </span>
+            </NavLink>
             <NavLink className='nav__link' to="/myprofile">My Profile</NavLink>
             <NavLink className='nav__link' to="/sightings">Sightings</NavLink>
           </div>
