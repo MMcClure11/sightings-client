@@ -28,7 +28,7 @@ export default function Filter(props){
         <option value="username">Username</option>
       </select>
       <input type="text" name="search" value={props.search} onChange={props.updateSearchState}/>
-      <input type="submit" />
+      <input className="btn btn--small" type="submit" />
     </form>
   </div>
   )
