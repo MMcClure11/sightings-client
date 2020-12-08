@@ -21,13 +21,21 @@ function Sighting (props) {
         <div className='card__content'>
           <h2 className='heading-sighting'>Category: {props.category.name}</h2>
           <h4 className='heading-tertiary heading-tertiary--no-margin'>Scientific Name: {props.scientificName}</h4>
-          <p className='heading-small'>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
+          <p className='heading-small'>Identified? {props.identified === true ? 
+            <svg className="icon--identified-true">
+              <use href={sprite + '#icon-checkmark'} />
+            </svg>
+            : 
+            <svg className="icon--identified-false">
+              <use href={sprite + '#icon-cancel-circle'} />
+            </svg>
+            }
+          </p>
           { !props.all &&
             <p className='heading-small'>{props.public === true ? 'Public Sighting' : 'Private Sighting'}</p>
           }
           <p className='heading-small'>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
           <p className='heading-small'>Date seen: {props.date}</p>
-          <p className='heading-small'>Notes: {props.notes}</p>
           <Link to={`/sightings/${props.id}`}>More Info</Link>
           <span>
             { props.currentOwner && 

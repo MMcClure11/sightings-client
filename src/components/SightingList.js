@@ -6,6 +6,8 @@ import {withRouter} from 'react-router-dom'
 import SightingFormModal from './SightingFormModal'
 import Filter from './Filter'
 import { addSighting, editSighting } from '../actions/sightings'
+import sprite from '../imgs/sprite.svg'
+
 
 
 class SightingList extends React.Component {
@@ -120,7 +122,11 @@ class SightingList extends React.Component {
   renderMySightings = () => {
     return (
       <>
-        <button className="btn btn--small" onClick={this.openNewSightingForm}>Report New Sighting</button>
+        <button className="btn btn--small" onClick={this.openNewSightingForm}>
+        <svg className="icon icon--add">
+          <use href={sprite + '#icon-plus'} />
+        </svg>
+          Sighting</button>
         <h2>My Sightings</h2>
           <section className="cards">
             {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
