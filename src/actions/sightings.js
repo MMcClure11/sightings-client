@@ -170,12 +170,13 @@ export function deleteComment(commentId) {
       method: 'DELETE',
     })
     .then(resp => resp.json())
-    .then(() => {
+    .then(sighting => {
+      // console.log(sighting)
       dispatch({
       type: DELETE_COMMENT,
-      commentId
+      sighting,
       })
-      dispatch(getCurrentUser())
+      // dispatch(getCurrentUser())
     })
   }
 }
