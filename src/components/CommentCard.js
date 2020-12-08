@@ -14,7 +14,7 @@ class CommentCard extends Component {
     return (
       <div>
         <p>{username}: {content}</p>
-        { userId === currentUser.id && <button onClick={this.onClick}>Delete</button>}
+        { userId === currentUser.id && <button className="btn btn--small" onClick={this.onClick}>Delete</button>}
       </div>
     )}
 }

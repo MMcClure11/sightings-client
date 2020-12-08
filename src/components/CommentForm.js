@@ -18,7 +18,7 @@ const CommentForm = (props) => {
         <textarea name="content" value={ content } onChange={props.commentFormChange}></textarea>
       </label><br/>
       <br/>
-      <input type="submit" value="Submit" />
+      <input className="btn btn--small" type="submit" value="Submit" />
     </form>
   )
 }
