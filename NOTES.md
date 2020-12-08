@@ -69,6 +69,7 @@
   - almost able to remove sendableSightingData hash, had to use isPublic on frontend because public is a reserved key word, so still had to modify the sendable data since is_public is not a key in my database.
 - [] change public to is_public
 - [] nest comments routes under sightings
+- [X] updated comment, how to keep rails from changing the order
 
 # STRETCH:
  - [X] comments (has_many through relationship)
