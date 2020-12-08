@@ -1,3 +1,4 @@
+@import "abstracts/mixins";
 @import "abstracts/variables";
 
 @import "base/animations";
@@ -9,3 +10,5 @@
 @import "components/sightings_card";
 
 @import "layout/header";
+
+@import "pages/authforms";
