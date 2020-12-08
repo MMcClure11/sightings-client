@@ -155,11 +155,21 @@ body {
     height: 2rem;
     width: 2rem;
     fill: #ebebeb; }
+    .icon--edit:hover {
+      cursor: pointer;
+      transform: translateY(-3px); }
+    .icon--edit:active {
+      transform: translateY(0); }
   .icon--trash {
     height: 2rem;
     width: 2rem;
     fill: #ebebeb;
     margin-left: 2rem; }
+    .icon--trash:hover {
+      cursor: pointer;
+      transform: translateY(-3px); }
+    .icon--trash:active {
+      transform: translateY(0); }
   .icon--add {
     height: 1rem;
     width: 1rem;
