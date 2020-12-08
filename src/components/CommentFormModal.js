@@ -5,19 +5,19 @@ import { editComment } from '../actions/sightings'
 class CommentFormModal extends Component {
 
   state = {
-    comment: this.props.content
+    content: this.props.content
   }
 
   onChange = (event) => {
-    this.setState({comment: event.target.value})
+    this.setState({content: event.target.value})
   }
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log('comment:', this.state.comment, 'props:', this.props)
-    this.props.editComment(this.state.comment, this.props.commentId)
+    console.log('comment:', this.state.content, 'props:', this.props)
+    this.props.editComment(this.state, this.props.commentId)
     this.props.toggle()
-    this.setState({comment: this.props.content})
+    this.setState({content: this.props.content})
   }
 
   render() {
@@ -30,7 +30,7 @@ class CommentFormModal extends Component {
         <form onSubmit={this.onSubmit}>
         <label>
           Comment:
-          <textarea type="text" name="comment" value={this.state.comment} onChange={this.onChange}></textarea>
+          <textarea type="text" name="content" value={this.state.content} onChange={this.onChange}></textarea>
         </label>
         <input className="btn btn--small" type="submit" value="Submit" />
       </form>
