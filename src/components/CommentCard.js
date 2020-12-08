@@ -1,20 +1,36 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteComment } from '../actions/sightings'
+import CommentFormModal from './CommentFormModal'
 
 class CommentCard extends Component {
 
+  state = {
+    modal: false
+  }
+
   onClick = () => {
-    // alert(`delete ${this.props.id}`)
     this.props.deleteComment(this.props.id)
   }
+
+  onClickOfEdit = () => {
+    this.setState({modal: true})
+  }
+
+  toggleModal = () => this.setState({modal: !this.state.modal})
 
   render(){
     const { username, content, currentUser, userId } = this.props
     return (
       <div>
         <p>{username}: {content}</p>
-        { userId === currentUser.id && <button className="btn btn--small" onClick={this.onClick}>Delete</button>}
+        { userId === currentUser.id && 
+        <>
+        <button className="btn btn--small" onClick={this.onClickOfEdit}>Edit</button>
+        <button className="btn btn--small" onClick={this.onClick}>Delete</button>
+        <CommentFormModal display={this.state.modal} toggle={this.toggleModal}/>
+        </>
+        }
       </div>
     )}
 }
