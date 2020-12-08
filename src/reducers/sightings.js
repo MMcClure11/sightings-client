@@ -7,6 +7,7 @@ import {
   UNSET_SIGHTING,
   COMMENT_FORM_CHANGE,
   SET_COMMENT,
+  EDIT_COMMENT,
   DELETE_COMMENT
 } from '../actionTypes'
 
@@ -56,6 +57,8 @@ export function sightingsReducer(state = initialState, action) {
         },
         commentForm: nullCommentForm
       }
+    case EDIT_COMMENT:
+      return {...state, selectedSighting: action.sighting}
     case DELETE_COMMENT:
       return {...state, selectedSighting: action.sighting}
     default:
