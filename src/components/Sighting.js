@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import { deleteSighting } from '../actions/sightings'
 import { Link } from 'react-router-dom'
+import sprite from '../imgs/sprite.svg'
 
 
 function Sighting (props) {
@@ -28,7 +29,12 @@ function Sighting (props) {
           <p className='heading-small'>Date seen: {props.date}</p>
           <p className='heading-small'>Notes: {props.notes}</p>
           <Link to={`/sightings/${props.id}`}>More Info</Link>
-          { props.currentOwner && <button className="btn btn--small" onClick={() => props.populateForm(props)}>Edit</button>}
+          { props.currentOwner && 
+            <a onClick={() => props.populateForm(props)}>
+              <svg className="icon icon--card">
+                <use href={sprite + '#icon-pencil2'} />
+              </svg>
+            </a>}
           { props.currentOwner && <button className="btn btn--small" onClick={onClick}>Delete</button>}
         </div>
       </div>

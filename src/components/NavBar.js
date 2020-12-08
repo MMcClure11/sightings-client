@@ -12,7 +12,6 @@ class NavBar extends Component {
       <nav className='nav'>
         {this.props.loggedIn ? 
           <>
-          <p>{this.props.currentUser.username}</p>
           <div className='nav__link-container'>
             <NavLink className='nav__link' to="/">
               <span>
