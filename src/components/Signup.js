@@ -32,7 +32,7 @@ onSubmit = e => {
       <div className='auth-form-container'>
         <form className='auth-form u-margin-top-medium' onSubmit={this.onSubmit}>
           <div class="u-margin-bottom-medium">
-            <h2 class="heading-secondary--secondary">
+            <h2 class="heading-secondary--secondary u-margin-left-medium ">
                 Signup 
             </h2>
           </div>
@@ -49,7 +49,7 @@ onSubmit = e => {
             <label for="username" class="auth-form__label">Name</label>
           </div>
           <div class="auth-form__group">
-            <input className='btn' type="submit" value="Signup"/>
+            <input className='btn u-margin-left-medium ' type="submit" value="Signup"/>
           </div>
         </form>
       </div>
