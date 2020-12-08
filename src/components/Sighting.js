@@ -29,18 +29,20 @@ function Sighting (props) {
           <p className='heading-small'>Date seen: {props.date}</p>
           <p className='heading-small'>Notes: {props.notes}</p>
           <Link to={`/sightings/${props.id}`}>More Info</Link>
-          { props.currentOwner && 
-            <a onClick={() => props.populateForm(props)}>
-              <svg className="icon icon--card">
-                <use href={sprite + '#icon-pencil2'} />
-              </svg>
-            </a>}
-          { props.currentOwner && 
-            <a onClick={onClick}>
-              <svg className="icon icon--card">
-                <use href={sprite + '#icon-bin2'} />
-              </svg>
-            </a>}
+          <span>
+            { props.currentOwner && 
+              <a onClick={() => props.populateForm(props)}>
+                <svg className="icon icon--edit">
+                  <use href={sprite + '#icon-pencil2'} />
+                </svg>
+              </a>}
+            { props.currentOwner && 
+              <a onClick={onClick}>
+                <svg className="icon icon--trash">
+                  <use href={sprite + '#icon-bin2'} />
+                </svg>
+              </a>}
+          </span>
         </div>
       </div>
     </div>

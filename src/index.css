@@ -151,15 +151,15 @@ body {
     width: 2rem;
     fill: #3EAA95;
     margin-right: .5rem; }
-  .icon--trash {
-    height: 1rem;
-    width: 1rem;
-    fill: #eee;
-    margin-left: 1rem; }
-  .icon--card {
+  .icon--edit {
     height: 2rem;
     width: 2rem;
     fill: #ebebeb; }
+  .icon--trash {
+    height: 2rem;
+    width: 2rem;
+    fill: #ebebeb;
+    margin-left: 2rem; }
   .icon--add {
     height: 1rem;
     width: 1rem;
