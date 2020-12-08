@@ -28,7 +28,6 @@
   - [X] sightings
   - [] and user
 - [X] toggle modal closed on submit and reset form state
-- [] refactor controlled form local state to redux store state
 - [X] add sighting show page so can add comments eventually and a google map
 
 # Sightings:
@@ -46,6 +45,8 @@
   - [] login controlled form in redux
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
   - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
+  - [] refactor commentForm to reuse in modal for edit
+  - [] controlled form for commentForm to redux
 
 # CSS:
   - [X] pick and 
@@ -66,14 +67,16 @@
 - [X] use ActiveModel Serializer to convert data from snake case to camel case
 - [X] handle converting camelCase to snake_case on the back end
   - almost able to remove sendableSightingData hash, had to use isPublic on frontend because public is a reserved key word, so still had to modify the sendable data since is_public is not a key in my database.
+- [] change public to is_public
+- [] nest comments routes under sightings
 
 # STRETCH:
  - [X] comments (has_many through relationship)
  - [] likes/favorites for sightings
  - [] add frontend library for validations
- - [] show page for sightings where comments can be 
+ - [X] show page for sightings where comments can be 
   - [X] added, 
-  - [] edited, 
+  - [X] edited, 
   - [X] deleted by the owner
  - [] show page includes google map of location of the sighting based on city, region and country
 
