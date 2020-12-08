@@ -29,7 +29,7 @@ onSubmit = e => {
       <div className='auth-form-container'>
         <form className='auth-form u-margin-top-big' onSubmit={this.onSubmit}>
           <div className="u-margin-bottom-medium">
-            <h2 className="heading-secondary--secondary u-margin-left-medium">
+            <h2 className="heading-secondary u-margin-left-medium">
                 Login 
             </h2>
           </div>
