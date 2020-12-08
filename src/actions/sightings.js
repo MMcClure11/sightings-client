@@ -7,6 +7,7 @@ import {
   UNSET_SIGHTING,
   COMMENT_FORM_CHANGE,
   SET_COMMENT,
+  EDIT_COMMENT,
   DELETE_COMMENT
 } from '../actionTypes'
 
@@ -159,6 +160,24 @@ export const submitComment = commentData => {
     .then(comment => dispatch({
       type: SET_COMMENT,
       payload: comment
+    }))
+  }
+}
+
+export const editComment = (commentData, commentId) => {
+  return dispatch => {
+    fetch(`http://localhost:3000/api/v1/comments/${commentId}`, {
+      credentials: "include",
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(commentData),
+    })
+    .then(resp => resp.json())
+    .then(sighting => dispatch({
+      type: EDIT_COMMENT,
+      sighting
     }))
   }
 }
