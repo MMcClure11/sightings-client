@@ -35,11 +35,11 @@ onSubmit = e => {
           </div>
           <div className="auth-form__group">
             <input className='auth-form__input' placeholder="username" value={this.state.username} name="username" type="text" onChange={this.onChange} />
-            <label for="username" className="auth-form__label">Username</label>
+            <label htmlFor="username" className="auth-form__label">Username</label>
           </div>
           <div className="auth-form__group">
             <input className='auth-form__input' placeholder="password" value={this.state.password} name="password" type="password" onChange={this.onChange} />
-            <label for="password" className="auth-form__label">Password</label>
+            <label htmlFor="password" className="auth-form__label">Password</label>
           </div> 
           <div className="auth-form__group">
             <input className='btn u-margin-left-medium' type="submit" value="Log In"/>
