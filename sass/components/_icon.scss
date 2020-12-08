@@ -1,0 +1,49 @@
+.icon {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: $color-primary;
+
+  &--home3 {
+      height: 2rem;
+      width: 2rem;
+      fill: $color-primary; 
+      margin-right: .5rem;
+  }
+
+  &--trash {
+      height: 1rem;
+      width: 1rem; 
+      fill: $color-gray-light-2; 
+      margin-left: 1rem;
+  }
+
+  &--edit {
+      height: 1rem;
+      width: 1rem; 
+      fill: $color-gray-light-2;  
+      margin-left: 3rem;
+  }
+
+  &--add {
+      height: 1rem;
+      width: 1rem; 
+      fill: $color-gray-light-2;  
+      margin-right: 3rem;
+  }
+
+  &--login {
+      margin-top: .5rem; 
+      margin-right: .25rem;
+      height: 2.25rem;
+      width: 2.25rem;
+      fill: $color-primary;
+  }
+
+  &--signup {
+      margin-top: .5rem; 
+      margin-right: .45rem;
+      height: 2rem;
+      width: 2rem;
+      fill: $color-primary;
+  }
+}

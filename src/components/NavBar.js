@@ -16,7 +16,7 @@ class NavBar extends Component {
           <div className='nav__link-container'>
             <NavLink className='nav__link' to="/">
               <span>
-                <svg className="icon">
+                <svg className="icon icon--home3">
                   <use href={sprite + '#icon-home3'} />
                 </svg>
                 Home
