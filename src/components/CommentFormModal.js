@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { editComment } from '../actions/sightings'
 
-export default class CommentFormModal extends Component {
+class CommentFormModal extends Component {
 
   state = {
     comment: this.props.content
@@ -10,14 +12,22 @@ export default class CommentFormModal extends Component {
     this.setState({comment: event.target.value})
   }
 
+  onSubmit = (event) => {
+    event.preventDefault();
+    console.log('comment:', this.state.comment, 'props:', this.props)
+    this.props.editComment(this.state.comment, this.props.commentId)
+    this.props.toggle()
+    this.setState({comment: this.props.content})
+  }
+
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     const display = this.props.display ? "block" : "none"
     return (
       <div id="myModal" className="modal" style={{ display }}>
       <div className="modal-content">
         <span  onClick={this.props.toggle} className="close">&times;</span>
-        <form >
+        <form onSubmit={this.onSubmit}>
         <label>
           Comment:
           <textarea type="text" name="comment" value={this.state.comment} onChange={this.onChange}></textarea>
@@ -29,3 +39,5 @@ export default class CommentFormModal extends Component {
     )
   }
 }
+
+export default connect(null, { editComment})(CommentFormModal)
