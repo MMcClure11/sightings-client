@@ -42,7 +42,6 @@
   - [] refactor sightingList class to reuse onChange functions
 
 # REFACTORS
-  - [] move comments action creator and reducer out of sightings and into its own comments action creator and reducer?
   - [] signup controlled form in redux
   - [] login controlled form in redux
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
@@ -51,8 +50,8 @@
 # CSS:
   - [X] pick and 
     - [] import svg icons
-  - [] style signup page**
-  - [] style login page**
+  - [X] style signup page**
+  - [X] style login page**
   - [] sighting cardFront
   - [] sighting cardBack
   - [] move modal css to sass
@@ -75,7 +74,7 @@
  - [] show page for sightings where comments can be 
   - [X] added, 
   - [] edited, 
-  - [] deleted by the owner
+  - [X] deleted by the owner
  - [] show page includes google map of location of the sighting based on city, region and country
 
 # Minimal Requirements for Flatiron project:
