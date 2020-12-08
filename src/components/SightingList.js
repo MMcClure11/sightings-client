@@ -182,15 +182,15 @@ class SightingList extends React.Component {
         <Filter updateFilterState={this.updateFilterState} updateSortState={this.updateSortState} updateSearchState={this.updateSearchState} searchSubmit={this.searchSubmit} {...this.state}/>
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
-          {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />) : 
-          this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+          {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true}/>) : 
+          this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
         </section>
       </>
     )
   }
 
   render(){
-    // console.log(this.props.currentUser)
+    // console.log(this.props)
     return (
       <div>
         { this.props.location.pathname === '/myprofile' ? this.renderMySightings() : this.renderAllSightings() }

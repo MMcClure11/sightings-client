@@ -8,11 +8,12 @@ function Sighting (props) {
   const onClick = () => {
     props.deleteSighting(props.id)
   }
+
   return (
     <div className='card'>
       <div className='card__side card__side--front'>
         <img className='card__image' src={props.image} alt={props.commonName}></img>
-        { props.user && <h2 className='heading-tertiary'>Reported By: {props.user.username}</h2> }
+        { props.all && <h2 className='heading-tertiary'>Reported By: {props.user.username}</h2> }
         <h2 className='heading-tertiary'>Common Name: {props.commonName}</h2>
       </div>
       <div className='card__side card__side--back'>
@@ -20,7 +21,7 @@ function Sighting (props) {
           <h2 className='heading-sighting'>Category: {props.category.name}</h2>
           <h4 className='heading-tertiary heading-tertiary--no-margin'>Scientific Name: {props.scientificName}</h4>
           <p className='heading-small'>Identified? {props.identified === true ? '✅ ': '🚫'}</p>
-          { !props.user &&
+          { !props.all &&
             <p className='heading-small'>{props.public === true ? 'Public Sighting' : 'Private Sighting'}</p>
           }
           <p className='heading-small'>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
