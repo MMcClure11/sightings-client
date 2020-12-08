@@ -44,9 +44,30 @@ class NavBar extends Component {
           </div>
           </>:
             <div className='nav__link-container'>
-              <NavLink className='nav__link' to="/">Home</NavLink>
-              <NavLink className='nav__link' to="/signup">Sign Up</NavLink>
-              <NavLink className='nav__link' to="/login">Login</NavLink>
+              <NavLink className='nav__link' to="/">
+                <span>
+                  <svg className="icon icon--nav">
+                    <use href={sprite + '#icon-home3'} />
+                  </svg>
+                  Home
+                </span>
+              </NavLink>
+              <NavLink className='nav__link' to="/signup">
+                <span>
+                  <svg className="icon icon--nav">
+                    <use href={sprite + '#icon-quill'} />
+                  </svg>
+                  Sign Up
+                </span>
+              </NavLink>
+              <NavLink className='nav__link' to="/login">
+                <span>
+                  <svg className="icon icon--nav">
+                    <use href={sprite + '#icon-unlocked'} />
+                  </svg>
+                  Login
+                </span>  
+              </NavLink>
             </div>
         }
       </nav>
