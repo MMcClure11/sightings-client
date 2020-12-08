@@ -20,7 +20,7 @@ class CommentCard extends Component {
   toggleModal = () => this.setState({modal: !this.state.modal})
 
   render(){
-    const { username, content, currentUser, userId } = this.props
+    const { username, content, currentUser, userId, id } = this.props
     return (
       <div>
         <p>{username}: {content}</p>
@@ -28,7 +28,7 @@ class CommentCard extends Component {
         <>
         <button className="btn btn--small" onClick={this.onClickOfEdit}>Edit</button>
         <button className="btn btn--small" onClick={this.onClick}>Delete</button>
-        <CommentFormModal display={this.state.modal} toggle={this.toggleModal}/>
+        <CommentFormModal display={this.state.modal} toggle={this.toggleModal} commentId={id} content={content}/>
         </>
         }
       </div>
