@@ -156,28 +156,15 @@ body {
     width: 1rem;
     fill: #eee;
     margin-left: 1rem; }
-  .icon--edit {
-    height: 1rem;
-    width: 1rem;
-    fill: #eee;
-    margin-left: 3rem; }
+  .icon--card {
+    height: 2rem;
+    width: 2rem;
+    fill: #ebebeb; }
   .icon--add {
     height: 1rem;
     width: 1rem;
     fill: #eee;
     margin-right: 3rem; }
-  .icon--login {
-    margin-top: .5rem;
-    margin-right: .25rem;
-    height: 2.25rem;
-    width: 2.25rem;
-    fill: #3EAA95; }
-  .icon--signup {
-    margin-top: .5rem;
-    margin-right: .45rem;
-    height: 2rem;
-    width: 2rem;
-    fill: #3EAA95; }
 
 .nav {
   flex: 0 0 24%;

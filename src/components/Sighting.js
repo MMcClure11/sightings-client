@@ -35,7 +35,12 @@ function Sighting (props) {
                 <use href={sprite + '#icon-pencil2'} />
               </svg>
             </a>}
-          { props.currentOwner && <button className="btn btn--small" onClick={onClick}>Delete</button>}
+          { props.currentOwner && 
+            <a onClick={onClick}>
+              <svg className="icon icon--card">
+                <use href={sprite + '#icon-bin2'} />
+              </svg>
+            </a>}
         </div>
       </div>
     </div>
