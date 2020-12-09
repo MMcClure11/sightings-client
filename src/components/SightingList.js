@@ -131,17 +131,16 @@ class SightingList extends React.Component {
     )
   }
 
-  // searchedSightings = () => this.props.searchOption === 'commonName' 
-  //   ? this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
-  //   : this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
-
   searchedSightings = () => {
-    if (this.props.searchOption === 'commonName'){
-      return this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
-    } else if (this.props.searchOption === 'username'){
-      return this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
-    } else if (this.props.searchOption === 'region'){
-      return this.props.sightings.filter(sighting => sighting.location.region.toLowerCase().includes(this.props.search.toLowerCase()))
+    switch(this.props.searchOption) {
+      case 'commonName':
+        return this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
+      case 'username':
+        return this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
+      case 'region':
+        return this.props.sightings.filter(sighting => sighting.location.region.toLowerCase().includes(this.props.search.toLowerCase()))
+      default:
+        return this.props.sightings
     }
   }
 
@@ -149,7 +148,7 @@ class SightingList extends React.Component {
 
   sortedSightings = () => this.props.sort === 'alphabetically' 
     ? this.filteredSightings().sort((a, b) => a.commonName.localeCompare(b.commonName)) 
-     : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
+    : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
 
   renderAllSightings = () => {
     console.log(this.props.sort)
