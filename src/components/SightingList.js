@@ -4,7 +4,7 @@ import { getSightings } from '../actions/sightings'
 import Sighting from './Sighting'
 import {withRouter} from 'react-router-dom'
 import SightingFormModal from './SightingFormModal'
-import Filter from './Filter'
+import Filters from './Filters'
 import { addSighting, editSighting } from '../actions/sightings'
 import sprite from '../imgs/sprite.svg'
 
@@ -28,11 +28,11 @@ class SightingList extends React.Component {
       category: 'Bird',
       isPublic: false,
     },
-    filter: 'All',
-    sort: 'Alphabetically',
-    searchOption: 'commonName',
-    search: '',
-    searched: false,
+    // filter: 'All',
+    // sort: 'Alphabetically',
+    // searchOption: 'commonName',
+    // search: '',
+    // searched: false,
   }
 
   toggleModal = () => this.setState({modal: !this.state.modal})
@@ -136,60 +136,62 @@ class SightingList extends React.Component {
     )
   }
 
-  updateFilterState = (event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value,
-      searched: false,
-      search: ''
-    })
-  }
+  // updateFilterState = (event) => {
+  //   const target = event.target;
+  //   const value = target.type === 'checkbox' ? target.checked : target.value;
+  //   const name = target.name;
+  //   this.setState({
+  //     [name]: value,
+  //     searched: false,
+  //     search: ''
+  //   })
+  // }
 
-  updateSortState = (event) => {
-    this.setState({sort: event.target.value, searched: false, search: ''})
-  }
+  // updateSortState = (event) => {
+  //   this.setState({sort: event.target.value, searched: false, search: ''})
+  // }
 
-  updateSearchState = (event) => {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    this.setState({
-      [name]: value
-    })
-  }
+  // updateSearchState = (event) => {
+  //   const target = event.target;
+  //   const value = target.value;
+  //   const name = target.name;
+  //   this.setState({
+  //     [name]: value
+  //   })
+  // }
 
-  filteredSightings = () => {
-    return this.state.filter === 'All' ? this.props.sightings : this.props.sightings.filter(sighting => sighting.category.name === this.state.filter)
-  }
+  // filteredSightings = () => {
+  //   return this.state.filter === 'All' ? this.props.sightings : this.props.sightings.filter(sighting => sighting.category.name === this.state.filter)
+  // }
 
-  sortedSightings = () => {
-    return this.state.sort === 'Alphabetically' 
-    ? this.filteredSightings().sort((a, b) => a.commonName.localeCompare(b.commonName)) 
-    : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
-  }
+  // sortedSightings = () => {
+  //   return this.state.sort === 'Alphabetically' 
+  //   ? this.filteredSightings().sort((a, b) => a.commonName.localeCompare(b.commonName)) 
+  //   : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
+  // }
 
-  searchSubmit = (e) => {
-    e.preventDefault();
-    this.setState({searched: true})   
-  }
+  // searchSubmit = (e) => {
+  //   e.preventDefault();
+  //   this.setState({searched: true})   
+  // }
 
-  searchedSightings = () => {
-    return this.state.searchOption === 'commonName'
-    ? this.sortedSightings().filter(sighting => sighting.commonName === this.state.search)
-    : this.sortedSightings().filter(sighting => sighting.user.username === this.state.search)
-  }
+  // searchedSightings = () => {
+  //   return this.state.searchOption === 'commonName'
+  //   ? this.sortedSightings().filter(sighting => sighting.commonName === this.state.search)
+  //   : this.sortedSightings().filter(sighting => sighting.user.username === this.state.search)
+  // }
 
   renderAllSightings = () => {
     return (
       <>
         <h2>All Sightings</h2>
-        <Filter updateFilterState={this.updateFilterState} updateSortState={this.updateSortState} updateSearchState={this.updateSearchState} searchSubmit={this.searchSubmit} {...this.state}/>
+        <Filters />
+        {/* <Filter updateFilterState={this.updateFilterState} updateSortState={this.updateSortState} updateSearchState={this.updateSearchState} searchSubmit={this.searchSubmit} {...this.state}/> */}
         { !this.props.sightings[0] && <div className="loader">LOADING</div> }
         <section className="cards">
-          {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true}/>) : 
-          this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
+          {/* {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true}/>) : 
+          this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)} */}
+          {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
         </section>
       </>
     )
