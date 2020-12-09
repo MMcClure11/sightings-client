@@ -22,6 +22,7 @@ const initialState = {
   commentForm: nullCommentForm,
   filtersForm: {
     search: '',
+    filter: '',
   }
 }
 
@@ -31,7 +32,7 @@ export function sightingsReducer(state = initialState, action) {
       return {...state, sightings: action.sightings}
     case FILTERS_FORM_CHANGE:
       return {...state, filtersForm: {
-        ...state.searchForm, [action.payload.name]: action.payload.value
+        ...state.filtersForm, [action.payload.name]: action.payload.value
       }}
     case ADD_SIGHTING:
       return {
