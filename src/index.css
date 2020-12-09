@@ -209,7 +209,7 @@ body {
   /* Black w/ opacity */
   /* Modal Content/Box */ }
   .modal__content {
-    background-color: #fefefe;
+    background-image: linear-gradient(to right bottom, #44bba4, #338d7b);
     margin: 15% auto;
     /* 15% from the top and centered */
     padding: 20px;
@@ -257,6 +257,43 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     height: 40rem; }
+
+.sighting-form {
+  width: 65vw; }
+  .sighting-form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .sighting-form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(235, 235, 235, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all .3s;
+    margin-left: 7rem; }
+    .sighting-form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(14, 17, 17, 0.1);
+      border-bottom: 3px solid #576272; }
+    .sighting-form__input:focus:invalid {
+      border-bottom: 3px solid #49705F; }
+    .sighting-form__input::-webkit-input-placeholder {
+      color: #333; }
+  .sighting-form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s; }
+  .sighting-form__input:placeholder-shown + .sighting-form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
 
 .cards {
   display: flex;

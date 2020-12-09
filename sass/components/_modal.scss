@@ -13,7 +13,9 @@
   /* Modal Content/Box */
 
   &__content {
-    background-color: #fefefe;
+    background-image: linear-gradient(to right bottom, 
+                                    rgba($color-primary-light, 1), 
+                                    rgba($color-primary-dark, 1));
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
