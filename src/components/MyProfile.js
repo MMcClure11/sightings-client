@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getCurrentUser } from '../actions/currentUser'
-import SightingList from './SightingList'
+import SightingContainer from '../containers/SightingContainer'
 
 class MyProfile extends Component {
 
@@ -18,9 +18,8 @@ class MyProfile extends Component {
       <>
         <div className='profile-headers'>
           <h2 className='heading-secondary'>Welcome, {this.props.currentUser && this.props.currentUser.username}</h2>
-          {/* <h4 className='heading-tertiary'>Name: {this.props.currentUser && this.props.currentUser.name}</h4> */}
         </div>
-        <SightingList />
+        <SightingContainer />
       </>
     )
   }

@@ -1,16 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getSightings } from '../actions/sightings'
-import Sighting from './Sighting'
+import Sighting from '../components/Sighting'
 import {withRouter} from 'react-router-dom'
-import SightingFormModal from './SightingFormModal'
-import Filters from './Filters'
+import SightingFormModal from '../components/SightingFormModal'
+import Filters from '../components/Filters'
 import { addSighting, editSighting } from '../actions/sightings'
 import sprite from '../imgs/sprite.svg'
 
 
 
-class SightingList extends React.Component {
+class SightingContainer extends React.Component {
 
   state = {
     modal: false,
@@ -180,4 +180,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, { getSightings, addSighting, editSighting })(SightingList))
+export default withRouter(connect(mapStateToProps, { getSightings, addSighting, editSighting })(SightingContainer))

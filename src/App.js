@@ -6,7 +6,7 @@ import Home from './containers/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import MyProfile from './components/MyProfile'
-import SightingList from './components/SightingList'
+import SightingContainer from './containers/SightingContainer'
 import NavBar from './components/NavBar'
 import PrivateRoute from './containers/PrivateRoute'
 import SightingPage from './components/SightingPage'
@@ -21,7 +21,7 @@ function App() {
             <Route exact path='/login' component={Login} history={history}/>
             <Route exact path='/signup' component={Signup} history={history}/>
             <PrivateRoute exact path='/myprofile' component={MyProfile} history={history}/>
-            <PrivateRoute exact path='/sightings' component={SightingList} history={history}/>
+            <PrivateRoute exact path='/sightings' component={SightingContainer} history={history}/>
             <PrivateRoute exact path='/sightings/:id' component={SightingPage} history={history} />
             <Route exact path="/" component={Home} history={history}/>
           </Switch>

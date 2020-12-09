@@ -47,10 +47,13 @@
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
   - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
  * - [] refactor commentForm to reuse in modal for edit
-    - [] controlled form for commentForm to redux
+      - [] controlled form for commentForm to redux
  * - [] CONTAINERS (some of my components should be containers)
-    - [] SightingList
+    - [X] SightingList
     - [] NavBar??
+    - [] Home rightnow only renders the header :_(
+        -[] but still want to later add footers and about etc...so does this count towards the three?
+    - [] what other components should be split up to hold containers?
 
 # CSS:
   - [X] pick and 
