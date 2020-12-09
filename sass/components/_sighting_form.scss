@@ -1,5 +1,6 @@
 .sighting-form {
-  width: 65vw; 
+  max-width: 85%; 
+   
   // height: 90vh; 
 
   &__group:not(:last-child) {

@@ -119,6 +119,9 @@ body {
 .u-margin-left-medium {
   margin-left: 9rem !important; }
 
+.u-margin-left-small {
+  margin-left: 2rem !important; }
+
 .btn {
   border-radius: 2rem;
   border: none;
@@ -219,12 +222,12 @@ body {
 
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: #f7f7f7;
   float: right;
   font-size: 28px;
   font-weight: bold; }
   .close:hover, .close:focus {
-    color: black;
+    color: #999;
     text-decoration: none;
     cursor: pointer; }
 
@@ -259,7 +262,7 @@ body {
     height: 40rem; }
 
 .sighting-form {
-  width: 65vw; }
+  max-width: 85%; }
   .sighting-form__group:not(:last-child) {
     margin-bottom: 2rem; }
   .sighting-form__input {

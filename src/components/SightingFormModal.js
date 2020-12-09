@@ -56,22 +56,24 @@ export default function SightingFormModal(props){
           <label className='sighting-form__label' htmlFor='date'>Date Seen</label>
         </div>
         <div className='sighting-form__group'>
-          <input
-            className='sighting-form__input'
-            name="identified"
-            type="checkbox"
-            checked={identified}
-            onChange={onChange} />
-          <label className='sighting-form__label' htmlFor='identified'>Is Identified?</label>
+          <label htmlFor='identified'>Is Identified?
+            <input
+              className='u-margin-left-small'
+              name="identified"
+              type="checkbox"
+              checked={identified}
+              onChange={onChange} />
+          </label>
         </div>
         <div className='sighting-form__group'>
-          <input
-            className='sighting-form__input'
-            name="isPublic"
-            type="checkbox"
-            checked={isPublic}
-            onChange={onChange} />
-          <label className='sighting-form__label' htmlFor='isPublic'>Make entry public?</label>
+          <label htmlFor='isPublic'>Make entry public?
+            <input
+              className='u-margin-left-small'
+              name="isPublic"
+              type="checkbox"
+              checked={isPublic}
+              onChange={onChange} />
+          </label>
         </div>
         <input className="btn btn--small" type="submit" value="Submit" />
       </form>
