@@ -39,6 +39,7 @@
     - [] add search by location
   - [X] sort by date_seen, alphabetically
   - [] refactor sightingList class to reuse onChange functions
+  - [] REFACTOR SEARCH FILTER SORT TO DYNAMICALLY UPDATE USING REDUX THE NICKY WAY
 
 # REFACTORS
   - [] signup controlled form in redux
