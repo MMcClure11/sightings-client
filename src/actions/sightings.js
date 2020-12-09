@@ -8,7 +8,8 @@ import {
   COMMENT_FORM_CHANGE,
   SET_COMMENT,
   EDIT_COMMENT,
-  DELETE_COMMENT
+  DELETE_COMMENT,
+  SEARCH_FORM_CHANGE
 } from '../actionTypes'
 
 import { getCurrentUser } from './currentUser'
@@ -199,3 +200,8 @@ export function deleteComment(commentId) {
     })
   }
 }
+
+export const searchFormChange = (e) => ({
+  type: SEARCH_FORM_CHANGE,
+  payload: {name: e.target.name, value: e.target.value}
+})
