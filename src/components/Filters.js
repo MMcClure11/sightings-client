@@ -1,15 +1,20 @@
+import { connect} from 'react-redux'
+
 const Filters = (props) => {
   return(
     <form className='sighting-form'>
        <div className='sighting-form__group'>
-          <input className='sighting-form__input' placeholder='Search by common name' type="search" name="search" onChange={handleSearchFormChange} value={search} />
+          <input className='sighting-form__input' placeholder='Search by common name' type="search" name="search" onChange={handleSearchFormChange} value={props.search} />
           <label className='sighting-form__label' htmlFor='search'>Search by common name</label>
         </div>
     </form>
   )
 }
 
-export default Filters
+const mapStateToProps = state => ({
+  ...state.sightings.filtersForm
+})
+export default connect(mapStateToProps)(Filters)
 
 
 

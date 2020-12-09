@@ -12,13 +12,16 @@ import {
 } from '../actionTypes'
 
 const nullCommentForm = {
-  content: ''
+  content: '',
 }
 
 const initialState = {
   sightings: [],
   selectedSighting: null,
-  commentForm: nullCommentForm
+  commentForm: nullCommentForm,
+  filtersForm: {
+    search: '',
+  }
 }
 
 export function sightingsReducer(state = initialState, action) {
