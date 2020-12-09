@@ -8,7 +8,8 @@ import {
   COMMENT_FORM_CHANGE,
   SET_COMMENT,
   EDIT_COMMENT,
-  DELETE_COMMENT
+  DELETE_COMMENT,
+  FILTERS_FORM_CHANGE
 } from '../actionTypes'
 
 const nullCommentForm = {
@@ -28,6 +29,10 @@ export function sightingsReducer(state = initialState, action) {
   switch(action.type){
     case GET_SIGHTINGS:
       return {...state, sightings: action.sightings}
+    case FILTERS_FORM_CHANGE:
+      return {...state, filtersForm: {
+        ...state.searchForm, [action.payload.name]: action.payload.value
+      }}
     case ADD_SIGHTING:
       return {
         ...state,

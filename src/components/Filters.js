@@ -5,7 +5,7 @@ const Filters = (props) => {
   return(
     <form className='sighting-form'>
        <div className='sighting-form__group'>
-          <input className='sighting-form__input' placeholder='Search by common name' type="search" name="search" onChange={handleSearchFormChange} value={props.search} />
+          <input className='sighting-form__input' placeholder='Search by common name' type="search" name="search" onChange={props.handleSearchFormChange} value={props.search} />
           <label className='sighting-form__label' htmlFor='search'>Search by common name</label>
         </div>
     </form>
