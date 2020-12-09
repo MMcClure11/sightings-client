@@ -144,6 +144,9 @@ body {
     padding: .5rem 1rem;
     font-size: 1rem;
     border-radius: 1rem; }
+  .btn--sighting {
+    margin: 2rem;
+    margin-top: 1.75rem; }
 
 .icon {
   height: 2.25rem;
@@ -314,7 +317,8 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  align-content: center; }
+  align-content: center;
+  margin-top: 3rem; }
 
 .card {
   perspective: 150rem;
@@ -419,3 +423,10 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
+
+.profile-headers {
+  max-width: 76%;
+  float: left;
+  margin: 2rem;
+  margin-left: 4.35rem;
+  margin-top: 0; }

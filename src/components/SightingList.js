@@ -117,12 +117,11 @@ class SightingList extends React.Component {
   renderMySightings = () => {
     return (
       <>
-        <button className="btn btn--small" onClick={this.openNewSightingForm}>
+        <button className="btn btn--sighting" onClick={this.openNewSightingForm}>
         <svg className="icon icon--add">
           <use href={sprite + '#icon-plus'} />
         </svg>
           Sighting</button>
-        <h2>My Sightings</h2>
           <section className="cards">
             {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
           </section>
@@ -166,9 +165,9 @@ class SightingList extends React.Component {
 
   render(){
     return (
-      <div>
+      <>
         { this.props.location.pathname === '/myprofile' ? this.renderMySightings() : this.renderAllSightings() }
-      </div>
+      </>
     )
   }
 }

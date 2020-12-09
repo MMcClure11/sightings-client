@@ -58,7 +58,7 @@
   - [X] style signup page**
   - [X] style login page**
   - [X] sighting cardFront
-  - [] sighting cardBack (get more info link)
+  - [X] sighting cardBack (get more info link)
   - [X] move modal css to sass
     - [] style comment form modal
   - [] move loader css to sass
