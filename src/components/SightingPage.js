@@ -29,9 +29,9 @@ class SightingPage extends Component {
         <h3>Country: {location.country} </h3>
         <h3>Date seen: { date }</h3>
         <h4>Notes: { notes }</h4>
-        { comments && comments.length > 0 ? <h6>Comments:</h6> : null}
+        { comments && comments.length > 0 ? <h5>Comments:</h5> : null}
         { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
-        { this.props.currentUser.id && <CommentForm sighting_id={ id } />}
+        <h4>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
       </>
     )
   }
