@@ -185,7 +185,12 @@ class SightingList extends React.Component {
   
   filteredSightings = () => this.props.filter === 'All' ?  this.searchedSightings() : this.searchedSightings().filter(sighting => sighting.category.name === this.props.filter)
 
+  sortedSightings = () => this.props.sort === 'alphabetically' 
+    ? this.filteredSightings().sort((a, b) => a.commonName.localeCompare(b.commonName)) 
+     : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
+
   renderAllSightings = () => {
+    console.log(this.props.sort)
     return (
       <>
         <h2>All Sightings</h2>
@@ -195,7 +200,7 @@ class SightingList extends React.Component {
         <section className="cards">
           {/* {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true}/>) : 
           this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)} */}
-          {this.props.sightings && this.filteredSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
+          {this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
         </section>
       </>
     )

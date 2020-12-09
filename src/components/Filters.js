@@ -23,6 +23,13 @@ const Filters = (props) => {
           </select>
           <label className='filters-form__label' htmlFor='filter'>Category</label>
         </div>
+        <div className='filters-form__group'>
+          <select onChange={props.handleSearchFormChange} value={props.sort} name="sort">
+            <option value="alphabetically">A-Z by Common Name</option>
+            <option value="date">Most Recently Seen</option>
+          </select>
+          <label>Sort by</label>
+        </div>
     </form>
   )
 }

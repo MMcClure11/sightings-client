@@ -23,6 +23,7 @@ const initialState = {
   filtersForm: {
     search: '',
     filter: 'All',
+    sort: 'alphabetically'
   }
 }
 
