@@ -95,6 +95,13 @@ body {
   font-size: 1.6rem;
   font-weight: 500; }
 
+.profile-headers {
+  max-width: 76%;
+  float: left;
+  margin: 2rem;
+  margin-left: 4.35rem;
+  margin-top: 0; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -422,10 +429,3 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
-
-.profile-headers {
-  max-width: 76%;
-  float: left;
-  margin: 2rem;
-  margin-left: 4.35rem;
-  margin-top: 0; }
