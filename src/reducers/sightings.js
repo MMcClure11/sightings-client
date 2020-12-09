@@ -22,7 +22,7 @@ const initialState = {
   commentForm: nullCommentForm,
   filtersForm: {
     search: '',
-    filter: '',
+    filter: 'All',
   }
 }
 

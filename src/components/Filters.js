@@ -10,7 +10,7 @@ const Filters = (props) => {
         </div>
         <div className='filters-form__group'>
           <select className='filters-form__input' name="filter" onChange={props.handleSearchFormChange} value={props.filter} >
-            <option value=''>Show All</option>
+            <option value="All">Show All</option>
             <option value="Bird">Bird</option>
             <option value="Freshwater Creature">Freshwater Creature</option>
             <option value="Fungus">Fungus</option>
