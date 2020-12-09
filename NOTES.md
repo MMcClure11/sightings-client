@@ -36,10 +36,10 @@
     - [X] make controlled form
     - [X] why do I have to use this.state.filter.filter?? where is it doubling up? Silly me, did filter: [:name]: value, so of course it was doubling
   - [X] search by common_name or username
-    - [] add search by location
+    - [X] add search by location
   - [X] sort by date_seen, alphabetically
- * - [X] refactor sightingList class to reuse onChange functions
- * - [X] REFACTOR SEARCH FILTER SORT TO DYNAMICALLY UPDATE USING REDUX THE NICKY WAY
+  - [X] refactor sightingList class to reuse onChange functions
+  - [X] REFACTOR SEARCH FILTER SORT TO DYNAMICALLY UPDATE USING REDUX THE NICKY WAY
 
 # REFACTORS
   - [] signup controlled form in redux
@@ -47,8 +47,10 @@
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
   - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
  * - [] refactor commentForm to reuse in modal for edit
-  - [] controlled form for commentForm to redux
+    - [] controlled form for commentForm to redux
  * - [] CONTAINERS (some of my components should be containers)
+    - [] SightingList
+    - [] NavBar??
 
 # CSS:
   - [X] pick and 

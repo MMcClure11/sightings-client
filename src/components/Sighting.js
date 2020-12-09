@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { deleteSighting } from '../actions/sightings'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import sprite from '../imgs/sprite.svg'
 
 
@@ -36,7 +36,7 @@ function Sighting (props) {
           }
           <p className='heading-small'>Location: {props.location.city}, {props.location.region}, {props.location.country}</p>
           <p className='heading-small'>Date seen: {props.date}</p>
-          <Link to={`/sightings/${props.id}`}>More Info</Link>
+          <NavLink to={`/sightings/${props.id}`} className='link'>More Info</NavLink>
           <span>
             { props.currentOwner && 
               <a onClick={() => props.populateForm(props)}>

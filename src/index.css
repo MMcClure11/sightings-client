@@ -190,6 +190,18 @@ body {
     margin-left: 1rem;
     padding-top: 4px; }
 
+.link {
+  text-decoration: none;
+  background-image: linear-gradient(to right, #f7f7f7, #eee);
+  -webkit-background-clip: text;
+  color: transparent; }
+  .link:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.25); }
+  .link:active {
+    transform: translateY(0);
+    text-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.25); }
+
 /* The Modal (background) */
 .modal {
   display: none;
