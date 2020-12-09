@@ -3,10 +3,10 @@ import { handleSearchFormChange } from '../actions/sightings'
 
 const Filters = (props) => {
   return(
-    <form className='sighting-form'>
-       <div className='sighting-form__group'>
-          <input className='sighting-form__input' placeholder='Search by common name' type="search" name="search" onChange={props.handleSearchFormChange} value={props.search} />
-          <label className='sighting-form__label' htmlFor='search'>Search by common name</label>
+    <form className='filters-form'>
+       <div className='filters-form__group'>
+          <input className='filters-form__input' placeholder='Search by common name' type="search" name="search" onChange={props.handleSearchFormChange} value={props.search} />
+          <label className='filters-form__label' htmlFor='search'>Search by common name</label>
         </div>
     </form>
   )

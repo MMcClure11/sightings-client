@@ -181,6 +181,8 @@ class SightingList extends React.Component {
   //   : this.sortedSightings().filter(sighting => sighting.user.username === this.state.search)
   // }
 
+  searchedSightings = () => this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
+
   renderAllSightings = () => {
     return (
       <>
@@ -191,7 +193,7 @@ class SightingList extends React.Component {
         <section className="cards">
           {/* {this.state.searched ? this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true}/>) : 
           this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)} */}
-          {this.props.sightings && this.props.sightings.map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
+          {this.props.sightings && this.searchedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
         </section>
       </>
     )
@@ -210,7 +212,8 @@ class SightingList extends React.Component {
 const mapStateToProps = state => {
   return {
       currentUser: state.currentUser,
-      sightings: state.sightings.sightings
+      sightings: state.sightings.sightings,
+      ...state.sightings.filtersForm
   }
 }
 
