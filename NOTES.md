@@ -38,16 +38,17 @@
   - [X] search by common_name or username
     - [] add search by location
   - [X] sort by date_seen, alphabetically
-  - [] refactor sightingList class to reuse onChange functions
-  - [] REFACTOR SEARCH FILTER SORT TO DYNAMICALLY UPDATE USING REDUX THE NICKY WAY
+ * - [] refactor sightingList class to reuse onChange functions
+ * - [] REFACTOR SEARCH FILTER SORT TO DYNAMICALLY UPDATE USING REDUX THE NICKY WAY
 
 # REFACTORS
   - [] signup controlled form in redux
   - [] login controlled form in redux
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
   - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
-  - [] refactor commentForm to reuse in modal for edit
+ * - [] refactor commentForm to reuse in modal for edit
   - [] controlled form for commentForm to redux
+ * - [] CONTAINERS (some of my components should be containers)
 
 # CSS:
   - [X] pick and 
