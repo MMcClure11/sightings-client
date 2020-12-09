@@ -1,4 +1,5 @@
-import { connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { handleSearchFormChange } from '../actions/sightings'
 
 const Filters = (props) => {
   return(
@@ -14,7 +15,7 @@ const Filters = (props) => {
 const mapStateToProps = state => ({
   ...state.sightings.filtersForm
 })
-export default connect(mapStateToProps)(Filters)
+export default connect(mapStateToProps, { handleSearchFormChange })(Filters)
 
 
 
