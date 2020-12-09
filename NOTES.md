@@ -51,16 +51,20 @@
 
 # CSS:
   - [X] pick and 
-    - [] import svg icons
+    - [X] import svg icons
   - [X] style signup page**
   - [X] style login page**
-  - [] sighting cardFront
-  - [] sighting cardBack
-  - [] move modal css to sass
+  - [X] sighting cardFront
+  - [] sighting cardBack (get more info link)
+  - [X] move modal css to sass
+    - [] style comment form modal
   - [] move loader css to sass
   - [] style loader
-  - [] style modal
+  - [X] style modal
   - [] style sighting show page
+  - [] style search, filter, sort
+  - [] vertical nav sticky
+  - [] profile (username, name, new sighting button make perty) 
   
 # BACKEND:
 - [X] add validations
