@@ -145,8 +145,7 @@ body {
     font-size: 1rem;
     border-radius: 1rem; }
   .btn--sighting {
-    margin: 2rem;
-    margin-top: 1.75rem; }
+    padding: .75rem 1rem; }
 
 .icon {
   height: 2.25rem;

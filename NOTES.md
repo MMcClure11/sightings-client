@@ -67,7 +67,7 @@
   - [] style sighting show page
   - [] style search, filter, sort
   - [] vertical nav sticky
-  - [] profile (username, name, new sighting button make perty) 
+  - [X] profile (username, name, new sighting button make perty) 
   
 # BACKEND:
 - [X] add validations

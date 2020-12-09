@@ -17,8 +17,8 @@ class MyProfile extends Component {
     return (
       <>
         <div className='profile-headers'>
-          <h2>Username: {this.props.currentUser && this.props.currentUser.username}</h2>
-          <h4>Name: {this.props.currentUser && this.props.currentUser.name}</h4>
+          <h2 className='heading-secondary'>Welcome, {this.props.currentUser && this.props.currentUser.username}</h2>
+          {/* <h4 className='heading-tertiary'>Name: {this.props.currentUser && this.props.currentUser.name}</h4> */}
         </div>
         <SightingList />
       </>
