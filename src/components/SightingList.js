@@ -131,9 +131,19 @@ class SightingList extends React.Component {
     )
   }
 
-  searchedSightings = () => this.props.searchOption === 'commonName' 
-    ? this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
-    : this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
+  // searchedSightings = () => this.props.searchOption === 'commonName' 
+  //   ? this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
+  //   : this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
+
+  searchedSightings = () => {
+    if (this.props.searchOption === 'commonName'){
+      return this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
+    } else if (this.props.searchOption === 'username'){
+      return this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
+    } else if (this.props.searchOption === 'region'){
+      return this.props.sightings.filter(sighting => sighting.location.region.toLowerCase().includes(this.props.search.toLowerCase()))
+    }
+  }
 
   filteredSightings = () => this.props.filter === 'All' ?  this.searchedSightings() : this.searchedSightings().filter(sighting => sighting.category.name === this.props.filter)
 

@@ -8,6 +8,7 @@ const Filters = (props) => {
           <select className='filters-form__input' name='searchOption' onChange={props.handleSearchFormChange} value={props.searchOption}>
             <option value='commonName'>Common Name</option>
             <option value='username'>Username</option>
+            <option value='region'>Region</option>
           </select>
           <label className='filters-form__label' htmlFor='searchOption'>Search By</label>
         </div>
