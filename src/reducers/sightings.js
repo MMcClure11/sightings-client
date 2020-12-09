@@ -21,9 +21,10 @@ const initialState = {
   selectedSighting: null,
   commentForm: nullCommentForm,
   filtersForm: {
+    searchOption: 'commonName',
     search: '',
     filter: 'All',
-    sort: 'alphabetically'
+    sort: 'alphabetically',
   }
 }
 

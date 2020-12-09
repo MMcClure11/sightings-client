@@ -131,14 +131,10 @@ class SightingList extends React.Component {
     )
   }
 
-  // searchedSightings = () => {
-  //   return this.state.searchOption === 'commonName'
-  //   ? this.sortedSightings().filter(sighting => sighting.commonName === this.state.search)
-  //   : this.sortedSightings().filter(sighting => sighting.user.username === this.state.search)
-  // }
+  searchedSightings = () => this.props.searchOption === 'commonName' 
+    ? this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
+    : this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
 
-  searchedSightings = () => this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
-  
   filteredSightings = () => this.props.filter === 'All' ?  this.searchedSightings() : this.searchedSightings().filter(sighting => sighting.category.name === this.props.filter)
 
   sortedSightings = () => this.props.sort === 'alphabetically' 

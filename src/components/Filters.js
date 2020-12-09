@@ -4,9 +4,16 @@ import { handleSearchFormChange } from '../actions/sightings'
 const Filters = (props) => {
   return(
     <form className='filters-form'>
+        <div className='filters-form__group'>
+          <select className='filters-form__input' name='searchOption' onChange={props.handleSearchFormChange} value={props.searchOption}>
+            <option value='commonName'>Common Name</option>
+            <option value='username'>Username</option>
+          </select>
+          <label className='filters-form__label' htmlFor='searchOption'>Search By</label>
+        </div>
        <div className='filters-form__group'>
-          <input className='filters-form__input' placeholder='Search by common name' type="search" name="search" onChange={props.handleSearchFormChange} value={props.search} />
-          <label className='filters-form__label' htmlFor='search'>Search by common name</label>
+          <input className='filters-form__input' placeholder='Search' type="search" name="search" onChange={props.handleSearchFormChange} value={props.search} />
+          <label className='filters-form__label' htmlFor='search'>Search</label>
         </div>
         <div className='filters-form__group'>
           <select className='filters-form__input' name="filter" onChange={props.handleSearchFormChange} value={props.filter} >
