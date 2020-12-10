@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteComment } from '../actions/sightings'
+import { deleteComment, setFormDataForEditComment } from '../actions/sightings'
 import CommentFormModal from './CommentFormModal'
 import sprite from '../imgs/sprite.svg'
 
@@ -16,9 +16,12 @@ class CommentCard extends Component {
 
   onClickOfEdit = () => {
     this.setState({modal: true})
+    this.props.setFormDataForEditComment(this.props.content)
   }
 
-  toggleModal = () => this.setState({modal: !this.state.modal})
+  toggleModal = () => {
+    this.setState({modal: !this.state.modal})
+  }
 
   render(){
     const { username, content, currentUser, userId, id } = this.props
@@ -54,4 +57,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { deleteComment })(CommentCard)
+export default connect(mapStateToProps, { setFormDataForEditComment, deleteComment })(CommentCard)

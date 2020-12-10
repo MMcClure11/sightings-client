@@ -7,6 +7,7 @@ import {
   UNSET_SIGHTING,
   COMMENT_FORM_CHANGE,
   SET_COMMENT,
+  SET_FORM_DATA_FOR_EDIT_COMMENT,
   EDIT_COMMENT,
   DELETE_COMMENT,
   FILTERS_FORM_CHANGE
@@ -162,6 +163,13 @@ export const submitComment = commentData => {
       type: SET_COMMENT,
       payload: comment
     }))
+  }
+}
+
+export const setFormDataForEditComment = content => {
+  return {
+    type: SET_FORM_DATA_FOR_EDIT_COMMENT,
+    content
   }
 }
 

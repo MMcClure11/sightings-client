@@ -9,7 +9,8 @@ import {
   SET_COMMENT,
   EDIT_COMMENT,
   DELETE_COMMENT,
-  FILTERS_FORM_CHANGE
+  FILTERS_FORM_CHANGE,
+  SET_FORM_DATA_FOR_EDIT_COMMENT
 } from '../actionTypes'
 
 const nullCommentForm = {
@@ -68,8 +69,14 @@ export function sightingsReducer(state = initialState, action) {
         },
         commentForm: nullCommentForm
       }
+    case SET_FORM_DATA_FOR_EDIT_COMMENT:
+      return {...state, commentForm: {
+        ...state.commentForm, content: action.content
+      }}
     case EDIT_COMMENT:
-      return {...state, selectedSighting: action.sighting}
+      return {...state, selectedSighting: action.sighting,
+        commentForm: nullCommentForm
+      }
     case DELETE_COMMENT:
       return {...state, selectedSighting: action.sighting}
     default:

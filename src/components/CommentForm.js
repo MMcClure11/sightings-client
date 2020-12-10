@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { commentFormChange, submitComment } from '../actions/sightings'
+import { commentFormChange, editComment, submitComment } from '../actions/sightings'
 
 const CommentForm = (props) => {
 
@@ -8,9 +8,14 @@ const CommentForm = (props) => {
 
   const onSubmit = e => {
     e.preventDefault()
-    props.submitComment({ ...props.form, sighting_id: props.sighting_id})
+    if (props.commentId) {
+      props.editComment(props.form, props.commentId)
+      props.toggle()
+    } else {
+      props.submitComment({ ...props.form, sighting_id: props.sighting_id})
+    }
   }
-
+  
   return(
     <form onSubmit={ onSubmit }>
        <label>
@@ -27,4 +32,4 @@ const mapStateToProps = state => ({
   form: state.sightings.commentForm
 })
 
-export default connect(mapStateToProps, { commentFormChange, submitComment })(CommentForm)
+export default connect(mapStateToProps, { commentFormChange, editComment, submitComment })(CommentForm)
