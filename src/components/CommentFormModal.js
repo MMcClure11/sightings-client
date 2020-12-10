@@ -17,7 +17,7 @@ class CommentFormModal extends Component {
       <div id="myModal" className="modal" style={{ display }}>
       <div className="modal__content">
         <span  onClick={this.props.toggle} className="close">&times;</span>
-        <CommentForm commentId={this.props.commentId} toggle={this.props.toggle}  />
+        <CommentForm commentId={this.props.commentId} toggle={this.props.toggle} />
       </div>
     </div>
     )

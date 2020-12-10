@@ -17,12 +17,11 @@ const CommentForm = (props) => {
   }
   
   return(
-    <form onSubmit={ onSubmit }>
-       <label>
-        Content:
+    <form className='sighting-form' onSubmit={ onSubmit }>
+      <div className='sighting-form__group'>
         <textarea name="content" value={ content } onChange={props.commentFormChange}></textarea>
-      </label><br/>
-      <br/>
+        <label className='sighting-form__label' htmlFor='content'>Comment</label><br/>
+      </div>
       <input className="btn btn--small" type="submit" value="Submit" />
     </form>
   )
