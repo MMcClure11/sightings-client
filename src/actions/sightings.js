@@ -8,6 +8,7 @@ import {
   COMMENT_FORM_CHANGE,
   SET_COMMENT,
   SET_FORM_DATA_FOR_EDIT_COMMENT,
+  RESET_FORM_DATA_FOR_COMMENT,
   EDIT_COMMENT,
   DELETE_COMMENT,
   FILTERS_FORM_CHANGE
@@ -170,6 +171,12 @@ export const setFormDataForEditComment = content => {
   return {
     type: SET_FORM_DATA_FOR_EDIT_COMMENT,
     content
+  }
+}
+
+export const resetFormDataForComment = () => {
+  return {
+    type: RESET_FORM_DATA_FOR_COMMENT
   }
 }
 

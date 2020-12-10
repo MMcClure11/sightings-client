@@ -54,6 +54,7 @@
     - [] Home rightnow only renders the header :_(
         -[] but still want to later add footers and about etc...so does this count towards the three?
     - [] what other components should be split up to hold containers?
+      - [] modalForm
 
 # CSS:
   - [X] pick and 
@@ -81,6 +82,7 @@
 - [] change public to is_public
 - [] nest comments routes under sightings
 - [X] updated comment, how to keep rails from changing the order
+- [] clean up routes not being used
 
 # STRETCH:
  - [X] comments (has_many through relationship)
