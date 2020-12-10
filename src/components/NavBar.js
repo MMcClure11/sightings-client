@@ -9,7 +9,8 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className='nav'>
+      
+      <nav className='nav '>
         {this.props.loggedIn ? 
           <>
           <div className='nav__link-container'>
@@ -70,6 +71,7 @@ class NavBar extends Component {
             </div>
         }
       </nav>
+      
     )
   }
 }

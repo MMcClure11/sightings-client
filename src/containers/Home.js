@@ -13,11 +13,11 @@ class Home extends Component {
 //add about, info, footer
   render() {
     return (
-      <div>
+     
         <>
         <Header history={this.props.history} />
         </>
-      </div>
+      
     )
   }
 }

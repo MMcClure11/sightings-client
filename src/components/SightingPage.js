@@ -19,12 +19,13 @@ class SightingPage extends Component {
   render() {
     const { commonName, image, category, scientificName, identified, location, date, notes, comments, id } = this.props
     return (
-      <>
+      <div className='sighting-page u-center-text'>
         { !this.props.id && <div className="loader"></div> }
-        <h2>Category { category && category.name }</h2>
-        <h1>{ commonName }</h1>
+        
+        <h1 className='heading-secondary' >{ commonName }</h1>
         <h3>{ scientificName }</h3>
-        <img src={ image } alt={ commonName }></img>
+        <h2  >Category { category && category.name }</h2>
+        <img className='sighting-page__image' src={ image } alt={ commonName }></img>
         <p className='heading-small'>Identified? {identified === true ? 
           <svg className="icon icon--identified-page-true">
             <use href={sprite + '#icon-checkmark'} />
@@ -43,7 +44,7 @@ class SightingPage extends Component {
         { comments && comments.length > 0 ? <h5>Comments:</h5> : null}
         { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
         <h4>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
-      </>
+      </div>
     )
   }
 }

@@ -1,0 +1,12 @@
+.sighting-page {
+  // max-width: 85rem;
+  // float: right;
+
+  &__image {
+    background-image: contain;
+    background-size: cover;
+    width: 50rem; 
+    // margin: 0 20rem; 
+
+  }
+}

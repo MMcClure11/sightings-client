@@ -337,9 +337,12 @@ body {
 .nav {
   float: left;
   background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
   height: 90vh;
-  padding: 4rem;
-  position: fixed; }
+  padding: 4rem; }
   .nav__link-container {
     display: flex;
     flex-direction: column;
@@ -533,3 +536,8 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
+
+.sighting-page__image {
+  background-image: contain;
+  background-size: cover;
+  width: 50rem; }

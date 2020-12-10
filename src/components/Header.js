@@ -9,6 +9,7 @@ class Header extends Component {
 
   render() {
     return (
+      
         <header className="header">
           <div className="header__text-box">
             <h1 className="heading-primary">
@@ -23,6 +24,7 @@ class Header extends Component {
             </div>
           } */}
         </header>
+      
     )
   }
 }
