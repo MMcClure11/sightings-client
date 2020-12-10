@@ -63,4 +63,19 @@
     padding-top: 4px;
   }
 
+  &--identified-page-true {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: $color-primary-dark;
+    margin-left: 1rem;
+  }
+
+  &--identified-page-false {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: red;
+    margin-left: .75rem;
+    padding-top: 4px;
+  }
+
 }

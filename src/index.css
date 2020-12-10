@@ -198,6 +198,17 @@ body {
     fill: red;
     margin-left: 1rem;
     padding-top: 4px; }
+  .icon--identified-page-true {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: #338D7B;
+    margin-left: 1rem; }
+  .icon--identified-page-false {
+    height: 1.75rem;
+    width: 1.75rem;
+    fill: red;
+    margin-left: .75rem;
+    padding-top: 4px; }
 
 .link {
   text-decoration: none;

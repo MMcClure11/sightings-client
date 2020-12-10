@@ -3,6 +3,7 @@ import { connect} from 'react-redux'
 import { setSelectedSighting, unsetSighting } from '../actions/sightings'
 import CommentCard from './CommentCard'
 import CommentForm from './CommentForm'
+import sprite from '../imgs/sprite.svg'
 
 class SightingPage extends Component {
 
@@ -23,7 +24,16 @@ class SightingPage extends Component {
         <h1>{ commonName }</h1>
         <h3>{ scientificName }</h3>
         <img src={ image } alt={ commonName }></img>
-        <h3>Identified? {identified === true ? '✅ ': '🚫'}</h3>
+        <p className='heading-small'>Identified? {identified === true ? 
+          <svg className="icon--identified-page-true">
+            <use href={sprite + '#icon-checkmark'} />
+          </svg>
+          : 
+          <svg className="icon--identified-page-false">
+            <use href={sprite + '#icon-cancel-circle'} />
+          </svg>
+          }
+        </p>
         <h3>City: {location.city} </h3>
         <h3>Region: {location.region} </h3>
         <h3>Country: {location.country} </h3>
