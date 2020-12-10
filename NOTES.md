@@ -54,7 +54,7 @@
     - [] Home rightnow only renders the header :_(
         -[] but still want to later add footers and about etc...so does this count towards the three?
     - [] what other components should be split up to hold containers?
-      - [] modalForm
+      - [X] CommentFormModal
 
 # CSS:
   - [X] pick and 

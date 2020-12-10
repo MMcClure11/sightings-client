@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { editComment } from '../actions/sightings'
-import CommentForm from './CommentForm'
+import CommentForm from '../components/CommentForm'
 
 class CommentFormModal extends Component {
 
