@@ -22,14 +22,14 @@ class CommentFormModal extends Component {
     const display = this.props.display ? "block" : "none"
     return (
       <div id="myModal" className="modal" style={{ display }}>
-      <div className="modal-content">
+      <div className="modal__content">
         <span  onClick={this.props.toggle} className="close">&times;</span>
-        <form onSubmit={this.onSubmit}>
-        <label>
-          Comment:
-          <textarea type="text" name="content" value={this.state.content} onChange={this.onChange}></textarea>
-        </label>
-        <input className="btn btn--small" type="submit" value="Submit" />
+        <form className='sighting-form' onSubmit={this.onSubmit}>
+        <div className='sighting-form__group'>
+          <textarea className='sighting-form__input' type="text" name="content" value={this.state.content} onChange={this.onChange}></textarea>
+          <label className='sighting-form__label'>Comment</label>
+        </div>
+        <input className="btn btn--small" type="submit" value="Edit" />
       </form>
       </div>
     </div>

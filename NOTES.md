@@ -63,7 +63,7 @@
   - [X] sighting cardFront
   - [X] sighting cardBack (get more info link)
   - [X] move modal css to sass
-    - [] style comment form modal
+    - [X] style comment form modal
   - [X] move loader css to sass
   - [X] style loader
   - [X] style modal
