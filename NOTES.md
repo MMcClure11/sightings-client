@@ -46,8 +46,8 @@
   - [] login controlled form in redux
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
   - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
- * - [] refactor commentForm to reuse in modal for edit
-      - [] controlled form for commentForm to redux
+ * - [X] refactor commentForm to reuse in modal for edit
+      - [X] controlled form for commentForm to redux
  * - [] CONTAINERS (some of my components should be containers)
     - [X] SightingList
     - [] NavBar??
