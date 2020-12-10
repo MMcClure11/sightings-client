@@ -150,7 +150,6 @@ class SightingContainer extends React.Component {
     : this.filteredSightings().sort((a, b) => b.date.localeCompare(a.date))
 
   renderAllSightings = () => {
-    console.log(this.props.sort)
     return (
       <>
         <h2 className='heading-secondary'>All Sightings</h2>

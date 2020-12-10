@@ -1,19 +1,11 @@
 //the parent container is a display flex, flex with grow or shrink based on what parameters it is given
 //first flex is in relation to the parent flex
 .nav {
-    flex: 0 0 24%;
     float: left; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; //y axis (because using flex dir column)
     background-color: $color-gray-light-2;
-    align-content: center; //x axis
     height: 90vh;
     padding: 4rem;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    // bottom: 0; 
+    position: fixed;
 
     &__link-container{
         display: flex;  

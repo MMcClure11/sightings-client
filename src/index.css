@@ -335,15 +335,11 @@ body {
     cursor: pointer; }
 
 .nav {
-  flex: 0 0 24%;
   float: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-color: #eee;
-  align-content: center;
   height: 90vh;
-  padding: 4rem; }
+  padding: 4rem;
+  position: fixed; }
   .nav__link-container {
     display: flex;
     flex-direction: column;
@@ -449,6 +445,32 @@ body {
     background-image: contain;
     background-size: cover;
     height: 45rem; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
   height: 90vh;
