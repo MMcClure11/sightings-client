@@ -25,11 +25,11 @@ class SightingPage extends Component {
         <h3>{ scientificName }</h3>
         <img src={ image } alt={ commonName }></img>
         <p className='heading-small'>Identified? {identified === true ? 
-          <svg className="icon--identified-page-true">
+          <svg className="icon icon--identified-page-true">
             <use href={sprite + '#icon-checkmark'} />
           </svg>
           : 
-          <svg className="icon--identified-page-false">
+          <svg className="icon icon--identified-page-false">
             <use href={sprite + '#icon-cancel-circle'} />
           </svg>
           }

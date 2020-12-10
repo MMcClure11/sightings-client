@@ -209,6 +209,25 @@ body {
     fill: red;
     margin-left: .75rem;
     padding-top: 4px; }
+  .icon--edit-comment {
+    height: 2rem;
+    width: 2rem;
+    fill: #44BBA4; }
+    .icon--edit-comment:hover {
+      cursor: pointer;
+      transform: translateY(-3px); }
+    .icon--edit-comment:active {
+      transform: translateY(0); }
+  .icon--trash-comment {
+    height: 2rem;
+    width: 2rem;
+    fill: #3B322C;
+    margin-left: 2rem; }
+    .icon--trash-comment:hover {
+      cursor: pointer;
+      transform: translateY(-3px); }
+    .icon--trash-comment:active {
+      transform: translateY(0); }
 
 .link {
   text-decoration: none;

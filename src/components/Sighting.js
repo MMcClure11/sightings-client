@@ -22,11 +22,11 @@ function Sighting (props) {
           <h2 className='heading-sighting'>Category: {props.category.name}</h2>
           <h4 className='heading-tertiary heading-tertiary--no-margin'>Scientific Name: {props.scientificName}</h4>
           <p className='heading-small'>Identified? {props.identified === true ? 
-            <svg className="icon--identified-true">
+            <svg className="icon icon--identified-true">
               <use href={sprite + '#icon-checkmark'} />
             </svg>
             : 
-            <svg className="icon--identified-false">
+            <svg className="icon icon--identified-false">
               <use href={sprite + '#icon-cancel-circle'} />
             </svg>
             }

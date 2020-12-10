@@ -78,4 +78,34 @@
     padding-top: 4px;
   }
 
+  &--edit-comment {
+    height: 2rem;
+    width: 2rem; 
+    fill: $color-primary-light;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--trash-comment {
+  height: 2rem;
+  width: 2rem; 
+  fill: $color-accent-dark;
+  margin-left: 2rem;
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
 }
