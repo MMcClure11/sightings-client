@@ -20,6 +20,7 @@ class SightingPage extends Component {
     const { commonName, image, category, scientificName, identified, location, date, notes, comments, id } = this.props
     return (
       <>
+        { !this.props.id && <div className="loader"></div> }
         <h2>Category { category && category.name }</h2>
         <h1>{ commonName }</h1>
         <h3>{ scientificName }</h3>

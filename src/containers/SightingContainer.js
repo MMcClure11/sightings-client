@@ -155,7 +155,7 @@ class SightingContainer extends React.Component {
       <>
         <h2>All Sightings</h2>
         <Filters />
-        { !this.props.sightings[0] && <div className="loader">LOADING</div> }
+        { !this.props.sightings[0] && <div className="loader"></div> }
         <section className="cards">
           {this.props.sightings && this.sortedSightings().map(sighting => <Sighting key={sighting.id} {...sighting} all={true} />)}
         </section>

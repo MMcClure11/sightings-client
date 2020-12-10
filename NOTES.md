@@ -24,9 +24,9 @@
 - [] active page on navbar is highlighted
 - [X] modal has required fields
   - [X] add public input
-- [] add spinner for loading 
+- [X] add spinner for loading 
   - [X] sightings
-  - [] and user
+  - [X] and selectedSighting
 - [X] toggle modal closed on submit and reset form state
 - [X] add sighting show page so can add comments eventually and a google map
 
@@ -64,8 +64,8 @@
   - [X] sighting cardBack (get more info link)
   - [X] move modal css to sass
     - [] style comment form modal
-  - [] move loader css to sass
-  - [] style loader
+  - [X] move loader css to sass
+  - [X] style loader
   - [X] style modal
   - [] style sighting show page
   - [] style search, filter, sort
