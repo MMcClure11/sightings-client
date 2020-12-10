@@ -153,7 +153,7 @@ class SightingContainer extends React.Component {
     console.log(this.props.sort)
     return (
       <>
-        <h2>All Sightings</h2>
+        <h2 className='heading-secondary'>All Sightings</h2>
         <Filters />
         { !this.props.sightings[0] && <div className="loader"></div> }
         <section className="cards">

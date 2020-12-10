@@ -68,7 +68,7 @@
   - [X] style loader
   - [X] style modal
   - [] style sighting show page
-  - [] style search, filter, sort
+  - [X] style search, filter, sort
   - [] vertical nav sticky
   - [X] profile (username, name, new sighting button make perty) 
   
