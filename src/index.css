@@ -565,3 +565,11 @@ body {
     border: 2px solid #333;
     margin: 2rem;
     text-align: left; }
+
+.textarea {
+  width: 60rem;
+  height: 12rem;
+  border: 3px solid #cccccc;
+  padding: 5px;
+  background-image: url(./imgs/so-white.png);
+  font-family: inherit; }

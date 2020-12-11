@@ -17,11 +17,8 @@ const CommentForm = (props) => {
   }
   
   return(
-    <form className='sighting-form' onSubmit={ onSubmit }>
-      <div className='sighting-form__group'>
-        <textarea name="content" value={ content } onChange={props.commentFormChange}></textarea>
-        <label className='sighting-form__label' htmlFor='content'>Comment</label><br/>
-      </div>
+    <form  onSubmit={ onSubmit }>
+      <textarea className='textarea' name="content" value={ content } onChange={props.commentFormChange} placeholder='Comment'></textarea>
       <input className="btn btn--small" type="submit" value="Submit" />
     </form>
   )
