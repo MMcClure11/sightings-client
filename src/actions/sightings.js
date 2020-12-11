@@ -18,7 +18,7 @@ import { getCurrentUser } from './currentUser'
 
 const URL = 'http://localhost:3000/api/v1/sightings'
 
-export function getSightings() {
+export const getSightings = () => {
   return (dispatch) => {
     fetch(URL)
     .then(resp => resp.json())
@@ -29,7 +29,7 @@ export function getSightings() {
   }
 }
 
-export function addSighting(sightingData) {
+export const addSighting = (sightingData) => {
   return dispatch => {
     const sendableSightingData = {
       image: sightingData.image,
@@ -70,7 +70,7 @@ export function addSighting(sightingData) {
   }
 }
 
-export function editSighting(sightingData) {
+export const editSighting = (sightingData) => {
   return dispatch => {
     const sendableSightingData = {
       image: sightingData.image,
@@ -112,7 +112,7 @@ export function editSighting(sightingData) {
   }
 }
 
-export function deleteSighting(sightingId) {
+export const deleteSighting = (sightingId) => {
   return (dispatch) => {
     return  fetch(`${URL}/${sightingId}`, {
       credentials: "include",
@@ -129,7 +129,7 @@ export function deleteSighting(sightingId) {
   }
 }
 
-export function setSelectedSighting(sightingId){
+export const setSelectedSighting = (sightingId) => {
   return dispatch => {
     fetch(`${URL}/${sightingId}`, {
       credentials: 'include'
@@ -198,7 +198,7 @@ export const editComment = (commentData, commentId) => {
   }
 }
 
-export function deleteComment(commentId) {
+export const deleteComment = (commentId) => {
   return (dispatch) => {
     return  fetch(`http://localhost:3000/api/v1/comments/${commentId}`, {
       credentials: "include",
@@ -206,12 +206,10 @@ export function deleteComment(commentId) {
     })
     .then(resp => resp.json())
     .then(sighting => {
-      // console.log(sighting)
       dispatch({
       type: DELETE_COMMENT,
       sighting,
       })
-      // dispatch(getCurrentUser())
     })
   }
 }
