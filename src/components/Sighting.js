@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import sprite from '../imgs/sprite.svg'
 
 
-function Sighting (props) {
+const Sighting = props => {
 
   const onClick = () => {
     props.deleteSighting(props.id)
