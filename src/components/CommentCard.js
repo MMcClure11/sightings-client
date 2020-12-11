@@ -27,26 +27,30 @@ class CommentCard extends Component {
   render(){
     const { username, content, currentUser, userId, id } = this.props
     return (
-      <>
-        <p>{username}: {content}</p>
+      <div>
+        <span>{username}: {content}</span>
         { userId === currentUser.id && 
         <>
         <span>
-          <a onClick={this.onClickOfEdit}>
-            <svg className="icon icon--edit-comment">
-              <use href={sprite + '#icon-pencil2'} />
-            </svg>
-          </a>
-          <a onClick={this.onClick}>
-            <svg className="icon icon--trash-comment">
-              <use href={sprite + '#icon-bin2'} />
-            </svg>
-          </a>
+          <span>
+            <a onClick={this.onClickOfEdit}>
+              <svg className="icon icon--edit-comment u-margin-left-small">
+                <use href={sprite + '#icon-pencil2'} />
+              </svg>
+            </a>
+          </span>
+          <span>
+            <a onClick={this.onClick}>
+              <svg className="icon icon--trash-comment">
+                <use href={sprite + '#icon-bin2'} />
+              </svg>
+            </a>
+          </span>
         </span>
         <CommentFormModal display={this.state.modal} toggle={this.toggleModal} commentId={id} content={content}/>
         </>
         }
-      </>
+      </div>
     )
   }
 }
