@@ -60,9 +60,9 @@ class SightingPage extends Component {
           { comments && comments.length > 0 ? <h3 className='heading-secondary'>Comments:</h3> : null}
           <div className='comment-container__box'>
             { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
+          </div>
+          <h4 className='sighting-page-info'>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
         </div>
-        <h4 className='sighting-page-info'>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
-      </div>
     </>
     )
   }

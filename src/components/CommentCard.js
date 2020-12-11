@@ -23,34 +23,35 @@ class CommentCard extends Component {
     this.setState({modal: !this.state.modal})
     this.props.resetFormDataForComment()
   }
-//check out jabber for styling ideas (margins, bold username)
+  
   render(){
     const { username, content, currentUser, userId, id } = this.props
     return (
-      <div>
-        <span>{username}: {content}</span>
-        { userId === currentUser.id && 
-        <>
-        <span>
+        <div className='comment'>
+          <span className='comment__username'>{username}</span> 
+          <span className='comment__content'>{content}</span>
+          { userId === currentUser.id && 
+          <>
           <span>
-            <a onClick={this.onClickOfEdit}>
-              <svg className="icon icon--edit-comment u-margin-left-small">
-                <use href={sprite + '#icon-pencil2'} />
-              </svg>
-            </a>
+            <span>
+              <a onClick={this.onClickOfEdit}>
+                <svg className="icon icon--edit-comment u-margin-left-small">
+                  <use href={sprite + '#icon-pencil2'} />
+                </svg>
+              </a>
+            </span>
+            <span>
+              <a onClick={this.onClick}>
+                <svg className="icon icon--trash-comment">
+                  <use href={sprite + '#icon-bin2'} />
+                </svg>
+              </a>
+            </span>
           </span>
-          <span>
-            <a onClick={this.onClick}>
-              <svg className="icon icon--trash-comment">
-                <use href={sprite + '#icon-bin2'} />
-              </svg>
-            </a>
-          </span>
-        </span>
-        <CommentFormModal display={this.state.modal} toggle={this.toggleModal} commentId={id} content={content}/>
-        </>
-        }
-      </div>
+          <CommentFormModal display={this.state.modal} toggle={this.toggleModal} commentId={id} content={content}/>
+          </>
+          }
+        </div>
     )
   }
 }

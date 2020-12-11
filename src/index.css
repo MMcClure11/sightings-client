@@ -575,6 +575,13 @@ body {
     margin: 2rem;
     text-align: left; }
 
+.comment {
+  margin-bottom: 1.5rem; }
+  .comment__username {
+    font-weight: 600;
+    margin-right: 1rem;
+    margin-left: 1rem; }
+
 .textarea {
   width: 60rem;
   height: 12rem;

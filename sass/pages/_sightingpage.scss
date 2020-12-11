@@ -7,25 +7,33 @@
     background-size: cover;
     width: 40rem; 
     margin: 2rem 0; 
-
   }
 }
 
-  .comment-container {
-    display: block;
-    
-    &__box{
-      background-image: url(./imgs/so-white.png);
-      color: $color-black;
-      max-height: 40vh;
-      overflow: scroll;
-      overflow-x: hidden;
-      width: auto; 
-      border: 2px solid $color-gray-dark-2;
-      margin: 2rem; 
-      text-align: left;
+.comment-container {
+  display: block;
+  
+  &__box{
+    background-image: url(./imgs/so-white.png);
+    color: $color-black;
+    max-height: 40vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: auto; 
+    border: 2px solid $color-gray-dark-2;
+    margin: 2rem; 
+    text-align: left;
   }
+}
 
+.comment {
+  margin-bottom: 1.5rem;
+
+  &__username {
+      font-weight: 600;
+      margin-right: 1rem;
+      margin-left: 1rem;
+  }
 }
 
 .textarea {
