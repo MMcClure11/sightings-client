@@ -70,7 +70,7 @@
   - [X] style modal
   - [] style sighting show page
   - [X] style search, filter, sort
-  - [] vertical nav sticky
+  - [] vertical nav sticky (post assessment)
   - [X] profile (username, name, new sighting button make perty) 
   
 # BACKEND:
