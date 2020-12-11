@@ -19,32 +19,51 @@ class SightingPage extends Component {
   render() {
     const { commonName, image, category, scientificName, identified, location, date, notes, comments, id } = this.props
     return (
-      <div className='sighting-page u-center-text'>
+      <>
+      <div className='sighting-page row u-center-text'>
         { !this.props.id && <div className="loader"></div> }
-        
-        <h1 className='heading-secondary' >{ commonName }</h1>
-        <h2 className='heading-tertiary'>Scientific Name - { scientificName }</h2>
-        <h2 className='heading-tertiary'>Category - { category && category.name }</h2>
-        <img className='sighting-page__image' src={ image } alt={ commonName }></img>
-        <p className='heading-small'>Identified? {identified === true ? 
-          <svg className="icon icon--identified-page-true">
-            <use href={sprite + '#icon-checkmark'} />
-          </svg>
-          : 
-          <svg className="icon icon--identified-page-false">
-            <use href={sprite + '#icon-cancel-circle'} />
-          </svg>
-          }
-        </p>
-        <h3 className='heading-small'>City: {location.city} </h3>
-        <h3 className='heading-small'>Region: {location.region} </h3>
-        <h3 className='heading-small'>Country: {location.country} </h3>
-        <h3 className='heading-small'>Date seen: { date }</h3>
-        <h4 className='heading-small'>Notes: { notes }</h4>
-        { comments && comments.length > 0 ? <h3 className='heading-small'>Comments:</h3> : null}
-        { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
-        <h4 className='heading-small'>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
+        <div className='col-1-of-2'>
+          <h1 className='heading-secondary' >{ commonName }</h1>
+          <img className='sighting-page__image' src={ image } alt={ commonName }></img>
+          <h2 className='heading-tertiary'>Scientific Name - { scientificName }</h2>
+          <h2 className='heading-tertiary'>Category - { category && category.name }</h2>
+        </div>
+        <div className='info'>
+          <p>
+            <p className='sighting-page-info u-margin-top-medium '>Identified? {identified === true ? 
+              <svg className="icon icon--identified-page-true">
+                <use href={sprite + '#icon-checkmark'} />
+              </svg>
+              : 
+              <svg className="icon icon--identified-page-false">
+                <use href={sprite + '#icon-cancel-circle'} />
+              </svg>
+              }
+            </p>
+          </p>
+          <p>
+            <h3 className='sighting-page-info u-margin-top-small'>City: {location.city} </h3>
+          </p>
+          <p>
+            <h3 className='sighting-page-info u-margin-top-small'>Region: {location.region} </h3>
+          </p>
+          <p>
+            <h3 className='sighting-page-info u-margin-top-small'>Country: {location.country} </h3>
+          </p>
+          <p>
+            <h3 className='sighting-page-info u-margin-top-small'>Date seen: { date }</h3>
+          </p>
+          <h4 className='u-margin-top-small'>Notes: { notes }</h4>
+        </div>
       </div>
+      <div className='comment-container'>
+        { comments && comments.length > 0 ? <h3 className='heading-secondary'>Comments:</h3> : null}
+        <div className='comment-container__box'>
+          { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
+        </div>
+        <h4 className='sighting-page-info'>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
+      </div>
+    </>
     )
   }
 }

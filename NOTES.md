@@ -83,7 +83,7 @@
 - [] nest comments routes under sightings
 - [X] updated comment, how to keep rails from changing the order
 - [X] add dependent destroy for comments to sightings
-- [] clean up routes not being used
+- [X] clean up routes not being used
 
 # STRETCH:
  - [X] comments (has_many through relationship)

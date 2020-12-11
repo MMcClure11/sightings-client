@@ -95,6 +95,11 @@ body {
   font-size: 1.6rem;
   font-weight: 500; }
 
+.sighting-page-info {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: inline-block; }
+
 .profile-headers {
   max-width: 76%;
   float: left;
@@ -113,6 +118,9 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
+
+.u-margin-top-small {
+  margin-top: 2rem !important; }
 
 .u-margin-top-medium {
   margin-top: 6rem !important; }
@@ -452,7 +460,7 @@ body {
     height: 45rem; }
 
 .row {
-  max-width: 114rem;
+  max-width: 100rem;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
@@ -542,4 +550,18 @@ body {
 .sighting-page__image {
   background-image: contain;
   background-size: cover;
-  width: 50rem; }
+  width: 40rem;
+  margin: 2rem 0; }
+
+.comment-container {
+  display: block; }
+  .comment-container__box {
+    background-image: url(./imgs/so-white.png);
+    color: #0e1111;
+    max-height: 40vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: auto;
+    border: 2px solid #333;
+    margin: 2rem;
+    text-align: left; }

@@ -5,8 +5,26 @@
   &__image {
     background-image: contain;
     background-size: cover;
-    width: 50rem; 
-    // margin: 0 20rem; 
+    width: 40rem; 
+    margin: 2rem 0; 
 
   }
 }
+
+  .comment-container {
+    display: block;
+    
+    &__box{
+      background-image: url(./imgs/so-white.png);
+      color: $color-black;
+      max-height: 40vh;
+      overflow: scroll;
+      overflow-x: hidden;
+      width: auto; 
+      border: 2px solid $color-gray-dark-2;
+      margin: 2rem; 
+      text-align: left;
+  }
+
+}
+
