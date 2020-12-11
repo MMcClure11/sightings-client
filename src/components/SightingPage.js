@@ -23,8 +23,8 @@ class SightingPage extends Component {
         { !this.props.id && <div className="loader"></div> }
         
         <h1 className='heading-secondary' >{ commonName }</h1>
-        <h3>Scientific Name - { scientificName }</h3>
-        <h2>Category - { category && category.name }</h2>
+        <h2 className='heading-tertiary'>Scientific Name - { scientificName }</h2>
+        <h2 className='heading-tertiary'>Category - { category && category.name }</h2>
         <img className='sighting-page__image' src={ image } alt={ commonName }></img>
         <p className='heading-small'>Identified? {identified === true ? 
           <svg className="icon icon--identified-page-true">
@@ -36,14 +36,14 @@ class SightingPage extends Component {
           </svg>
           }
         </p>
-        <h3>City: {location.city} </h3>
-        <h3>Region: {location.region} </h3>
-        <h3>Country: {location.country} </h3>
-        <h3>Date seen: { date }</h3>
-        <h4>Notes: { notes }</h4>
-        { comments && comments.length > 0 ? <h5>Comments:</h5> : null}
+        <h3 className='heading-small'>City: {location.city} </h3>
+        <h3 className='heading-small'>Region: {location.region} </h3>
+        <h3 className='heading-small'>Country: {location.country} </h3>
+        <h3 className='heading-small'>Date seen: { date }</h3>
+        <h4 className='heading-small'>Notes: { notes }</h4>
+        { comments && comments.length > 0 ? <h3 className='heading-small'>Comments:</h3> : null}
         { comments && comments.map(comment => <CommentCard key={comment.id} {...comment} />)}
-        <h4>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
+        <h4 className='heading-small'>Add Comment:</h4>{ this.props.currentUser.id && <CommentForm sighting_id={ id } />}
       </div>
     )
   }
