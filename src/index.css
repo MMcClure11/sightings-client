@@ -353,9 +353,11 @@ body {
     text-decoration: none; }
     .nav__link:hover {
       transform: translateY(-3px);
-      color: #44BBA4; }
+      color: #44BBA4;
+      text-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.25); }
     .nav__link:active {
       transform: translateY(0);
+      text-shadow: 0 1rem 1rem rgba(14, 17, 17, 0.25);
       color: #338D7B; }
   .nav__logout-container {
     display: flex;

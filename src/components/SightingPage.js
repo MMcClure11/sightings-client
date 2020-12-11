@@ -23,8 +23,8 @@ class SightingPage extends Component {
         { !this.props.id && <div className="loader"></div> }
         
         <h1 className='heading-secondary' >{ commonName }</h1>
-        <h3>{ scientificName }</h3>
-        <h2  >Category { category && category.name }</h2>
+        <h3>Scientific Name - { scientificName }</h3>
+        <h2>Category - { category && category.name }</h2>
         <img className='sighting-page__image' src={ image } alt={ commonName }></img>
         <p className='heading-small'>Identified? {identified === true ? 
           <svg className="icon icon--identified-page-true">

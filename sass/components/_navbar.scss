@@ -24,12 +24,12 @@
         &:hover {
           transform: translateY(-3px);
           color: $color-primary-light;
-          // box-shadow: 0 1rem 2rem rgba($color-black, .40);
+          text-shadow: 0 1rem 1rem rgba($color-black, 0.25);
         }
 
         &:active {
           transform: translateY(0);
-          // box-shadow: 0 1rem 2rem rgba($color-black, .25);
+          text-shadow: 0 1rem 1rem rgba($color-black, 0.25);
           color: $color-primary-dark;
         }
     }
