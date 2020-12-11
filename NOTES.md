@@ -52,6 +52,7 @@
     - [] what other components should be split up to hold containers?
       - [X] CommentFormModal
       - [] myProfile
+  - [] HREFS IN A TAGS CAUSING ERRORS FROM SPRITES
 
 # CSS:
   - [X] pick and 
