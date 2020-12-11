@@ -1,8 +1,10 @@
 import React from 'react'
 
-export default function SightingFormModal(props){
+const SightingFormModal = props => {
+
   const display = props.display ? "block" : "none"
   const { image, category, commonName, scientificName, notes, date, identified, city, region, country, isPublic, toggle, onChange, onSubmit } = props
+  
   return (
     <div id="myModal" className="modal" style={{ display }}>
       <div className="modal__content">
@@ -81,3 +83,5 @@ export default function SightingFormModal(props){
     </div>
   )
 }
+
+export default SightingFormModal
