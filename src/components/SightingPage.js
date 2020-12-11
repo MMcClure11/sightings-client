@@ -30,7 +30,7 @@ class SightingPage extends Component {
         </div>
         <div className='info'>
           <p>
-            <p className='sighting-page-info u-margin-top-medium '>Identified? {identified === true ? 
+            <span className='sighting-page-info u-margin-top-medium '>Identified? {identified === true ? 
               <svg className="icon icon--identified-page-true">
                 <use href={sprite + '#icon-checkmark'} />
               </svg>
@@ -39,19 +39,19 @@ class SightingPage extends Component {
                 <use href={sprite + '#icon-cancel-circle'} />
               </svg>
               }
-            </p>
+            </span>
           </p>
           <p>
-            <h3 className='sighting-page-info u-margin-top-small'>City: {location.city} </h3>
+            <span className='sighting-page-info u-margin-top-small'>City: {location.city} </span>
           </p>
           <p>
-            <h3 className='sighting-page-info u-margin-top-small'>Region: {location.region} </h3>
+            <span className='sighting-page-info u-margin-top-small'>Region: {location.region} </span>
           </p>
           <p>
-            <h3 className='sighting-page-info u-margin-top-small'>Country: {location.country} </h3>
+            <span className='sighting-page-info u-margin-top-small'>Country: {location.country} </span>
           </p>
           <p>
-            <h3 className='sighting-page-info u-margin-top-small'>Date seen: { date }</h3>
+            <span className='sighting-page-info u-margin-top-small'>Date seen: { date }</span>
           </p>
           <h4 className='u-margin-top-small'>Notes: { notes }</h4>
         </div>
