@@ -108,4 +108,17 @@
       transform: translateY(0);
     }
   }
+
+  &--send-comment {
+    fill: $color-accent-dark;
+    
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
 }

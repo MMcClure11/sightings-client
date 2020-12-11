@@ -159,6 +159,8 @@ body {
     padding: .5rem 1rem;
     font-size: 1rem;
     border-radius: 1rem; }
+    .btn--small--submit-comment {
+      margin-left: 3rem; }
   .btn--sighting {
     padding: .75rem 1rem; }
 
@@ -266,6 +268,13 @@ body {
       cursor: pointer;
       transform: translateY(-3px); }
     .icon--trash-comment:active {
+      transform: translateY(0); }
+  .icon--send-comment {
+    fill: #3B322C; }
+    .icon--send-comment:hover {
+      cursor: pointer;
+      transform: translateY(-3px); }
+    .icon--send-comment:active {
       transform: translateY(0); }
 
 .link {
