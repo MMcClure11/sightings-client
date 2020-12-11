@@ -15,7 +15,7 @@ const CommentForm = (props) => {
       props.submitComment({ ...props.form, sighting_id: props.sighting_id})
     }
   }
-  
+  //change submit to airplane icon, margin left and bottom
   return(
     <form  onSubmit={ onSubmit }>
       <textarea className='textarea' name="content" value={ content } onChange={props.commentFormChange} placeholder='Comment'></textarea>

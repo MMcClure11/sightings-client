@@ -15,7 +15,7 @@ class SightingPage extends Component {
   componentWillUnmount(){
     this.props.unsetSighting()
   }
-
+//give background with SightingCard gradient
   render() {
     const { commonName, image, category, scientificName, identified, location, date, notes, comments, id } = this.props
     return (

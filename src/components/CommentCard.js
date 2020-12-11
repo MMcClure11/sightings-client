@@ -23,7 +23,7 @@ class CommentCard extends Component {
     this.setState({modal: !this.state.modal})
     this.props.resetFormDataForComment()
   }
-
+//check out jabber for styling ideas (margins, bold username)
   render(){
     const { username, content, currentUser, userId, id } = this.props
     return (
