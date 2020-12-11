@@ -82,6 +82,7 @@
 - [] change public to is_public
 - [] nest comments routes under sightings
 - [X] updated comment, how to keep rails from changing the order
+- [X] add dependent destroy for comments to sightings
 - [] clean up routes not being used
 
 # STRETCH:
@@ -95,8 +96,8 @@
  - [] show page includes google map of location of the sighting based on city, region and country
 
 # Minimal Requirements for Flatiron project:
-- [] The code should be written in ES6 as much as possible
-  - [] refactor functions to const as arrow functions
+- [X] The code should be written in ES6 as much as possible
+  - [X] refactor functions to const as arrow functions
 - [X] Use the create-react-app generator to start your project.
 - [X] Your app should have one HTML page to render your react-redux application
 - [X] There should be 5 stateless components (components that mapDispatch or mapStateToProps count because you're using props, not state)

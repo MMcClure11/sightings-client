@@ -8,8 +8,6 @@ import Filters from '../components/Filters'
 import { addSighting, editSighting } from '../actions/sightings'
 import sprite from '../imgs/sprite.svg'
 
-
-
 class SightingContainer extends React.Component {
 
   state = {
