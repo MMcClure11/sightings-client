@@ -72,11 +72,7 @@ class SightingContainer extends React.Component {
 
   componentDidMount(){
     this.props.getSightings()
-  }
-
-  onClick = (url) => {
-    this.props.history.push(url)
-  }  
+  } 
 
   openNewSightingForm = () => this.setState({
     modal: true,
