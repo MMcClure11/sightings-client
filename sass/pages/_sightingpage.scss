@@ -37,3 +37,12 @@
   font-family: inherit;
 }
 
+.info {
+  background-image: linear-gradient(to left bottom, 
+                                    rgba($color-primary-light, 0.6), 
+                                    rgba($color-primary-dark, 0.8));
+  width: 40%;
+  float: right;
+  padding: 0 2rem 5rem 2rem;
+}
+

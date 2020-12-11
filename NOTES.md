@@ -21,7 +21,6 @@
 - [X] PrivateRoute
   - [X] if not loggedIn /sightings and /myprofile should redirect to login page
 - [X] signup and login pages should display navBar so that they can click on Home or the other button
-- [] active page on navbar is highlighted
 - [X] modal has required fields
   - [X] add public input
 - [X] add spinner for loading 
@@ -50,11 +49,9 @@
       - [X] controlled form for commentForm to redux
  * - [] CONTAINERS (some of my components should be containers)
     - [X] SightingList
-    - [] NavBar??
-    - [] Home rightnow only renders the header :_(
-        -[] but still want to later add footers and about etc...so does this count towards the three?
     - [] what other components should be split up to hold containers?
       - [X] CommentFormModal
+      - [] myProfile
 
 # CSS:
   - [X] pick and 
@@ -71,6 +68,7 @@
   - [X] style sighting show page
   - [X] style search, filter, sort
   - [] vertical nav sticky (post assessment)
+  - [] active page on navbar is highlighted (post assessment)
   - [X] profile (username, name, new sighting button make perty) 
   
 # BACKEND:
