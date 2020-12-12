@@ -34,14 +34,14 @@ class CommentCard extends Component {
           <>
           <span>
             <span>
-              <a onClick={this.onClickOfEdit}>
+              <a href="#bottom" onClick={this.onClickOfEdit}>
                 <svg className="icon icon--edit-comment u-margin-left-small">
                   <use href={sprite + '#icon-pencil2'} />
                 </svg>
               </a>
             </span>
             <span>
-              <a onClick={this.onClick}>
+              <a href="#bottom" onClick={this.onClick}>
                 <svg className="icon icon--trash-comment">
                   <use href={sprite + '#icon-bin2'} />
                 </svg>

@@ -39,13 +39,13 @@ const Sighting = props => {
           <NavLink to={`/sightings/${props.id}`} className='link'>More Info</NavLink>
           <span>
             { props.currentOwner && 
-              <a onClick={() => props.populateForm(props)}>
+              <a href="#center" onClick={() => props.populateForm(props)}>
                 <svg className="icon icon--edit">
                   <use href={sprite + '#icon-pencil2'} />
                 </svg>
               </a>}
             { props.currentOwner && 
-              <a onClick={onClick}>
+              <a href="#center" onClick={onClick}>
                 <svg className="icon icon--trash">
                   <use href={sprite + '#icon-bin2'} />
                 </svg>
