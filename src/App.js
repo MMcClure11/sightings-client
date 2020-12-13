@@ -5,7 +5,7 @@ import './App.css';
 import Home from './containers/Home'
 import Login from './components/Login'
 import Signup from './components/Signup'
-import MyProfile from './components/MyProfile'
+import MyProfile from './containers/MyProfile'
 import SightingContainer from './containers/SightingContainer'
 import NavBar from './components/NavBar'
 import PrivateRoute from './containers/PrivateRoute'

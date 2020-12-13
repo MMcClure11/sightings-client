@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getCurrentUser } from '../actions/currentUser'
-import SightingContainer from '../containers/SightingContainer'
+import SightingContainer from './SightingContainer'
 
 class MyProfile extends Component {
 
@@ -9,9 +9,9 @@ class MyProfile extends Component {
     this.props.getCurrentUser()
   }
 
-  onClick = (url) => {
-    this.props.history.push(url)
-  }
+  // onClick = (url) => {
+  //   this.props.history.push(url)
+  // }
 
   render() {
     return (

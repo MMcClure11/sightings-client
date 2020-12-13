@@ -47,11 +47,11 @@
   - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
   - [X] refactor commentForm to reuse in modal for edit
       - [X] controlled form for commentForm to redux
- * - [] CONTAINERS (some of my components should be containers)
+  - [X] CONTAINERS (some of my components should be containers)
     - [X] SightingList
-    - [] what other components should be split up to hold containers?
+    - [X] what other components should be split up to hold containers?
       - [X] CommentFormModal
-      - [] myProfile
+      - [X] myProfile
   - [X] HREFS IN A TAGS CAUSING ERRORS FROM SPRITES
 
 # CSS:
