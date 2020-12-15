@@ -70,7 +70,7 @@ class SightingPage extends Component {
 
 const mapStateToProps = (state) => ({
   ...state.sightings.selectedSighting,
-  currentUser: state.currentUser
+  currentUser: state.currentUser.currentUser
 })
 
 export default connect(mapStateToProps, { setSelectedSighting, unsetSighting })(SightingPage)

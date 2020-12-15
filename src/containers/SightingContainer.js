@@ -167,7 +167,7 @@ class SightingContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-      currentUser: state.currentUser,
+      currentUser: state.currentUser.currentUser,
       sightings: state.sightings.sightings,
       ...state.sightings.filtersForm
   }
