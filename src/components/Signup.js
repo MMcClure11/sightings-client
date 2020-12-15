@@ -9,15 +9,14 @@ class Signup extends Component {
     username: '',
     password: '',
     name: '',
+  }
 
-}
+  onChange = e => {
+      const { name, value } = e.target
+      this.setState({[name]: value})
+  }
 
-onChange = e => {
-    const { name, value } = e.target
-    this.setState({[name]: value})
-}
-
-onSubmit = e => {
+  onSubmit = e => {
     e.preventDefault()
     this.props.signup(this.state, this.props.history)
     this.setState({
@@ -25,7 +24,7 @@ onSubmit = e => {
         password: '',
         name: '',
     })
-}
+  }
 
   render() {
     return (
