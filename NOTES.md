@@ -30,7 +30,7 @@
 - [X] add sighting show page so can add comments eventually and a google map
 
 - [] if logged in, typing url to sightings or myProfile redirects to home page because of @@init first time they are not logged in
-- [] redirect from login or signup page if they are already logged in
+- [X] redirect from login or signup page if they are already logged in
 
 # Sightings:
   - [] choose Identified or Non-identified (or both?)
