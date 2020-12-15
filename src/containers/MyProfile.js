@@ -9,10 +9,6 @@ class MyProfile extends Component {
     this.props.getCurrentUser()
   }
 
-  // onClick = (url) => {
-  //   this.props.history.push(url)
-  // }
-
   render() {
     return (
       <>
