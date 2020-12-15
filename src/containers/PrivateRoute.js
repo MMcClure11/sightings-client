@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux"
 import { authUser } from '../actions/currentUser'
-const { Route, Redirect } = require("react-router-dom")
+import { Route, Redirect} from 'react-router-dom' 
 
 class PrivateRoute extends Component {
 
