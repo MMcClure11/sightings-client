@@ -1,5 +1,3 @@
-import { connect } from 'react-redux'
-import { editComment } from '../actions/sightings'
 import CommentForm from '../components/CommentForm'
 
 const CommentFormModal = props => {
@@ -15,4 +13,4 @@ const CommentFormModal = props => {
   )
 }
 
-export default connect(null, { editComment })(CommentFormModal)
+export default CommentFormModal
