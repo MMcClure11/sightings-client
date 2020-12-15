@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { getCurrentUser } from '../actions/currentUser'
 import Header from '../components/Header'
 
-
 class Home extends Component {
 
   componentDidMount(){
@@ -13,7 +12,6 @@ class Home extends Component {
 //add about, info, footer
   render() {
     return (
-     
         <>
         <Header />
         </>
