@@ -15,7 +15,7 @@ class Home extends Component {
     return (
      
         <>
-        <Header history={this.props.history} />
+        <Header />
         </>
       
     )
@@ -24,7 +24,6 @@ class Home extends Component {
 
 const mapStateToProps = state => {
   return({
-      loggedIn: !!state.currentUser,
       currentUser: state.currentUser
   })
 }
