@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { useHistory } from 'react-router';
+import { BrowserRouter as Router, Route, Switch, useHistory} from 'react-router-dom';
 import './App.css';
 
 import Home from './containers/Home'

@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { login } from '../actions/currentUser.js'
-
+import { login, getCurrentUser } from '../actions/currentUser.js'
+import { withRouter, Redirect } from 'react-router-dom'
 
 class Login extends Component {
+
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
 
   state = {
     username: '',
@@ -26,6 +30,8 @@ onSubmit = e => {
 
   render() {
     return (
+      <>
+      { !this.props.loggedIn ? 
       <div className='auth-form-container'>
         <form className='auth-form u-margin-top-big' onSubmit={this.onSubmit}>
           <div className="u-margin-bottom-medium">
@@ -46,8 +52,17 @@ onSubmit = e => {
           </div>
         </form>
       </div>
+      : <Redirect to='/' />
+      }
+      </>
     )
   }
 }
 
-export default connect(null, { login })(Login)
+const mapStateToProps = state => {
+  return {
+    loggedIn: !!state.currentUser
+  }
+}
+
+export default withRouter(connect(mapStateToProps, { login, getCurrentUser })(Login))
