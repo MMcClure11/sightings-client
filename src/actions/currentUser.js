@@ -1,6 +1,8 @@
 import { 
   SET_CURRENT_USER,
-  CLEAR_CURRENT_USER
+  CLEAR_CURRENT_USER,
+  BEGIN_AUTH,
+  COMPLETE_AUTH
 } from '../actionTypes' 
 
 export const login = (credentials, history) => {
@@ -81,7 +83,7 @@ export const getCurrentUser = () => {
 
 export const authUser = () => {
   return dispatch => {
-    dispatch({ type: 'BEGIN_AUTH'})
+    dispatch({ type: BEGIN_AUTH})
     return fetch("http://localhost:3000/api/v1/get_current_user", {
       credentials: "include",
       method: "GET",
@@ -93,7 +95,7 @@ export const authUser = () => {
       .then(response => {
         if (response.error) {
           console.log(response.error)
-          dispatch({ type: 'COMPLETE_AUTH'})
+          dispatch({ type: COMPLETE_AUTH})
           dispatch({type: CLEAR_CURRENT_USER})
 
         } else {
@@ -101,7 +103,7 @@ export const authUser = () => {
             type: SET_CURRENT_USER, 
             user: response
           })
-          dispatch({ type: 'COMPLETE_AUTH'})
+          dispatch({ type: COMPLETE_AUTH})
         }
       })
       .catch(console.log)
