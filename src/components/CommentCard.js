@@ -7,7 +7,8 @@ import sprite from '../imgs/sprite.svg'
 class CommentCard extends Component {
 
   state = {
-    modal: false
+    modal: false,
+    heart: false
   }
 
   onClick = () => {
@@ -23,6 +24,12 @@ class CommentCard extends Component {
     this.setState({modal: !this.state.modal})
     this.props.resetFormDataForComment()
   }
+
+  onClickHeart = () => {
+    this.setState({
+      heart: !this.state.heart
+    })
+  }
   
   render(){
     const { username, content, currentUser, userId, id } = this.props
@@ -30,6 +37,9 @@ class CommentCard extends Component {
         <div className='comment'>
           <span className='comment__username'>{username}</span> 
           <span className='comment__content'>{content}</span>
+          <button onClick={this.onClickHeart}>
+            Like: { this.state.heart && '<3' }
+          </button>
           { userId === currentUser.id && 
           <>
           <span>
