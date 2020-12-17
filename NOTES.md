@@ -74,7 +74,8 @@
   - [] vertical nav sticky (post assessment)
   - [] active page on navbar is highlighted (post assessment)
   - [X] profile (username, name, new sighting button make perty) 
-  - [] add logo
+  - [X] add logo
+  - [] add fade transitions
   
 # BACKEND:
 - [X] add validations
