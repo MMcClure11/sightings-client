@@ -173,12 +173,14 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getSightings: () => dispatch(getSightings()),
-    addSighting: (data) => dispatch(addSighting(data)),
-    editSighting: (data) => dispatch(editSighting(data))
-  }
-}
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SightingContainer))
-// export default withRouter(connect(mapStateToProps, { getSightings, addSighting, editSighting })(SightingContainer))
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getSightings: () => dispatch(getSightings()),
+//     addSighting: (data) => dispatch(addSighting(data)),
+//     editSighting: (data) => dispatch(editSighting(data))
+//   }
+// }
+// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SightingContainer))
+
+//uses destructuring to pass in dispatch actions
+export default withRouter(connect(mapStateToProps, { getSightings, addSighting, editSighting })(SightingContainer))
