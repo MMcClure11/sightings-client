@@ -16,8 +16,10 @@ import {
 
 import { getCurrentUser } from './currentUser'
 
-// const URL = 'http://localhost:3000/api/v1/sightings'
-const URL = 'https://nature-watch-api.herokuapp.com/api/v1/sightings'
+const URL = 'http://localhost:3000/api/v1/sightings'
+const COMMENT_URL = 'http://localhost:3000/api/v1/comments'
+// const URL = 'https://nature-watch-api.herokuapp.com/api/v1/sightings'
+
 
 export const getSightings = () => {
   return (dispatch) => {
@@ -154,7 +156,7 @@ export const commentFormChange = (e) => ({
 
 export const submitComment = commentData => {
   return dispatch => {
-    fetch('https://nature-watch-api.herokuapp.com/comments', {
+    fetch(COMMENT_URL, {
       credentials: "include",
       method: 'POST',
       headers: {
@@ -185,7 +187,7 @@ export const resetFormDataForComment = () => {
 
 export const editComment = (commentData, commentId) => {
   return dispatch => {
-    fetch(`https://nature-watch-api.herokuapp.com/api/v1/comments/${commentId}`, {
+    fetch(`${COMMENT_URL}/${commentId}`, {
       credentials: "include",
       method: 'PATCH',
       headers: {
@@ -203,7 +205,7 @@ export const editComment = (commentData, commentId) => {
 
 export const deleteComment = (commentId) => {
   return (dispatch) => {
-    return  fetch(`https://nature-watch-api.herokuapp.com/api/v1/comments/${commentId}`, {
+    return  fetch(`${COMMENT_URL}/${commentId}`, {
       credentials: "include",
       method: 'DELETE',
     })
