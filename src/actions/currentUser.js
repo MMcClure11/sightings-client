@@ -7,7 +7,8 @@ import {
 
 export const login = (credentials, history) => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/login", {
+    // return fetch("http://localhost:3000/api/v1/login", {
+      return fetch("https://nature-watch-api.herokuapp.com/api/v1/login", {
       credentials: "include",
       method: "POST",
       headers: {
@@ -33,7 +34,7 @@ export const login = (credentials, history) => {
 
 export const signup = (credentials, history) => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/signup", {
+    return fetch("https://nature-watch-api.herokuapp.com/api/v1/signup", {
       credentials: "include",
       method: "POST",
       headers: {
@@ -59,7 +60,7 @@ export const signup = (credentials, history) => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/get_current_user", {
+    return fetch("https://nature-watch-api.herokuapp.com/api/v1/get_current_user", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -84,7 +85,7 @@ export const getCurrentUser = () => {
 export const authUser = () => {
   return dispatch => {
     dispatch({ type: BEGIN_AUTH})
-    return fetch("http://localhost:3000/api/v1/get_current_user", {
+    return fetch("https://nature-watch-api.herokuapp.com/api/v1/get_current_user", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -113,7 +114,7 @@ export const authUser = () => {
 export const logout = (history) => {
   return dispatch => {
     // dispatch(clearSightings())
-    return fetch('http://localhost:3000/api/v1/logout', {
+    return fetch('https://nature-watch-api.herokuapp.com/api/v1/logout', {
       credentials: "include",
       method: "DELETE"
     })
