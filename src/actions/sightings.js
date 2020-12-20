@@ -16,14 +16,15 @@ import {
 
 import { getCurrentUser } from './currentUser'
 
-const URL = 'http://localhost:3000/api/v1/sightings'
-const COMMENT_URL = 'http://localhost:3000/api/v1/comments'
-// const URL = 'https://nature-watch-api.herokuapp.com/api/v1/sightings'
+const BASE_URL = 'http://localhost:3000/api/v1/'
+// const BASE_URL = 'https://nature-watch-api.herokuapp.com/api/v1'
+const SIGHTING_URL = `${BASE_URL}/sightings`
+const COMMENT_URL = `${BASE_URL}/comments`
 
 
 export const getSightings = () => {
   return (dispatch) => {
-    fetch(URL, {
+    fetch(SIGHTING_URL, {
       credentials: 'include',
     })
     .then(resp => resp.json())
@@ -49,7 +50,7 @@ export const addSighting = (sightingData) => {
       country: sightingData.country,
       public: sightingData.isPublic,
     }
-    return fetch(URL, {
+    return fetch(SIGHTING_URL, {
       credentials: "include",
       method: 'POST',
       headers: {
@@ -91,7 +92,7 @@ export const editSighting = (sightingData) => {
       public: sightingData.isPublic,
       id: sightingData.id
     }
-    return fetch(`${URL}/${sightingData.id}`, {
+    return fetch(`${SIGHTING_URL}/${sightingData.id}`, {
       credentials: "include",
       method: 'PATCH',
       headers: {
@@ -119,7 +120,7 @@ export const editSighting = (sightingData) => {
 
 export const deleteSighting = (sightingId) => {
   return (dispatch) => {
-    return  fetch(`${URL}/${sightingId}`, {
+    return  fetch(`${SIGHTING_URL}/${sightingId}`, {
       credentials: "include",
       method: 'DELETE',
     })
@@ -136,7 +137,7 @@ export const deleteSighting = (sightingId) => {
 
 export const setSelectedSighting = (sightingId) => {
   return dispatch => {
-    fetch(`${URL}/${sightingId}`, {
+    fetch(`${SIGHTING_URL}/${sightingId}`, {
       credentials: 'include'
     })
     .then(resp => resp.json())
