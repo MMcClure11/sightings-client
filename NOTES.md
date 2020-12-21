@@ -151,3 +151,4 @@
       - editting a sighting does change it, but it's not changing the redux store so I can see the changes in the sighting page and if I change public to private it no longer appears in the sightings all page even though it says it is a public sighting on the card
       - when posting a new sighting returns back a same errors as above for comments
       - upon refresh (and skipping the CLEAR_USER step) the edits are being saved in the database
+      - Jordan when refreshing it causes a user to logout. However she can successfully navigate to a link. So it probably IS my weird begin and complete auth solve that is causing that issue. However she can succesfully edit and delete but NOT post. Because of an internal server error, there are no current_user.habits so current_user is nil
