@@ -133,4 +133,12 @@
     - check endpoints
     - change urls to include request to heroku api
       - sends correct fetch data, set-cookie sameSite issue when using heroku api and local frontend
-      
+
+  # Instructions to deploy the frontend
+    - in root directory touch static.json
+      inlude: { "root": "build/", "routes": { "/**": "index.html" } }
+      allows for use of react-router
+    - heroku create nature-watch
+    - git push heroku main
+    - add frontend url to initializers/cors.rb to accepted origins in api
+    
