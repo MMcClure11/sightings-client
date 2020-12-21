@@ -112,3 +112,6 @@
 - [X] Your Rails API should handle the data persistence with a database. You should be using fetch() within your actions to GET and POST data from your API - do not use jQuery methods. (you can use async await)
 - [X] Your client-side application should handle the display of data with minimal data manipulation
 - [X] Your application should have great styling: remember, this is your final!
+
+# Deploy
+  - [X] rails api deployed to Heroku, can navigate to api/vs/sightings and see all the objects
