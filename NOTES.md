@@ -141,4 +141,13 @@
     - heroku create nature-watch
     - git push heroku main
     - add frontend url to initializers/cors.rb to accepted origins in api
-    
+
+  - in playing around with the redux store open, I noticed that the deployed app is running CLEAR_USER after the user is being set for navigating to a new page, but it does NOT do that when locals are run...so if I Skip that action in the redux store, it actually goes to the right place
+    - tried doing that and navigating to the sighting page, and added a comment: 
+    POST https://nature-watch-api.herokuapp.com/api/v1/comments 500 (Internal Server Error)
+    sightings.js:160 Uncaught (in promise) SyntaxError: Unexpected end of JSON input
+    at sightings.js:160
+      - WHY this now? it works locally...
+      - editting a sighting does change it, but it's not changing the redux store so I can see the changes in the sighting page and if I change public to private it no longer appears in the sightings all page even though it says it is a public sighting on the card
+      - when posting a new sighting returns back a same errors as above for comments
+      - upon refresh (and skipping the CLEAR_USER step) the edits are being saved in the database

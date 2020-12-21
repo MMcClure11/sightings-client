@@ -16,8 +16,8 @@ import {
 
 import { getCurrentUser } from './currentUser'
 
-// const BASE_URL = 'http://localhost:3000/api/v1/'
-const BASE_URL = 'https://nature-watch-api.herokuapp.com/api/v1'
+const BASE_URL = 'http://localhost:3000/api/v1/'
+// const BASE_URL = 'https://nature-watch-api.herokuapp.com/api/v1'
 const SIGHTING_URL = `${BASE_URL}/sightings`
 const COMMENT_URL = `${BASE_URL}/comments`
 
