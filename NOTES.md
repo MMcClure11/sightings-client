@@ -118,4 +118,6 @@
   - [X] frontend deployed to heroku, can login, signup, and logout
     - when rails s runs and send request from Heroku frontend, raises cookie cross-site issue
     - when send request to heroku API using yarn start locally, raises same cookie cross-site issue
+    - but now when both herokus being used there are no cors issues being raised it's just redirecting a shit ton to home, say what?? No wait, the issue is still there, I had just unchecked the third-party issue showing
+    - BUT am wondering if it's really a cors issue or that weird complete auth business i implemented so users could type in the url...might have to wait and see if we get Jordan's working, cause if that's the case then maybe that method doesn't work with a live app...
     - when rails s and yarn start going, it WORKS but the same cookie cross-site issue is raised the first time I add a comment
