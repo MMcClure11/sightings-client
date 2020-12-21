@@ -115,3 +115,5 @@
 
 # Deploy
   - [X] rails api deployed to Heroku, can navigate to api/vs/sightings and see all the objects
+  - [X] frontend deployed to heroku, can login, signup, and logout
+    - when rails s runs and send request from Heroku frontend, raises cookie cross-site issue 
