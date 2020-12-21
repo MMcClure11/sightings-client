@@ -167,12 +167,22 @@ class SightingContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-      currentUser: state.currentUser.currentUser,
+      currentUser: state.currentUser,
       sightings: state.sightings.sightings,
       ...state.sightings.filtersForm
   }
 }
 
+//With Begin and Complete Auth
+// const mapStateToProps = state => {
+//   return {
+//       currentUser: state.currentUser.currentUser,
+//       sightings: state.sightings.sightings,
+//       ...state.sightings.filtersForm
+//   }
+// }
+
+//How to set up dispatch without destructuring
 // const mapDispatchToProps = dispatch => {
 //   return {
 //     getSightings: () => dispatch(getSightings()),

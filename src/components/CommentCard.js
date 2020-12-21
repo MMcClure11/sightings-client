@@ -58,7 +58,7 @@ class CommentCard extends Component {
 
 const mapStateToProps = state => {
   return {
-      currentUser: state.currentUser.currentUser,
+      currentUser: state.currentUser,
   }
 }
 
