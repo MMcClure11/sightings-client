@@ -153,4 +153,4 @@
       - upon refresh (and skipping the CLEAR_USER step) the edits are being saved in the database
       - Jordan when refreshing it causes a user to logout. However she can successfully navigate to a link. So it probably IS my weird begin and complete auth solve that is causing that issue. However she can succesfully edit and delete but NOT post. Because of an internal server error, there are no current_user.habits so current_user is nil
   - refactored so privateRoute is back to how it originally was (commented out code for now)
-  - so no I can SEE sightings and edit but not add
+  - so now I can SEE sightings and edit but not add, however edits do not show up (because using get_current_user to refresh the redux store) so have to refresh to see the edits (but they DO show up on the sighting page) and refreshing causes the user to be logged out.
