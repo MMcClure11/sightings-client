@@ -12,7 +12,7 @@ const CommentForm = (props) => {
       props.editComment(props.form, props.commentId)
       props.toggle()
     } else {
-      props.submitComment({ ...props.form, sighting_id: props.sighting_id})
+      props.submitComment({ content: props.form.content, user_id: props.currentUser.id, sighting_id: props.sighting_id})
     }
   }
 
@@ -25,7 +25,8 @@ const CommentForm = (props) => {
 }
 
 const mapStateToProps = state => ({
-  form: state.sightings.commentForm
+  form: state.sightings.commentForm, 
+  currentUser: state.currentUser
 })
 
 export default connect(mapStateToProps, { commentFormChange, editComment, submitComment })(CommentForm)
