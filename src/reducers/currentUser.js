@@ -1,8 +1,8 @@
 import { 
   SET_CURRENT_USER, 
   CLEAR_CURRENT_USER,
-  BEGIN_AUTH,
-  COMPLETE_AUTH
+  // BEGIN_AUTH,
+  // COMPLETE_AUTH
 } from "../actionTypes"
 
 export function currentUserReducer(state = null, action) {

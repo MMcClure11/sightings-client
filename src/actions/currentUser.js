@@ -1,12 +1,12 @@
 import { 
   SET_CURRENT_USER,
   CLEAR_CURRENT_USER,
-  BEGIN_AUTH,
-  COMPLETE_AUTH
+  // BEGIN_AUTH,
+  // COMPLETE_AUTH
 } from '../actionTypes' 
 
-// const URL = 'http://localhost:3000/api/v1'
-const URL = 'https://nature-watch-api.herokuapp.com/api/v1'
+const URL = 'http://localhost:3000/api/v1'
+// const URL = 'https://nature-watch-api.herokuapp.com/api/v1'
 
 export const login = (credentials, history) => {
   return dispatch => {
