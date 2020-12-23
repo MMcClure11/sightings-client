@@ -124,16 +124,20 @@ class SightingContainer extends React.Component {
     )
   }
 
+  publicSightings = () => {
+    return this.props.sightings.filter(sighting => sighting.public === true)
+  }
+
   searchedSightings = () => {
     switch(this.props.searchOption) {
       case 'commonName':
-        return this.props.sightings.filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
+        return this.publicSightings().filter(sighting => sighting.commonName.toLowerCase().includes(this.props.search.toLowerCase()))
       case 'username':
-        return this.props.sightings.filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
+        return this.publicSightings().filter(sighting => sighting.user.username.toLowerCase().includes(this.props.search.toLowerCase()))
       case 'region':
-        return this.props.sightings.filter(sighting => sighting.location.region.toLowerCase().includes(this.props.search.toLowerCase()))
+        return this.publicSightings().filter(sighting => sighting.location.region.toLowerCase().includes(this.props.search.toLowerCase()))
       default:
-        return this.props.sightings
+        return this.publicSightings()
     }
   }
 
