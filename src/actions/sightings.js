@@ -35,7 +35,7 @@ export const getSightings = () => {
   }
 }
 
-export const addSighting = (sightingData) => {
+export const addSighting = (sightingData, userId) => {
   return dispatch => {
     const sendableSightingData = {
       image: sightingData.image,
@@ -49,6 +49,7 @@ export const addSighting = (sightingData) => {
       region: sightingData.region,
       country: sightingData.country,
       public: sightingData.isPublic,
+      userId: userId
     }
     return fetch(SIGHTING_URL, {
       credentials: "include",
