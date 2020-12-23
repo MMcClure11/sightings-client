@@ -17,7 +17,7 @@ class SightingPage extends Component {
   }
 
   render() {
-    const { commonName, image, category, scientificName, identified, location, date, notes, comments, id } = this.props
+    const { commonName, image, category, scientificName, identified, location, date, notes, comments, id, username } = this.props
     return (
       <>
       <div className='sighting-page row u-center-text'>
@@ -30,7 +30,10 @@ class SightingPage extends Component {
         </div>
         <div className='info'>
           <p>
-            <span className='sighting-page-info u-margin-top-medium '>Identified? {identified === true ? 
+            <span className='sighting-page-info u-margin-top-medium' >Reported by { username } </span>
+          </p>
+          <p>
+            <span className='sighting-page-info u-margin-top-small'>Identified? {identified === true ? 
               <svg className="icon icon--identified-page-true">
                 <use href={sprite + '#icon-checkmark'} />
               </svg>
