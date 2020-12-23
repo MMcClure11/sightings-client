@@ -117,7 +117,7 @@ class SightingContainer extends React.Component {
         </svg>
           Sighting</button>
           <section className="cards">
-            {this.props.currentUser && this.props.currentUser.sightings.map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
+            {this.props.currentUser && this.props.sightings.filter(sighting => sighting.user.id === this.props.currentUser.id).map(sighting => <Sighting key={sighting.id} populateForm={this.populateForm} {...sighting} currentOwner={true} />)}
           </section>
         <SightingFormModal toggle={this.toggleModal} {...this.state.form} display={this.state.modal} onChange={this.onChange} onSubmit={this.onSubmit}/>
       </>
