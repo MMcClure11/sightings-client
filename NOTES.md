@@ -47,7 +47,7 @@
   - [] signup controlled form in redux
   - [] login controlled form in redux
   - [] sightings controlled form in redux ?? maybe, might be difficult with edit also
-  - [] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
+  - [X] take sightings out of users serializer and iterate on front end to find current_user's sightings for showing their profile page (sending way too much info currently)
   - [X] refactor commentForm to reuse in modal for edit
       - [X] controlled form for commentForm to redux
   - [X] CONTAINERS (some of my components should be containers)
@@ -155,3 +155,5 @@
   - refactored so privateRoute is back to how it originally was (commented out code for now)
   - so now I can SEE sightings and edit but not add, however edits do not show up (because using get_current_user to refresh the redux store) so have to refresh to see the edits (but they DO show up on the sighting page) and refreshing causes the user to be logged out.
   - Changed the creation of a comment to not use current_user and instead pass in the user_id from the client. Result being that when running the heroku api and local client a user CAN add a comment. Confirming that the session info is not being sent successfully via credentials: "include" in the fetch requests. It also works when using heroku api and client.
+  - Refactored to not call current_user in the backend, but instead pass the user_id from the frontend. This makes the app functional so users can add, edit and delete sightings and comments. 
+  - Still have sessions issue to fix: using current_user.build is better practice, and users cannot enter a URL to navigate to a page (it logs them out) and if a user refreshes the page it logs them out.
