@@ -121,7 +121,7 @@
     - but now when both herokus being used there are no cors issues being raised it's just redirecting a shit ton to home, say what?? No wait, the issue is still there, I had just unchecked the third-party issue showing
     - BUT am wondering if it's really a cors issue or that weird complete auth business i implemented so users could type in the url...might have to wait and see if we get Jordan's working, cause if Jordan's works then maybe that work around isn't compatible with a live app...(just seems weird since works locally)
     - when rails s and yarn start going, it WORKS but the same cookie cross-site issue is raised the first time I add a comment
-  - [] DEPLOY FULLY FUNCTIONAL
+  - [X] DEPLOY FULLY FUNCTIONAL
 
   # Instructions to deploy the backend
     - cd into sightings-api
@@ -133,6 +133,8 @@
     - check endpoints
     - change urls to include request to heroku api
       - sends correct fetch data, set-cookie sameSite issue when using heroku api and local frontend
+    - gem 'rails_same_site_cookie', '~> 0.1.8'
+    - bundle install (fixes same_site none attribute problem, now can successfully refresh page without being logged in!)
 
   # Instructions to deploy the frontend
     - in root directory touch static.json
@@ -157,3 +159,4 @@
   - Changed the creation of a comment to not use current_user and instead pass in the user_id from the client. Result being that when running the heroku api and local client a user CAN add a comment. Confirming that the session info is not being sent successfully via credentials: "include" in the fetch requests. It also works when using heroku api and client.
   - Refactored to not call current_user in the backend, but instead pass the user_id from the frontend. This makes the app functional so users can add, edit and delete sightings and comments. 
   - Still have sessions issue to fix: using current_user.build is better practice, and users cannot enter a URL to navigate to a page (it logs them out) and if a user refreshes the page it logs them out.
+  - try adding rails_same_site_cookie gem, tested on Heroku site, and IT WORKS!
