@@ -47,7 +47,7 @@ class SightingContainer extends React.Component {
     if (this.state.form.id) {
       this.props.editSighting(this.state.form)
     } else {
-      this.props.addSighting(this.state.form, this.props.currentUser.id)
+      this.props.addSighting(this.state.form)
     }
     this.setState({
       modal: false,
