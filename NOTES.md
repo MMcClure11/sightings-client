@@ -160,3 +160,5 @@
   - Refactored to not call current_user in the backend, but instead pass the user_id from the frontend. This makes the app functional so users can add, edit and delete sightings and comments. 
   - Still have sessions issue to fix: using current_user.build is better practice, and users cannot enter a URL to navigate to a page (it logs them out) and if a user refreshes the page it logs them out.
   - try adding rails_same_site_cookie gem, tested on Heroku site, and IT WORKS!
+  - succesfully reverted code to use current_user for making a new sighting and a new comment
+  - [] Try reimplementing Before and After Auth for page redirects 
