@@ -12,7 +12,7 @@ const CommentForm = (props) => {
       props.editComment(props.form, props.commentId)
       props.toggle()
     } else {
-      props.submitComment({ content: props.form.content, user_id: props.currentUser.id, sighting_id: props.sighting_id})
+      props.submitComment({ content: props.form.content, sighting_id: props.sighting_id})
     }
   }
 
