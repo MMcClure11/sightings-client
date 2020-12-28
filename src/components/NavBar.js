@@ -3,9 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Logout from '../components/Logout'
 import sprite from '../imgs/sprite.svg'
 
-
 const NavBar = props => {
-
   
   return (
     <nav className='nav '>

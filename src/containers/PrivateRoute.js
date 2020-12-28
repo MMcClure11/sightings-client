@@ -3,23 +3,6 @@ import { connect } from "react-redux"
 import { authUser } from '../actions/currentUser'
 import { Route, Redirect} from 'react-router-dom' 
 
-// const PrivateRoute = ({ component: Component,loggedIn, ...rest }) => {
-
-//   return <Route {...rest} render={(props) => (
-//     loggedIn
-//       ? <Component {...props} />
-//       : <Redirect to='/' />
-//   )}
-//   />
-// }
-
-// const mapStateToProps = (state) => {
-//   return { loggedIn: !!state.currentUser }
-// }
-
-// export default connect(mapStateToProps)(PrivateRoute)
-
-// PrivateRoute component using authUser
 class PrivateRoute extends Component {
 
   componentDidMount() {

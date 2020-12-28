@@ -177,24 +177,4 @@ const mapStateToProps = state => {
   }
 }
 
-//With Begin and Complete Auth
-// const mapStateToProps = state => {
-//   return {
-//       currentUser: state.currentUser.currentUser,
-//       sightings: state.sightings.sightings,
-//       ...state.sightings.filtersForm
-//   }
-// }
-
-//How to set up dispatch without destructuring
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     getSightings: () => dispatch(getSightings()),
-//     addSighting: (data) => dispatch(addSighting(data)),
-//     editSighting: (data) => dispatch(editSighting(data))
-//   }
-// }
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SightingContainer))
-
-//uses destructuring to pass in dispatch actions
 export default withRouter(connect(mapStateToProps, { getSightings, addSighting, editSighting })(SightingContainer))
