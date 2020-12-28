@@ -161,4 +161,4 @@
   - Still have sessions issue to fix: using current_user.build is better practice, and users cannot enter a URL to navigate to a page (it logs them out) and if a user refreshes the page it logs them out.
   - try adding rails_same_site_cookie gem, tested on Heroku site, and IT WORKS!
   - succesfully reverted code to use current_user for making a new sighting and a new comment
-  - [] Try reimplementing Before and After Auth for page redirects 
+  - [X] Try reimplementing Before and After Auth for page redirects 
