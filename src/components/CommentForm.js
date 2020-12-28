@@ -26,7 +26,6 @@ const CommentForm = (props) => {
 
 const mapStateToProps = state => ({
   form: state.sightings.commentForm, 
-  currentUser: state.currentUser
 })
 
 export default connect(mapStateToProps, { commentFormChange, editComment, submitComment })(CommentForm)

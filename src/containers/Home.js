@@ -20,10 +20,4 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return({
-      currentUser: state.currentUser
-  })
-}
-
-export default connect(mapStateToProps, { getCurrentUser })(Home)
+export default connect(null, { getCurrentUser })(Home)

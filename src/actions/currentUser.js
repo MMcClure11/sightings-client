@@ -1,8 +1,8 @@
 import { 
   SET_CURRENT_USER,
   CLEAR_CURRENT_USER,
-  // BEGIN_AUTH,
-  // COMPLETE_AUTH
+  BEGIN_AUTH,
+  COMPLETE_AUTH
 } from '../actionTypes' 
 
 // const URL = 'http://localhost:3000/api/v1'
@@ -84,34 +84,34 @@ export const getCurrentUser = () => {
   }
 }
 
-// export const authUser = () => {
-//   return dispatch => {
-//     dispatch({ type: BEGIN_AUTH})
-//     return fetch(`${URL}/get_current_user`, {
-//       credentials: "include",
-//       method: "GET",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//     })
-//       .then(r => r.json())
-//       .then(response => {
-//         if (response.error) {
-//           console.log(response.error)
-//           dispatch({ type: COMPLETE_AUTH})
-//           dispatch({type: CLEAR_CURRENT_USER})
+export const authUser = () => {
+  return dispatch => {
+    dispatch({ type: BEGIN_AUTH})
+    return fetch(`${URL}/get_current_user`, {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then(r => r.json())
+      .then(response => {
+        if (response.error) {
+          console.log(response.error)
+          dispatch({ type: COMPLETE_AUTH})
+          dispatch({type: CLEAR_CURRENT_USER})
 
-//         } else {
-//           dispatch({
-//             type: SET_CURRENT_USER, 
-//             user: response
-//           })
-//           dispatch({ type: COMPLETE_AUTH})
-//         }
-//       })
-//       .catch(console.log)
-//   }
-// }
+        } else {
+          dispatch({
+            type: SET_CURRENT_USER, 
+            user: response
+          })
+          dispatch({ type: COMPLETE_AUTH})
+        }
+      })
+      .catch(console.log)
+  }
+}
 
 export const logout = (history) => {
   return dispatch => {
