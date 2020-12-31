@@ -56,6 +56,7 @@
       - [X] CommentFormModal
       - [X] myProfile
   - [X] HREFS IN A TAGS CAUSING ERRORS FROM SPRITES
+  - [] iterate over categories to dynamically create select for making and editing a sighting instead of hardcoding in the categories
 
 # CSS:
   - [X] pick and 
