@@ -34,6 +34,14 @@ const NavBar = props => {
               Sightings
             </span>
           </NavLink>
+          <NavLink className='nav__link' to="/users">
+          <span>
+              <svg className="icon icon--nav">
+                <use href={sprite + '#icon-binoculars'} />
+              </svg>
+              Users
+            </span>
+          </NavLink>
         </div>
         <div className='nav__logout-container'>
           <Logout /> 
