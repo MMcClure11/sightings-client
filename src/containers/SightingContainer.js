@@ -172,7 +172,6 @@ class SightingContainer extends React.Component {
 
   renderOptions = () => {
     const location = this.props.location.pathname
-    console.log(this.props.location.pathname)
     switch(location) {
       case '/myprofile':
         return this.renderMySightings()
@@ -181,7 +180,7 @@ class SightingContainer extends React.Component {
       case `/users/${this.props.selectedUser && this.props.selectedUser.id}`:
         return this.renderSelectedUserSightings()
       default:
-        return this.renderAllSightings()
+        return null
     }
   }
   
