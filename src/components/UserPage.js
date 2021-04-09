@@ -24,6 +24,9 @@ class UserPage extends React.Component {
         <div>
           <p>Hello! I am { name }!</p>
           <p>My username: { username }</p>
+          <p>Followers: 0</p>
+          <p>Following: 0</p>
+          <button className='btn btn--small'>Follow</button>
         </div>
         <SightingContainer  />  
       </>

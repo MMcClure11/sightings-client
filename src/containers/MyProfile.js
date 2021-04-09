@@ -15,6 +15,8 @@ class MyProfile extends Component {
         <div className='profile-headers'>
           <h2 className='heading-secondary'>Welcome, {this.props.currentUser && this.props.currentUser.username}</h2>
         </div>
+        <p>Followers: 0</p>
+        <p>Following: 0</p>
         <SightingContainer />
       </>
     )
