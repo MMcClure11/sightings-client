@@ -1,5 +1,7 @@
 import React from 'react'
 
+import SightingContainer from '../containers/SightingContainer'
+
 import { connect } from 'react-redux'
 import { setSelectedUser, unsetUser } from '../actions/users'
 
@@ -18,10 +20,13 @@ class UserPage extends React.Component {
   render() {
     const { name, id, username } = this.props
     return (
-      <div>
-        <p>Hello! I am { name }!</p>
-        <p>My username: { username }</p>
-      </div>
+      <>
+        <div>
+          <p>Hello! I am { name }!</p>
+          <p>My username: { username }</p>
+        </div>
+        <SightingContainer  />  
+      </>
     )
   }
 }

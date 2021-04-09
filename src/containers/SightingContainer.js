@@ -160,10 +160,30 @@ class SightingContainer extends React.Component {
     )
   }
 
+  renderSelectedUserSightings = () => {
+    return (
+      <>
+        <section className="cards">
+          {this.props.selectedUser && this.publicSightings().filter(sighting => sighting.user.id === this.props.selectedUser.id).map(sighting => <Sighting key={sighting.id} {...sighting} />)}
+        </section>
+      </>
+    )
+  }
+
+  renderOptions = () => {
+    if (this.props.location.pathname === '/myprofile') {
+      return this.renderMySightings()
+    } else if (this.props.location.pathname === '/sightings') {
+      return this.renderAllSightings()
+    } else {
+      return this.renderSelectedUserSightings()
+    }
+  }
+  
   render(){
     return (
       <>
-        { this.props.location.pathname === '/myprofile' ? this.renderMySightings() : this.renderAllSightings() }
+      { this.renderOptions() }
       </>
     )
   }
@@ -173,7 +193,8 @@ const mapStateToProps = state => {
   return {
       currentUser: state.currentUser.currentUser,
       sightings: state.sightings.sightings,
-      ...state.sightings.filtersForm
+      ...state.sightings.filtersForm,
+      selectedUser: state.users.selectedUser
   }
 }
 

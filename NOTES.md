@@ -163,3 +163,7 @@
   - try adding rails_same_site_cookie gem, tested on Heroku site, and IT WORKS!
   - succesfully reverted code to use current_user for making a new sighting and a new comment
   - [X] Try reimplementing Before and After Auth for page redirects 
+
+  GITHUB PULL REQUESTS
+  git push -u origin following-users
+  this pushes to the remote branch
