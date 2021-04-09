@@ -1,19 +1,33 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+import { setSelectedUser, unsetUser } from '../actions/users'
+
+
 class UserPage extends React.Component {
 
   componentDidMount(){
     const id = this.props.match.params.id
-    console.log(id)  
+    this.props.setSelectedUser(id)
+  }
+
+  componentWillUnmount(){
+    this.props.unsetUser()
   }
 
   render() {
+    const { name, id, username } = this.props
     return (
       <div>
-        I am a particular user's page
+        <p>Hello! I am { name }!</p>
+        <p>My username: { username }</p>
       </div>
     )
   }
 }
 
-export default UserPage
+const mapStateToProps = (state) => ({
+  ...state.users.selectedUser
+})
+
+export default connect(mapStateToProps, { setSelectedUser, unsetUser })(UserPage)
