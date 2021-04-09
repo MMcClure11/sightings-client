@@ -12,10 +12,8 @@ class UserContainer extends React.Component {
   } 
 
   render() {
-    console.log(this.props.users)
     return (
       <div>
-        I am the users container
         { this.props.users && this.props.users.map(user => <UserCard key={ user.id } user={user} />)}
       </div>
     )

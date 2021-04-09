@@ -10,6 +10,7 @@ import NavBar from './components/NavBar'
 import PrivateRoute from './containers/PrivateRoute'
 import SightingPage from './components/SightingPage'
 import UserContainer from './containers/UserContainer'
+import UserPage from './components/UserPage'
 
 function App() {
   const history = useHistory();
@@ -22,6 +23,7 @@ function App() {
             <Route exact path='/signup' component={Signup} history={history}/>
             <PrivateRoute exact path='/myprofile' component={MyProfile} history={history}/>
             <PrivateRoute exact path='/users' component={UserContainer} history={history}/>
+            <PrivateRoute exact path='/users/:id' component={UserPage} history={history}/>
             <PrivateRoute exact path='/sightings' component={SightingContainer} history={history}/>
             <PrivateRoute exact path='/sightings/:id' component={SightingPage} history={history} />
             <Route exact path="/" component={Home} history={history}/>
