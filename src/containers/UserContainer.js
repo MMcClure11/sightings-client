@@ -11,10 +11,14 @@ class UserContainer extends React.Component {
     this.props.getUsers()
   } 
 
+  currentUserFilter = () => {
+    return this.props.users.filter(user => user.id !== this.props.currentUser.id)
+  }
+
   render() {
     return (
       <div>
-        { this.props.users && this.props.users.map(user => <UserCard key={ user.id } user={user} />)}
+        { this.props.users && this.currentUserFilter().map(user => <UserCard key={ user.id } user={user} />)}
       </div>
     )
   }
@@ -23,6 +27,7 @@ class UserContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     users: state.users.users,
+    currentUser: state.currentUser.currentUser
   }
 }
 
