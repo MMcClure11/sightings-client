@@ -4,30 +4,30 @@
   fill: $color-primary;
 
   &--nav {
-      height: 2rem;
-      width: 2rem;
-      fill: $color-primary; 
-      margin-right: .5rem;
+    height: 2rem;
+    width: 2rem;
+    fill: $color-primary;
+    margin-right: 0.5rem;
   }
 
   &--edit {
-      height: 2rem;
-      width: 2rem; 
-      fill: $color-white;
+    height: 2rem;
+    width: 2rem;
+    fill: $color-white;
 
-      &:hover {
-        cursor: pointer;
-        transform: translateY(-3px);
-      }
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-3px);
+    }
 
-      &:active {
-        transform: translateY(0);
-      }
+    &:active {
+      transform: translateY(0);
+    }
   }
 
   &--trash {
     height: 2rem;
-    width: 2rem; 
+    width: 2rem;
     fill: $color-white;
     margin-left: 2rem;
 
@@ -39,13 +39,13 @@
     &:active {
       transform: translateY(0);
     }
-}
+  }
 
   &--add {
-      height: 1rem;
-      width: 1rem; 
-      fill: $color-accent-light;  
-      margin-right: 1rem;
+    height: 1rem;
+    width: 1rem;
+    fill: $color-accent-light;
+    margin-right: 1rem;
   }
 
   &--identified-true {
@@ -74,13 +74,13 @@
     height: 1.75rem;
     width: 1.75rem;
     fill: red;
-    margin-left: .75rem;
+    margin-left: 0.75rem;
     padding-top: 4px;
   }
 
   &--edit-comment {
     height: 2rem;
-    width: 2rem; 
+    width: 2rem;
     fill: $color-primary-light;
 
     &:hover {
@@ -94,10 +94,10 @@
   }
 
   &--trash-comment {
-  height: 2rem;
-  width: 2rem; 
-  fill: $color-accent-dark;
-  margin-left: 2rem;
+    height: 2rem;
+    width: 2rem;
+    fill: $color-accent-dark;
+    margin-left: 2rem;
 
     &:hover {
       cursor: pointer;
@@ -111,7 +111,7 @@
 
   &--send-comment {
     fill: $color-accent-dark;
-    
+
     &:hover {
       cursor: pointer;
       transform: translateY(-3px);

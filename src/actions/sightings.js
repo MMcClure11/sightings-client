@@ -1,6 +1,6 @@
 import {
   GET_SIGHTINGS,
-  ADD_SIGHTING, 
+  ADD_SIGHTING,
   EDIT_SIGHTING,
   DELETE_SIGHTING,
   SET_SELECTED_SIGHTING,
@@ -11,32 +11,33 @@ import {
   RESET_FORM_DATA_FOR_COMMENT,
   EDIT_COMMENT,
   DELETE_COMMENT,
-  FILTERS_FORM_CHANGE
-} from '../actionTypes'
+  FILTERS_FORM_CHANGE,
+} from '../actionTypes';
 
-import { getCurrentUser } from './currentUser'
+import { getCurrentUser } from './currentUser';
 
-const BASE_URL = 'http://localhost:3000/api/v1/'
+const BASE_URL = 'http://localhost:3000/api/v1/';
 // const BASE_URL = 'https://nature-watch-api.herokuapp.com/api/v1'
-const SIGHTING_URL = `${BASE_URL}/sightings`
-const COMMENT_URL = `${BASE_URL}/comments`
-
+const SIGHTING_URL = `${BASE_URL}/sightings`;
+const COMMENT_URL = `${BASE_URL}/comments`;
 
 export const getSightings = () => {
   return (dispatch) => {
     fetch(SIGHTING_URL, {
       credentials: 'include',
     })
-    .then(resp => resp.json())
-    .then(sightings => dispatch({
-      type: GET_SIGHTINGS,
-      sightings
-    }))
-  }
-}
+      .then((resp) => resp.json())
+      .then((sightings) =>
+        dispatch({
+          type: GET_SIGHTINGS,
+          sightings,
+        })
+      );
+  };
+};
 
 export const addSighting = (sightingData) => {
-  return dispatch => {
+  return (dispatch) => {
     const sendableSightingData = {
       image: sightingData.image,
       commonName: sightingData.commonName,
@@ -49,35 +50,35 @@ export const addSighting = (sightingData) => {
       region: sightingData.region,
       country: sightingData.country,
       public: sightingData.isPublic,
-    }
+    };
     return fetch(SIGHTING_URL, {
-      credentials: "include",
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(sendableSightingData),
     })
-    .then(response => response.json())
-    .then(sighting => {
-      if (sighting.error) {
-        alert(sighting.error)
-      } else {
-        dispatch({
-          type: ADD_SIGHTING, 
-          sighting
-        })
-        dispatch(getCurrentUser())
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  }
-}
+      .then((response) => response.json())
+      .then((sighting) => {
+        if (sighting.error) {
+          alert(sighting.error);
+        } else {
+          dispatch({
+            type: ADD_SIGHTING,
+            sighting,
+          });
+          dispatch(getCurrentUser());
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+};
 
 export const editSighting = (sightingData) => {
-  return dispatch => {
+  return (dispatch) => {
     const sendableSightingData = {
       image: sightingData.image,
       commonName: sightingData.commonName,
@@ -90,137 +91,143 @@ export const editSighting = (sightingData) => {
       region: sightingData.region,
       country: sightingData.country,
       public: sightingData.isPublic,
-      id: sightingData.id
-    }
+      id: sightingData.id,
+    };
     return fetch(`${SIGHTING_URL}/${sightingData.id}`, {
-      credentials: "include",
+      credentials: 'include',
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(sendableSightingData),
     })
-    .then(response => response.json())
-    .then(sighting => {
-      if (sighting.error) {
-        alert(sighting.error)
-      } else {
-        dispatch({
-          type: EDIT_SIGHTING, 
-          sighting
-        })
-        dispatch(getCurrentUser())
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  }
-}
+      .then((response) => response.json())
+      .then((sighting) => {
+        if (sighting.error) {
+          alert(sighting.error);
+        } else {
+          dispatch({
+            type: EDIT_SIGHTING,
+            sighting,
+          });
+          dispatch(getCurrentUser());
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+};
 
 export const deleteSighting = (sightingId) => {
   return (dispatch) => {
-    return  fetch(`${SIGHTING_URL}/${sightingId}`, {
-      credentials: "include",
+    return fetch(`${SIGHTING_URL}/${sightingId}`, {
+      credentials: 'include',
       method: 'DELETE',
     })
-    .then(resp => resp.json())
-    .then(() => {
-      dispatch({
-      type: DELETE_SIGHTING,
-      sightingId
-      })
-      dispatch(getCurrentUser())
-    })
-  }
-}
+      .then((resp) => resp.json())
+      .then(() => {
+        dispatch({
+          type: DELETE_SIGHTING,
+          sightingId,
+        });
+        dispatch(getCurrentUser());
+      });
+  };
+};
 
 export const setSelectedSighting = (sightingId) => {
-  return dispatch => {
+  return (dispatch) => {
     fetch(`${SIGHTING_URL}/${sightingId}`, {
-      credentials: 'include'
+      credentials: 'include',
     })
-    .then(resp => resp.json())
-    .then(sighting => dispatch({
-      type: SET_SELECTED_SIGHTING,
-      sighting
-    }))
-  }
-}
+      .then((resp) => resp.json())
+      .then((sighting) =>
+        dispatch({
+          type: SET_SELECTED_SIGHTING,
+          sighting,
+        })
+      );
+  };
+};
 
-export const unsetSighting = () => ({type: UNSET_SIGHTING})
+export const unsetSighting = () => ({ type: UNSET_SIGHTING });
 
 export const commentFormChange = (e) => ({
   type: COMMENT_FORM_CHANGE,
-  payload: {name: e.target.name, value: e.target.value}
-})
+  payload: { name: e.target.name, value: e.target.value },
+});
 
-export const submitComment = commentData => {
-  return dispatch => {
+export const submitComment = (commentData) => {
+  return (dispatch) => {
     fetch(COMMENT_URL, {
-      credentials: "include",
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(commentData),
     })
-    .then(resp => resp.json())
-    .then(comment => dispatch({
-      type: SET_COMMENT,
-      payload: comment
-    }))
-  }
-}
+      .then((resp) => resp.json())
+      .then((comment) =>
+        dispatch({
+          type: SET_COMMENT,
+          payload: comment,
+        })
+      );
+  };
+};
 
-export const setFormDataForEditComment = content => {
+export const setFormDataForEditComment = (content) => {
   return {
     type: SET_FORM_DATA_FOR_EDIT_COMMENT,
-    content
-  }
-}
+    content,
+  };
+};
 
 export const resetFormDataForComment = () => {
   return {
-    type: RESET_FORM_DATA_FOR_COMMENT
-  }
-}
+    type: RESET_FORM_DATA_FOR_COMMENT,
+  };
+};
 
 export const editComment = (commentData, commentId) => {
-  return dispatch => {
+  return (dispatch) => {
     fetch(`${COMMENT_URL}/${commentId}`, {
-      credentials: "include",
+      credentials: 'include',
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(commentData),
     })
-    .then(resp => resp.json())
-    .then(sighting => dispatch({
-      type: EDIT_COMMENT,
-      sighting
-    }))
-  }
-}
+      .then((resp) => resp.json())
+      .then((sighting) =>
+        dispatch({
+          type: EDIT_COMMENT,
+          sighting,
+        })
+      );
+  };
+};
 
 export const deleteComment = (commentId) => {
   return (dispatch) => {
-    return  fetch(`${COMMENT_URL}/${commentId}`, {
-      credentials: "include",
+    return fetch(`${COMMENT_URL}/${commentId}`, {
+      credentials: 'include',
       method: 'DELETE',
     })
-    .then(resp => resp.json())
-    .then(sighting => {
-      dispatch({
-      type: DELETE_COMMENT,
-      sighting,
-      })
-    })
-  }
-}
+      .then((resp) => resp.json())
+      .then((sighting) => {
+        dispatch({
+          type: DELETE_COMMENT,
+          sighting,
+        });
+      });
+  };
+};
 
 export const handleSearchFormChange = (e) => ({
   type: FILTERS_FORM_CHANGE,
-  payload: {name: e.target.name, value: e.target.value}
-})
+  payload: { name: e.target.name, value: e.target.value },
+});

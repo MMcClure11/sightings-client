@@ -10,30 +10,28 @@
   font-size: 2rem;
 
   &:hover {
-      background-color: $color-tertiary-dark;
-      color: $color-accent-light;
-      box-shadow: 0 1rem 2rem rgba($color-black, .40);
-      transform: translateY(-2px);
+    background-color: $color-tertiary-dark;
+    color: $color-accent-light;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    transform: translateY(-2px);
   }
 
   &:active {
-      box-shadow: 0 1rem 1rem rgba($color-black, 0.25);
-      transform: translateY(0);
+    box-shadow: 0 1rem 1rem rgba($color-black, 0.25);
+    transform: translateY(0);
   }
 
   &--small {
-      padding: .5rem 1rem;
-      font-size: 1rem;
-      border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
 
-      &--submit-comment {
-        margin-left: 3rem;
-      }
+    &--submit-comment {
+      margin-left: 3rem;
+    }
   }
 
   &--sighting {
-    padding: .75rem 1rem; 
-    
+    padding: 0.75rem 1rem;
   }
-
 }

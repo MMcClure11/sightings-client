@@ -1,26 +1,23 @@
-@import "abstracts/mixins";
-@import "abstracts/variables";
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "components/button";
-@import "components/filter_form";
-@import "components/icon";
-@import "components/link";
-@import "components/loader";
-@import "components/modal";
-@import "components/navbar";
-@import "components/sighting_form";
-@import "components/sightings_card";
+@import 'components/button';
+@import 'components/filter_form';
+@import 'components/icon';
+@import 'components/link';
+@import 'components/loader';
+@import 'components/modal';
+@import 'components/navbar';
+@import 'components/sighting_form';
+@import 'components/sightings_card';
 
-@import "layout/grid";
-@import "layout/header";
+@import 'layout/grid';
+@import 'layout/header';
 
-@import "pages/authforms";
-@import "pages/sightingpage";
-
-
-
+@import 'pages/authforms';
+@import 'pages/sightingpage';

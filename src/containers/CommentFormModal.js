@@ -1,16 +1,17 @@
-import CommentForm from '../components/CommentForm'
+import CommentForm from '../components/CommentForm';
 
-const CommentFormModal = props => {
-
-  const display = props.display ? "block" : "none"
+const CommentFormModal = (props) => {
+  const display = props.display ? 'block' : 'none';
   return (
-    <div id="myModal" className="modal" style={{ display }}>
-    <div className="modal__content">
-      <span  onClick={props.toggle} className="close">&times;</span>
-      <CommentForm commentId={props.commentId} toggle={props.toggle} />
+    <div id='myModal' className='modal' style={{ display }}>
+      <div className='modal__content'>
+        <span onClick={props.toggle} className='close'>
+          &times;
+        </span>
+        <CommentForm commentId={props.commentId} toggle={props.toggle} />
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default CommentFormModal
+export default CommentFormModal;

@@ -1,6 +1,10 @@
 .link {
   text-decoration: none;
-  background-image: linear-gradient(to right, $color-gray-light-1, $color-gray-light-2);
+  background-image: linear-gradient(
+    to right,
+    $color-gray-light-1,
+    $color-gray-light-2
+  );
   -webkit-background-clip: text;
   color: transparent;
 

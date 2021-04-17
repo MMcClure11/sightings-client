@@ -11,12 +11,12 @@ import {
   DELETE_COMMENT,
   FILTERS_FORM_CHANGE,
   SET_FORM_DATA_FOR_EDIT_COMMENT,
-  RESET_FORM_DATA_FOR_COMMENT
-} from '../actionTypes'
+  RESET_FORM_DATA_FOR_COMMENT,
+} from '../actionTypes';
 
 const nullCommentForm = {
   content: '',
-}
+};
 
 const initialState = {
   sightings: [],
@@ -27,62 +27,84 @@ const initialState = {
     search: '',
     filter: 'All',
     sort: 'alphabetically',
-  }
-}
+  },
+};
 
 export function sightingsReducer(state = initialState, action) {
-  switch(action.type){
+  switch (action.type) {
     case GET_SIGHTINGS:
-      return {...state, sightings: action.sightings}
+      return { ...state, sightings: action.sightings };
     case FILTERS_FORM_CHANGE:
-      return {...state, filtersForm: {
-        ...state.filtersForm, [action.payload.name]: action.payload.value
-      }}
+      return {
+        ...state,
+        filtersForm: {
+          ...state.filtersForm,
+          [action.payload.name]: action.payload.value,
+        },
+      };
     case ADD_SIGHTING:
       return {
         ...state,
-        sightings: [...state.sightings, action.sighting]
-      }
+        sightings: [...state.sightings, action.sighting],
+      };
     case EDIT_SIGHTING:
       return {
-        ...state, 
-        sightings: [...state.sightings.map(sighting => sighting.id === action.sighting.id ? action.sighting : sighting)]
-      }
+        ...state,
+        sightings: [
+          ...state.sightings.map((sighting) =>
+            sighting.id === action.sighting.id ? action.sighting : sighting
+          ),
+        ],
+      };
     case DELETE_SIGHTING:
       return {
         ...state,
-        sightings: [...state.sightings.filter(sighting => sighting.id !== action.sightingId)]
-      }
+        sightings: [
+          ...state.sightings.filter(
+            (sighting) => sighting.id !== action.sightingId
+          ),
+        ],
+      };
     case SET_SELECTED_SIGHTING:
-      return {...state, selectedSighting: action.sighting}
+      return { ...state, selectedSighting: action.sighting };
     case UNSET_SIGHTING:
-      return {...state, selectedSighting: null}
+      return { ...state, selectedSighting: null };
     case COMMENT_FORM_CHANGE:
-      return {...state, commentForm: {
-        ...state.commentForm, [action.payload.name]: action.payload.value
-      }}
+      return {
+        ...state,
+        commentForm: {
+          ...state.commentForm,
+          [action.payload.name]: action.payload.value,
+        },
+      };
     case SET_COMMENT:
       return {
         ...state,
         selectedSighting: {
           ...state.selectedSighting,
-          comments: [...state.selectedSighting.comments, action.payload]
+          comments: [...state.selectedSighting.comments, action.payload],
         },
-        commentForm: nullCommentForm
-      }
+        commentForm: nullCommentForm,
+      };
     case SET_FORM_DATA_FOR_EDIT_COMMENT:
-      return {...state, commentForm: {
-        ...state.commentForm, content: action.content
-      }}
+      return {
+        ...state,
+        commentForm: {
+          ...state.commentForm,
+          content: action.content,
+        },
+      };
     case RESET_FORM_DATA_FOR_COMMENT:
-      return {...state, commentForm: nullCommentForm}
+      return { ...state, commentForm: nullCommentForm };
     case EDIT_COMMENT:
-      return {...state, selectedSighting: action.sighting,
-        commentForm: nullCommentForm
-      }
+      return {
+        ...state,
+        selectedSighting: action.sighting,
+        commentForm: nullCommentForm,
+      };
     case DELETE_COMMENT:
-      return {...state, selectedSighting: action.sighting}
+      return { ...state, selectedSighting: action.sighting };
     default:
-      return state
+      return state;
   }
 }
